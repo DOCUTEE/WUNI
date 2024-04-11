@@ -26,9 +26,9 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -42,12 +42,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border x:Name="btnLoginCustomer" Grid.Column="0">
-                        <Label Content="Tôi là khách hàng"></Label>
-                    </Border>
-                    <Border x:Name="btnLoginWorker" Grid.Column="1">
-                        <Label Content="Tôi là thợ"></Label>
-                    </Border>
+                    <Button x:Name="btnLoginCustomer" Grid.Column="0" Margin="20,20,20,20" Content="Tôi là khách hàng" FontSize="26" Click="btnLoginCustomer_Click"></Button>
+                    <Button x:Name="btnLoginWorker" Grid.Column="1" Margin="20,20,20,20" Content="Tôi là thợ" FontSize="26" Click="btnLoginWorker_Click"></Button>
                 </Grid>
                 <TextBlock Grid.Row="5" HorizontalAlignment="Center">
                     Bạn chưa có tài khoản ? 

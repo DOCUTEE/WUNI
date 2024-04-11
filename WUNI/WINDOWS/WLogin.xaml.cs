@@ -33,5 +33,15 @@ namespace WUNI.WINDOWS
             WWhoRegister wWhoRegister = new WWhoRegister(); 
             wWhoRegister.Show();
         }
+
+        private void btnLoginWorker_Click(object sender, RoutedEventArgs e)
+        {
+            //Thịnh code đăng nhập để kiểm tra xem tài khoản đã tồn tại hay chưa nếu rồi thì vào window WWorkerMain.xaml
+        }
+
+        private void btnLoginCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            //Thịnh code đăng nhập để kiểm tra xem tài khoản đã tồn tại hay chưa nếu rồi thì vào window WCustomerMain.xaml
+        }
     }
 }
