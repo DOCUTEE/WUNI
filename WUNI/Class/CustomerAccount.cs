@@ -25,11 +25,6 @@ namespace WUNI.Class
         public string Passwords { get => passwords; set => passwords = value; }
         public string CustomerID { get => customerID; set => customerID = value; }
 
-        public bool checkLogin()
-        {
-            CustomerAccountDAO customerAccountDAO = new CustomerAccountDAO();
-            DataTable da = customerAccountDAO.checkLogin(this);
-            return da.Rows.Count > 0;
-        }
+      
     }
 }
