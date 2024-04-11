@@ -17,15 +17,9 @@ namespace WUNI.Class
         {
             this.orderID = orderID;
             this.workerID = workerID;
-            Add();
         }
 
-        public void Add()
-        {
-            WorkedDAO workedDAO = new WorkedDAO();
-            workedDAO.Add(this);
-        }
-
+     
         public string OrderID { get => orderID; set => orderID = value; }
         public string WorkerID { get => workerID; set => workerID = value; }
     }
