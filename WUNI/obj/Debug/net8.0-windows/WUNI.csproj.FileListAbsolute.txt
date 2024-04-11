@@ -3,11 +3,9 @@ D:\WUNI\WUNI\bin\Debug\net8.0-windows\WUNI.deps.json
 D:\WUNI\WUNI\bin\Debug\net8.0-windows\WUNI.runtimeconfig.json
 D:\WUNI\WUNI\bin\Debug\net8.0-windows\WUNI.dll
 D:\WUNI\WUNI\bin\Debug\net8.0-windows\WUNI.pdb
-D:\WUNI\WUNI\obj\Debug\net8.0-windows\MainWindow.g.cs
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\App.g.cs
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI_MarkupCompile.cache
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI_MarkupCompile.lref
-D:\WUNI\WUNI\obj\Debug\net8.0-windows\MainWindow.baml
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.g.resources
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.GeneratedMSBuildEditorConfig.editorconfig
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.AssemblyInfoInputs.cache
@@ -18,3 +16,12 @@ D:\WUNI\WUNI\obj\Debug\net8.0-windows\refint\WUNI.dll
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.pdb
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.genruntimeconfig.cache
 D:\WUNI\WUNI\obj\Debug\net8.0-windows\ref\WUNI.dll
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WLogin.g.cs
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WRegisterCustomer.g.cs
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WRegisterWorker.g.cs
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WLogin.baml
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WRegisterCustomer.baml
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WRegisterWorker.baml
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WUNI.sourcelink.json
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WWhoRegister.g.cs
+D:\WUNI\WUNI\obj\Debug\net8.0-windows\WWhoRegister.baml

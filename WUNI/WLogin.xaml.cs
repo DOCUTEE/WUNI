@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,15 @@ namespace WUNI
         public WLogin()
         {
             InitializeComponent();
+            string path = Environment.CurrentDirectory;
+            string path2 = Directory.GetParent(path).Parent.Parent.FullName + "\\Logo\\Wuni.jpg";
+            imgBrand.Source = new BitmapImage(new Uri(path2));
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            WWhoRegister wWhoRegister = new WWhoRegister(); 
+            wWhoRegister.Show();
         }
     }
 }
