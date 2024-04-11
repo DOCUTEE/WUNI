@@ -39,7 +39,7 @@ namespace WUNI
             }
         }
 
-        public DataTable LoadData(string sqlStr)
+        public DataTable AdapterExcute(string sqlStr)
         {
             DataTable dtTable = new DataTable();
 

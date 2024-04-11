@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Printing;
 using System.Text;
@@ -30,6 +31,20 @@ namespace WUNI.DAOClass
             string sqlStr = string.Format("DELETE FROM {0} WHERE WorkerID = '{1}' and OrderID = '{2}'",
                 this.tableName, queuee.WorkerID, queuee.OrderID);
             this.conn.CommandExecute(sqlStr);
+        }
+
+        List<string> GetOrderIDsOf(string workerID)
+        {
+            List<string> orderIDs = new List<string>();
+            string sqlStr = string.Format("select * From {0} where WorkerID = '{1}'", this.tableName, workerID);
+            DataTable da = this.conn.AdapterExcute(sqlStr);
+            
+            foreach(DataRow row in da.Rows)
+            {
+                string orderID = row["OrderID"].ToString();
+                orderIDs.Add(orderID);
+            }
+            return orderIDs;
         }
     }
 }

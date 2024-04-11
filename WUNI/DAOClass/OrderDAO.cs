@@ -22,7 +22,7 @@ namespace WUNI.DAOClass
             DataTable da;
             string orderID;
             string sqlStr = string.Format("SELECT MAX(orderID) FROM Orders");
-            da = this.conn.LoadData(sqlStr);
+            da = this.conn.AdapterExcute(sqlStr);
 
             if (da.Rows.Count > 0)
             {
@@ -47,5 +47,51 @@ namespace WUNI.DAOClass
             this.conn.CommandExecute(sqlStr);
         }
 
+
+        public List<Order> GetAvailableOrder()
+        {
+            List<Order> orders = new List<Order>();
+
+            string sqlStr = string.Format("Seclect * from {0} Where IsWorked = 0", this.tableName);
+            DataTable da = conn.AdapterExcute(sqlStr);
+            foreach (DataRow row in da.Rows) 
+            {
+                string fieldID = row["FieldID"].ToString();
+                string customerID = row["CustomerID"].ToString();
+                string description = row["Description"].ToString();
+                string issueImage = row["IssueImage"].ToString();
+                DateOnly issueDate = DateOnly.Parse(row["IssueDate"].ToString());
+                string workerID = row["WorkerID"].ToString();
+
+                Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                orders.Add(order);
+
+            }
+            return orders;
+        }
+
+        public List<Order> GetOrdersFrom(List<string> orderID)
+        {
+            List<Order> orders = new List<Order>();
+
+            foreach(string id in orderID)
+            {
+                string sqlStr = string.Format("Select * from {0} Where OrderID = '{1}'", this.tableName, id);
+                DataTable da =  this.conn.AdapterExcute(sqlStr);
+                foreach (DataRow row in da.Rows)
+                {
+                    string fieldID = row["FieldID"].ToString();
+                    string customerID = row["CustomerID"].ToString();
+                    string description = row["Description"].ToString();
+                    string issueImage = row["IssueImage"].ToString();
+                    DateOnly issueDate = DateOnly.Parse(row["IssueDate"].ToString());
+                    string workerID = row["WorkerID"].ToString();
+
+                    Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                    orders.Add(order);
+                }
+            }
+            return orders;
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace WUNI.DAOClass
             DataTable da;
             string customerID;
             string sqlStr = string.Format("SELECT MAX(CustomerID) FROM Customer");
-            da = this.conn.LoadData(sqlStr);
+            da = this.conn.AdapterExcute(sqlStr);
 
             if (da.Rows.Count > 0)
             {

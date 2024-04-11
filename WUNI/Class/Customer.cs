@@ -13,7 +13,7 @@ namespace WUNI.Class
         private string customerID;
         private string citizenID;
         private string name;
-        private DateTime birth;
+        private DateOnly birth;
         private string gender;
         private string address;
         private string mail;
@@ -21,7 +21,7 @@ namespace WUNI.Class
         private string description;
         private string profileImage;
 
-        public Customer(string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        public Customer(string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
         {
             this.customerID = getLastCustomerID();
             this.citizenID = citizenID;
@@ -40,11 +40,11 @@ namespace WUNI.Class
             CustomerDAO customerDAO = new CustomerDAO();
             return customerDAO.getLastCustomerID();
 
-        }
+        }   
         public string CustomerID { get => customerID; set => customerID = value; }
         public string CitizenID { get => citizenID; set => citizenID = value; }
         public string Name { get => name; set => name = value; }
-        public DateTime Birth { get => birth; set => birth = value; }
+        public DateOnly Birth { get => birth; set => birth = value; }
         public string Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; }
         public string Mail { get => mail; set => mail = value; }

@@ -25,12 +25,7 @@ namespace WUNI.Class
         public string Passwords { get => passwords; set => passwords = value; }
         public string WorkerID { get => workerID; set => workerID = value; }
 
-        public bool checkLogin()
-        {
-            WorkerAccountDAO workerAccountDAO = new WorkerAccountDAO();
-            DataTable da = workerAccountDAO.checkLogin(this);
-            return da.Rows.Count > 0;
-        }
+       
 
 
     }

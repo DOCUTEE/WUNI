@@ -18,10 +18,11 @@ namespace WUNI.DAOClass
             this.tableName = "CustomerAccount";
             this.conn = new DBConnection();
         }
-        internal DataTable checkLogin(CustomerAccount customerAccount)
+        internal bool checkLogin(CustomerAccount customerAccount)
         {
             string sqlStr = string.Format("Select * from {0} where UserName = '{1}' and Passwords = '{2}'", this.tableName, customerAccount.UserName, customerAccount.Passwords);
-            return conn.LoadData(sqlStr);
+            DataTable da = this.conn.AdapterExcute(sqlStr);
+            return da.Rows.Count > 0;
         }
 
 
@@ -31,6 +32,13 @@ namespace WUNI.DAOClass
                 "Values ('{1}', '{2}', '{3}')", this.tableName, customerAccount.UserName, customerAccount.Passwords, customerAccount.CustomerID);
 
             conn.CommandExecute(sqlStr);
+        }
+
+        public string GetCustomerID(CustomerAccount customerAccount)
+        {
+            string sqlStr = string.Format("Select WorkerID from {0} where UserName = '{1}'", this.tableName, customerAccount.UserName);
+            DataTable da = this.conn.AdapterExcute(sqlStr);
+            return da.Rows[0][0].ToString();
         }
     }
 }

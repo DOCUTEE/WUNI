@@ -18,15 +18,8 @@ namespace WUNI.Class
             this.workedID = workedID;
             this.customerID = customerID;
             this.busDate = busDate;
-            Add();
         }
-        public void Add()
-        {
-            BusyDateDAO busyDateDAO = new BusyDateDAO();
-            busyDateDAO.Add(this);
-        }
-        
-
+      
 
 
         public string WorkedID { get => workedID; set => workedID = value; }
