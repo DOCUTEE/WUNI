@@ -7,6 +7,58 @@
         mc:Ignorable="d"
         Title="WLogin" Height="900" Width="1440">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="imgBrand" Grid.Row="0" Source="../Logo/WUNI.jqg" HorizontalAlignment="Center">
+            <Image.Clip>
+                <EllipseGeometry RadiusX="22" RadiusY="22" Center="22,22"/>
+            </Image.Clip>
+        </Image>
+        <Label Grid.Row="1" Content="Đăng nhập" HorizontalContentAlignment="Center" FontSize="48"></Label>
+        <Label Grid.Row="2" Content="Chào mừng quay trở lại!" HorizontalContentAlignment="Center" FontSize="24"></Label>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Email"></Label>
+                <TextBox x:Name="txbEmail" Grid.Row="1"></TextBox>
+                <Label Grid.Row="2" Content="Password"></Label>
+                <PasswordBox x:Name="txtPassword" Grid.Row="3"></PasswordBox>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="btnLoginCustomer" Grid.Column="0">
+                        <Label Content="Tôi là khách hàng"></Label>
+                    </Border>
+                    <Border x:Name="btnLoginWorker" Grid.Column="1">
+                        <Label Content="Tôi là thợ"></Label>
+                    </Border>
+                </Grid>
+                <TextBlock Grid.Row="5" HorizontalAlignment="Center">
+                    Bạn chưa có tài khoản ? 
+                    <Hyperlink Click="Hyperlink_Click">
+                        Đăng ký
+                    </Hyperlink>
+                </TextBlock>
+                
+             </Grid>
+        </Grid>
     </Grid>
 </Window>
