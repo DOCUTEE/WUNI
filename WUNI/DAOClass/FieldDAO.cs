@@ -18,9 +18,9 @@ namespace WUNI.DAOClass
         }
         public DataTable getAllService()
         {
-            string sqlStr = string.Format("Select FieldID, Field from {0}", this.tableName);
+            string sqlStr = string.Format("Select Field from {0}", this.tableName);
            
-            DataTable da = conn.LoadData(sqlStr);
+            DataTable da = conn.AdapterExcute(sqlStr);
             return da;
         }
     }

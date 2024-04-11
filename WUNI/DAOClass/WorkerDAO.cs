@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
+using System.Xml.Linq;
 using WUNI.Class;
 
 namespace WUNI.DAOClass
@@ -36,7 +40,7 @@ namespace WUNI.DAOClass
             DataTable da;
             string workerID;
             string sqlStr = string.Format("SELECT MAX(WorkerID) FROM Worker");
-            da = this.conn.LoadData(sqlStr);
+            da = this.conn.AdapterExcute(sqlStr);
 
             if (da.Rows.Count > 0)
             {
@@ -50,6 +54,38 @@ namespace WUNI.DAOClass
                 workerID = "1";
             }
             return workerID;
+        }
+
+
+        public List<Worker> ListWorkerIs(string fieldID)
+        {
+            List<Worker> workers = new List<Worker>();
+            string sqlStr = string.Format("select * from {0} where FieldID = '{1}'", this.tableName, fieldID);
+            DataTable da = this.conn.AdapterExcute(sqlStr);
+            foreach (DataRow workerRow in da.Rows)
+            {
+
+                string workerID = workerRow[0].ToString();
+                string citizenID = workerRow[1].ToString();
+                string name = workerRow[2].ToString();
+                DateOnly birth = DateOnly.Parse(workerRow[3].ToString());
+                string gender = workerRow[4].ToString();
+                string address = workerRow[5].ToString();
+                string mail = workerRow[6].ToString();
+                string phoneNumber = workerRow[7].ToString();
+                float pricePerHour = float.Parse(workerRow[8].ToString());
+                string field = workerID[9].ToString();
+                string description = workerRow[10].ToString();
+                float rating = float.Parse(workerRow[11].ToString());
+                string profileImage = workerRow[12].ToString();
+
+                Worker worker = new Worker(workerID, citizenID, name,
+                    birth, gender, address, mail, phoneNumber, pricePerHour,
+                    field, description, rating, profileImage);
+                workers.Add(worker);
+
+            }
+            return workers;
         }
 
 
