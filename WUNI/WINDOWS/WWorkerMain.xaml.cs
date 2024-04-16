@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WUNI.Class;
+using WUNI.WINDOWS.WorkerPages;
 
 namespace WUNI.WINDOWS
 {
@@ -20,6 +22,8 @@ namespace WUNI.WINDOWS
     /// </summary>
     public partial class WWorkerMain : Window
     {
+        private string workerID;
+
         public WWorkerMain()
         {
             InitializeComponent();
@@ -29,6 +33,19 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
+            fContent.NavigationService.Navigate(new PWorkerFindJob());
+        }
+        public WWorkerMain(string workerID)
+        {
+            InitializeComponent();
+            this.workerID = workerID;
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
+            iconFindWork.Source = new BitmapImage(new Uri(path1 + "\\Logo\\FindIcon.png"));
+            iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
+            iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
+            iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
+            
         }
 
         private void btnFindWork_MouseEnter(object sender, MouseEventArgs e)
@@ -140,6 +157,8 @@ namespace WUNI.WINDOWS
             WLogin wLogin = new WLogin();
             wLogin.Show();
             this.Close();
+
         }
+        
     }
 }
