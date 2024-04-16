@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WUNI.Class;
+using System.Data;
 
 namespace WUNI.DAOClass
 {
@@ -27,23 +28,23 @@ namespace WUNI.DAOClass
             {
                 string reviewID = row[0].ToString();
                 string customerID = row[1].ToString();
-	            string workerID = row[2].ToString()
+                string workerID = row[2].ToString();
                 string comment = row[3].ToString();
                 string reviewImage = row[4].ToString();
-	            int starNumber = int.Parse(row[5].ToString());
+	            int starNum= int.Parse(row[5].ToString());
 
-                Review review = new Review(reviewID, customerID, workerID, comment, reviewImage, starNumber);
+                Review review = new Review(reviewID, customerID, workerID, comment, reviewImage, starNum);
                 reviews.Add(review);
 
             }
-            return orders;
+            return reviews;
 
         }
-        public float StarAvgOf(string WorkerID)
-        {
+        //public float StarAvgOf(string WorkerID)
+        //{
 
 
-        }
+        //}
 
         public void Add(Review review)
         {

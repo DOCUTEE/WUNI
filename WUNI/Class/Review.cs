@@ -9,7 +9,7 @@ namespace WUNI.Class
     internal class Review
     {
         private string reviewID;
-        private string rustomerID;
+        private string customerID;
         private string workerID;
         private string comment;
         private string reviewImage;
