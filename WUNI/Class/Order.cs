@@ -36,7 +36,7 @@ namespace WUNI.Class
         private string getLastOrderID()
         {
             OrderDAO orderDAO = new OrderDAO();
-            return orderDAO.getLastOrderID();
+            return orderDAO.GetMaxOrderID();
 
         }
 

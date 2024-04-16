@@ -37,7 +37,7 @@ namespace WUNI.Class
         }
         private void Init(string workerID, string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
         {
-            this.workerID = getLastWorkerID();
+            this.workerID = workerID;
             this.citizenID = citizenID;
             this.name = name;
             this.birth = birth;

@@ -18,7 +18,7 @@ namespace WUNI.DAOClass
             this.conn = new DBConnection();
         }
        
-        internal string getWorkerID(string userName, string passWord)
+        internal string GetWorkerID(string userName, string passWord)
         {
             string sqlStr = string.Format("Select * from {0} where Passwords = '{1}' and UserName = '{2}'", this.tableName, passWord, userName);
             DataTable da = conn.AdapterExcute(sqlStr);
