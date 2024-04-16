@@ -94,9 +94,26 @@ namespace WUNI.DAOClass
             return orders;
         }
 
-        //public List<Order> WorkedFor(string customerID)
-        //{
+        public List<Order> workedfor(string customerId)
+        {
+            List<Order> orders = new List<Order>();
+            string query = string.Format("Select * from {0} Where customerID = '{1}'", this.tableName, customerId);
+            DataTable da = this.conn.AdapterExcute(query);
+            foreach (DataRow row in da.Rows)
+            {
+                string fieldID = row["FieldID"].ToString();
+                string customerID = row["CustomerID"].ToString();
+                string description = row["Description"].ToString();
+                string issueImage = row["IssueImage"].ToString();
+                DateOnly issueDate = DateOnly.Parse(row["IssueDate"].ToString());
+                string workerID = row["WorkerID"].ToString();
 
-        //}
+                Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                orders.Add (order);
+            }
+            return orders;
+
+        }
+
     }
 }

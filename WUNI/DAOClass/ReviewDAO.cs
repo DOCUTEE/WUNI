@@ -40,11 +40,15 @@ namespace WUNI.DAOClass
             return reviews;
 
         }
-        //public float StarAvgOf(string WorkerID)
-        //{
+        public float StarAvgOf(string workerID)
+        {
+
+            string query = string.Format("SELECT AVG(StarNumber) AS agvStar FROM {0} WHERE WorkerID = '{1}' GROUP BY WorkerID", this.tableName, workerID);
+            DataTable da = this.conn.AdapterExcute(query);
+            return float.Parse(da.Rows[0][0].ToString());
 
 
-        //}
+        }
 
         public void Add(Review review)
         {
