@@ -88,6 +88,9 @@ namespace WUNI.DAOClass
             return workers;
         }
 
-
+        internal Worker GetWorkerFrom(string workerID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

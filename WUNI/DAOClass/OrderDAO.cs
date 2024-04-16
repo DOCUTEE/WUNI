@@ -93,5 +93,10 @@ namespace WUNI.DAOClass
             }
             return orders;
         }
+
+        public List<Order> WorkedFor(string customerID)
+        {
+
+        }
     }
 }
