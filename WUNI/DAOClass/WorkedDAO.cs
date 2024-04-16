@@ -31,8 +31,8 @@ namespace WUNI.DAOClass
         public List<string> GetOrderIDList(string workerID)
         {
             List<string> orderIDs = new List<string>();
-            string sqlStr = string.Format("Select OrderID from {0} Where WorkerID = '{1}'", this.tableName, workerID);
-            DataTable da = this.conn.AdapterExcute(sqlStr);
+            string query = string.Format("Select OrderID from {0} Where WorkerID = '{1}'", this.tableName, workerID);
+            DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
                 string orderID = row[0].ToString();
@@ -41,7 +41,7 @@ namespace WUNI.DAOClass
             return orderIDs;
         }
 
-        public int NumberWorkedOF(string workerID)
+        public int NumberWorkedOf(string workerID)
         {
             string query = string.Format("SELECT COUNT(*) FROM {0} WHERE WorkerID = '{1}'", this.tableName, workerID);
             DataTable da = this.conn.AdapterExcute(query);
@@ -49,10 +49,12 @@ namespace WUNI.DAOClass
 
         }
 
-        //public List<Order> WorkedFor(string customerID)
-        //Phần này phải nằm trong OrderDAO vì không có thuộc tính customerID trong Worked. 
-        //tìm trong Order where customerID= id and isWorked = 1
-        
+        public List<Order> WorkedFor(string customerID)
+        {
+            OrderDAO orderDAO = new OrderDAO();
+            return orderDAO.Workedfor(customerID);
+        }
+
     }
 }
 

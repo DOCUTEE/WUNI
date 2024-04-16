@@ -60,8 +60,8 @@ namespace WUNI.DAOClass
         public List<Worker> ListWorkerIs(string fieldID)
         {
             List<Worker> workers = new List<Worker>();
-            string sqlStr = string.Format("select * from {0} where FieldID = '{1}'", this.tableName, fieldID);
-            DataTable da = this.conn.AdapterExcute(sqlStr);
+            string query = string.Format("select * from {0} where FieldID = '{1}'", this.tableName, fieldID);
+            DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow workerRow in da.Rows)
             {
 
@@ -90,7 +90,31 @@ namespace WUNI.DAOClass
 
         internal Worker GetWorkerFrom(string workerID)
         {
-            throw new NotImplementedException();
+            Worker worker = null;
+            string query = string.Format("select * from {0} where WorkerID = '{1}'", this.tableName, workerID);
+            DataTable da = this.conn.AdapterExcute(query);
+            foreach (DataRow workerRow in da.Rows)
+            {
+
+                string id = workerRow[0].ToString();
+                string citizenID = workerRow[1].ToString();
+                string name = workerRow[2].ToString();
+                DateOnly birth = DateOnly.Parse(workerRow[3].ToString());
+                string gender = workerRow[4].ToString();
+                string address = workerRow[5].ToString();
+                string mail = workerRow[6].ToString();
+                string phoneNumber = workerRow[7].ToString();
+                float pricePerHour = float.Parse(workerRow[8].ToString());
+                string field = workerID[9].ToString();
+                string description = workerRow[10].ToString();
+                float rating = float.Parse(workerRow[11].ToString());
+                string profileImage = workerRow[12].ToString();
+
+                worker = new Worker(workerID, citizenID, name,
+                    birth, gender, address, mail, phoneNumber, pricePerHour,
+                    field, description, rating, profileImage);
+            }
+            return worker;
         }
     }
 }

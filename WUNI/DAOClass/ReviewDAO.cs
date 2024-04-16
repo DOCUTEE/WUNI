@@ -22,7 +22,7 @@ namespace WUNI.DAOClass
         {
             List<Review> reviews = new List<Review>();
 
-            string query = string.Format("Seclect * from {0} Where StarNumber = '{1}'", this.tableName, starNumber);
+            string query = string.Format("Select * from {0} Where StarNumber = '{1}'", this.tableName, starNumber);
             DataTable da = conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {

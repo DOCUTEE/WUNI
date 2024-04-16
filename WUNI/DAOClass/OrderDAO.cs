@@ -17,7 +17,7 @@ namespace WUNI.DAOClass
             this.tableName = "Orders";
             this.conn = new DBConnection();
         }
-        internal string getLastOrderID()
+        internal string GetMaxOrderID()
         {
             DataTable da;
             string orderID;
@@ -94,10 +94,10 @@ namespace WUNI.DAOClass
             return orders;
         }
 
-        public List<Order> workedfor(string customerId)
+        public List<Order> Workedfor(string customerId)
         {
             List<Order> orders = new List<Order>();
-            string query = string.Format("Select * from {0} Where customerID = '{1}'", this.tableName, customerId);
+            string query = string.Format("Select * from {0} Where customerID = '{1}' and IsWorked = 1", this.tableName, customerId);
             DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {

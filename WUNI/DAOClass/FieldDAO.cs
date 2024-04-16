@@ -16,12 +16,19 @@ namespace WUNI.DAOClass
             this.tableName = "Field";
             this.conn = new DBConnection();
         }
-        public DataTable getAllService()
+        public List<string> getAllService()
         {
+            List<string> fields = new List<string>();
             string sqlStr = string.Format("Select Field from {0}", this.tableName);
            
             DataTable da = conn.AdapterExcute(sqlStr);
-            return da;
+            foreach (DataRow dr in da.Rows)
+            {
+                string field = dr[0].ToString();
+                fields.Add(field);
+
+            }
+            return fields;
         }
     }
 }
