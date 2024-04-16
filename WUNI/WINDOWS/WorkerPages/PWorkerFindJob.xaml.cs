@@ -24,6 +24,7 @@ namespace WUNI.WINDOWS.WorkerPages
         public PWorkerFindJob()
         {
             InitializeComponent();
+            //Đoạn code này chỉ là mẫu
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
@@ -33,6 +34,7 @@ namespace WUNI.WINDOWS.WorkerPages
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
+            
         }
     }
 }
