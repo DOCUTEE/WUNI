@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WUNI.Class;
 using WUNI.WINDOWS.UC;
 
 namespace WUNI.WINDOWS.WorkerPages
@@ -21,20 +22,41 @@ namespace WUNI.WINDOWS.WorkerPages
     /// </summary>
     public partial class PWorkerFindJob : Page
     {
+        private List<Order> orders;
         public PWorkerFindJob()
         {
             InitializeComponent();
             //Đoạn code này chỉ là mẫu
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
+            //ufgOrders.Children.Add(new UCOrderCard());
             
         }
+        public PWorkerFindJob(List<Order> orders)
+        {
+            InitializeComponent();
+            this.Orders = orders;
+            foreach(Order order in orders)
+            {
+                UCOrderCard card = new UCOrderCard(order);
+                ufgOrders.Children.Add(card);
+            }
+        }
+
+        internal List<Order> Orders { get => orders; set => orders = value; }
     }
 }
