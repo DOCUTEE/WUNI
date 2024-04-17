@@ -22,6 +22,7 @@ namespace WUNI.WINDOWS.WorkerPages
     /// </summary>
     public partial class PWorkerFindJob : Page
     {
+        private string workerID;
         private List<Order> orders;
         public PWorkerFindJob()
         {
@@ -29,34 +30,40 @@ namespace WUNI.WINDOWS.WorkerPages
             //Đoạn code này chỉ là mẫu
             ufgOrders.Children.Add(new UCOrderCard());
             ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            //ufgOrders.Children.Add(new UCOrderCard());
-            
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+            ufgOrders.Children.Add(new UCOrderCard());
+
         }
-        public PWorkerFindJob(List<Order> orders)
+        public PWorkerFindJob(List<Order> orders, string workerID)
         {
             InitializeComponent();
             this.Orders = orders;
-            foreach(Order order in orders)
+            foreach (Order order in orders)
             {
                 UCOrderCard card = new UCOrderCard(order);
                 ufgOrders.Children.Add(card);
             }
+            this.workerID = workerID;
         }
 
         internal List<Order> Orders { get => orders; set => orders = value; }
+
+        private void btnBookingMe_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
