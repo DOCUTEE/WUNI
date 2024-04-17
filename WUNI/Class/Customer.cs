@@ -23,7 +23,19 @@ namespace WUNI.Class
 
         public Customer(string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
         {
-            this.customerID = getLastCustomerID();
+           Init(getLastCustomerID(), citizenID, name, birth , gender, address, mail, phoneNumber, description, profileImage);
+           
+        }
+        public Customer(string customerID, string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        {
+            Init(customerID, citizenID, name, birth , gender,address, mail, phoneNumber, description,profileImage);
+
+        }
+
+
+        private void Init(string customerID, string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        {
+            this.customerID = customerID;
             this.citizenID = citizenID;
             this.name = name;
             this.birth = birth;
@@ -33,8 +45,8 @@ namespace WUNI.Class
             this.phoneNumber = phoneNumber;
             this.description = description;
             this.profileImage = profileImage;
-        }
 
+        }
         private string getLastCustomerID()
         {
             CustomerDAO customerDAO = new CustomerDAO();
