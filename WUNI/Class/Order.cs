@@ -7,7 +7,7 @@ using WUNI.DAOClass;
 
 namespace WUNI.Class
 {
-    internal class Order
+    public class Order
     {
         private string orderID;
         private string fieldID;
@@ -32,7 +32,19 @@ namespace WUNI.Class
             this.workerID = workerID;
         }
 
+        public string GetFieldFrom(string fieldID)
+        {
+            FieldDAO fieldDAO= new FieldDAO();
+            return fieldDAO.GetFieldFrom(fieldID);
+        }
 
+        public string GetAddressFrom(string  customerID)
+        {
+            CustomerDAO customerDAO= new CustomerDAO();
+            Customer customer = customerDAO.GetCustomerFrom(customerID);
+            return customer.Address;
+
+        }
         private string getLastOrderID()
         {
             OrderDAO orderDAO = new OrderDAO();

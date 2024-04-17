@@ -88,7 +88,7 @@ namespace WUNI.DAOClass
             return workers;
         }
 
-        internal Worker GetWorkerFrom(string workerID)
+        public Worker GetWorkerFrom(string workerID)
         {
             Worker worker = null;
             string query = string.Format("select * from {0} where WorkerID = '{1}'", this.tableName, workerID);
