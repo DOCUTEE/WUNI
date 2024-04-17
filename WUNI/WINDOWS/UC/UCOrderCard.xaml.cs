@@ -36,13 +36,13 @@ namespace WUNI.WINDOWS.UC
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             this.order = order;
-            issueImage.ImageSource = new BitmapImage(new Uri(path1 + this.order.IssueImage));
-            txbField.Text = this.order.GetFieldOfOrder();
-            txbDescription.Text = "Mô tả: " +  this.order.Description;
-            txbCustomerName.Text = "Tên khách hàng: " + this.order.GetCustomerName();
-            txbAddress.Text = "Địa chỉ: " + this.order.GetAddress();
-            txbPhoneNumber.Text = "Số điện thoại: " + this.order.getPhoneNumber();
-            txbIssueDate.Text = "Ngày đăng: " + this.order.IssueDate.ToString();
+            //issueImage.ImageSource = new BitmapImage(new Uri(path1 + this.order.IssueImage));
+            //txbField.Text = this.order.GetFieldOfOrder();
+            //txbDescription.Text = "Mô tả: " +  this.order.Description;
+            //txbCustomerName.Text = "Tên khách hàng: " + this.order.GetCustomerName();
+            //txbAddress.Text = "Địa chỉ: " + this.order.GetAddress();
+            //txbPhoneNumber.Text = "Số điện thoại: " + this.order.getPhoneNumber();
+            //txbIssueDate.Text = "Ngày đăng: " + this.order.IssueDate.ToString();
         }
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
