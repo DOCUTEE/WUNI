@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WUNI.Class;
+using WUNI.WINDOWS.WorkerPages;
 
 namespace WUNI.WINDOWS
 {
@@ -20,6 +22,8 @@ namespace WUNI.WINDOWS
     /// </summary>
     public partial class WWorkerMain : Window
     {
+        private string workerID;
+
         public WWorkerMain()
         {
             InitializeComponent();
@@ -29,6 +33,20 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
+            fContent.NavigationService.Navigate(new PWorkerFindJob());
+        }
+        public WWorkerMain(string workerID)
+        {
+            InitializeComponent();
+            this.workerID = workerID;
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
+            iconFindWork.Source = new BitmapImage(new Uri(path1 + "\\Logo\\FindIcon.png"));
+            iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
+            iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
+            iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
+            fContent.NavigationService.Navigate(new PWorkerFindJob(this.workerID));
+
         }
 
         private void btnFindWork_MouseEnter(object sender, MouseEventArgs e)
@@ -116,7 +134,7 @@ namespace WUNI.WINDOWS
             btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
-            //Thịnh
+            fContent.NavigationService.Navigate(new PWorkerFindJob(this.workerID));
         }
 
         private void btnHistory_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -124,7 +142,7 @@ namespace WUNI.WINDOWS
             btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
-            //Thịnh
+            fContent.NavigationService.Navigate(new PWorkerHistory(this.workerID));
         }
 
         private void btnAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -140,6 +158,8 @@ namespace WUNI.WINDOWS
             WLogin wLogin = new WLogin();
             wLogin.Show();
             this.Close();
+
         }
+        
     }
 }

@@ -8,20 +8,22 @@ using WUNI.Class;
 
 namespace WUNI.DAOClass
 {
+
+    //aaaaaaaaaaaaaaaa
     internal class OrderDAO
     {
         private string tableName;
         private DBConnection conn;
         public OrderDAO()
         {
-            this.tableName = "Orders";
+            this.tableName = "[dbo].[Order]";
             this.conn = new DBConnection();
         }
-        internal string getLastOrderID()
+        internal string GetMaxOrderID()
         {
             DataTable da;
             string orderID;
-            string sqlStr = string.Format("SELECT MAX(orderID) FROM Orders");
+            string sqlStr = string.Format("SELECT MAX(orderID) FROM {0}",this.tableName);
             da = this.conn.AdapterExcute(sqlStr);
 
             if (da.Rows.Count > 0)
@@ -52,18 +54,19 @@ namespace WUNI.DAOClass
         {
             List<Order> orders = new List<Order>();
 
-            string sqlStr = string.Format("Seclect * from {0} Where IsWorked = 0", this.tableName);
+            string sqlStr = string.Format("Select * from {0} Where IsWorked = 0", this.tableName);
             DataTable da = conn.AdapterExcute(sqlStr);
             foreach (DataRow row in da.Rows) 
             {
+                string orderID = row["OrderID"].ToString();
                 string fieldID = row["FieldID"].ToString();
                 string customerID = row["CustomerID"].ToString();
                 string description = row["Description"].ToString();
                 string issueImage = row["IssueImage"].ToString();
-                DateOnly issueDate = DateOnly.Parse(row["IssueDate"].ToString());
+                DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
 
-                Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                Order order = new Order(orderID,fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add(order);
 
             }
@@ -84,7 +87,7 @@ namespace WUNI.DAOClass
                     string customerID = row["CustomerID"].ToString();
                     string description = row["Description"].ToString();
                     string issueImage = row["IssueImage"].ToString();
-                    DateOnly issueDate = DateOnly.Parse(row["IssueDate"].ToString());
+                    DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                     string workerID = row["WorkerID"].ToString();
 
                     Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
@@ -94,9 +97,32 @@ namespace WUNI.DAOClass
             return orders;
         }
 
-        public List<Order> WorkedFor(string customerID)
+        public List<Order> Workedfor(string customerId)
         {
+            List<Order> orders = new List<Order>();
+            string query = string.Format("Select * from {0} Where customerID = '{1}' and IsWorked = 1", this.tableName, customerId);
+            DataTable da = this.conn.AdapterExcute(query);
+            foreach (DataRow row in da.Rows)
+            {
+                string fieldID = row["FieldID"].ToString();
+                string customerID = row["CustomerID"].ToString();
+                string description = row["Description"].ToString();
+                string issueImage = row["IssueImage"].ToString();
+                DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
+                string workerID = row["WorkerID"].ToString();
+
+                Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                orders.Add (order);
+            }
+            return orders;
 
         }
+        public void UpdateIsWorked(string orderID)
+        {
+            string query = string.Format("Update {0} Set IsWorked = 1 Where OrderID = '{1}'", this.tableName, orderID);
+            conn.CommandExecute(query);
+        }
+        
+        //HUYGAAAAA
     }
 }

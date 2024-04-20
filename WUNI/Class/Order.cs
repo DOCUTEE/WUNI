@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,8 @@ using WUNI.DAOClass;
 
 namespace WUNI.Class
 {
-    internal class Order
+
+    public class Order
     {
         private string orderID;
         private string fieldID;
@@ -15,13 +16,28 @@ namespace WUNI.Class
         private bool isWorked;
         private string description;
         private string issueImage;
-        private DateOnly issueDate;
+        private DateTime issueDate;
         private bool isQueue;
         private string workerID;
 
-        public Order(string fieldID, string customerID, string description, string issueImage, DateOnly issueDate, string workerID)
+        public Order(string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
         {
-            this.orderID = getLastOrderID();
+            Init(getLastOrderID(), fieldID, customerID, description, issueImage, issueDate, workerID);
+
+
+        }
+        public Order(string orderID, string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
+        {
+            Init(orderID, fieldID, customerID, description, issueImage, issueDate, workerID);
+
+
+        }
+
+
+
+        void Init(string orderID, string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
+        {
+            this.orderID = orderID;
             this.fieldID = fieldID;
             this.customerID = customerID;
             this.isWorked = false;
@@ -32,11 +48,34 @@ namespace WUNI.Class
             this.workerID = workerID;
         }
 
+        public string GetFieldName()
+        {
+            FieldDAO fieldDAO= new FieldDAO();
+            return fieldDAO.GetFieldFrom(this.fieldID);
+        }
 
+        public string GetAddress()
+        {
+            CustomerDAO customerDAO= new CustomerDAO();
+            Customer customer = customerDAO.GetCustomerFrom(this.customerID);
+            return customer.Address;
+        }
+        public string GetCustomerName()
+        {
+            CustomerDAO customerDAO= new CustomerDAO();
+            Customer customer = customerDAO.GetCustomerFrom(this.customerID);
+            return customer.Name;
+        }
+        public string GetPhoneNumber()
+        {
+            CustomerDAO customerDAO= new CustomerDAO();
+            Customer customer = customerDAO.GetCustomerFrom(this.customerID);
+            return customer.PhoneNumber;
+        }
         private string getLastOrderID()
         {
             OrderDAO orderDAO = new OrderDAO();
-            return orderDAO.getLastOrderID();
+            return orderDAO.GetMaxOrderID();
 
         }
 
@@ -46,7 +85,7 @@ namespace WUNI.Class
         public bool IsWorked { get => isWorked; set => isWorked = value; }
         public string Description { get => description; set => description = value; }
         public string IssueImage { get => issueImage; set => issueImage = value; }
-        public DateOnly IssueDate { get => issueDate; set => issueDate = value; }
+        public DateTime IssueDate { get => issueDate; set => issueDate = value; }
         public bool IsQueue { get => isQueue; set => isQueue = value; }
 
         public string WorkerID { get => workerID; set => workerID = value; }

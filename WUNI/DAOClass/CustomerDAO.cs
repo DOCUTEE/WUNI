@@ -28,7 +28,34 @@ namespace WUNI.DAOClass
             this.conn.CommandExecute(sqlStr);
         }
 
-        internal string getLastCustomerID()
+        public Customer GetCustomerFrom(string customerID)
+        {
+            Customer customer = null;
+            string query = string.Format("select * from {0} where CustomerID = '{1}'", this.tableName, customerID);
+            DataTable da = this.conn.AdapterExcute(query);
+            foreach (DataRow row in da.Rows)
+            {
+
+                string id = row[0].ToString();
+                string citizenID = row[1].ToString();
+                string name = row[2].ToString();
+                DateTime birth = DateTime.Parse(row[3].ToString());
+                string gender = row[4].ToString();
+                string address = row[5].ToString();
+                string mail = row[6].ToString();
+                string phoneNumber = row[7].ToString();
+                string description = row[8].ToString();
+                string profileImage = row[9].ToString();
+
+                customer = new Customer(id, citizenID, name,
+                    birth, gender, address, mail, phoneNumber, description, profileImage);
+            }
+            return customer;
+        }
+
+
+
+        public string getLastCustomerID()
         {
             DataTable da;
             string customerID;

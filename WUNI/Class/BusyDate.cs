@@ -11,9 +11,9 @@ namespace WUNI.Class
     {
         private string workedID;
         private string customerID;
-        private DateOnly busDate;
+        private DateTime busDate;
 
-        public BusyDate(string workedID, string customerID, DateOnly busDate)
+        public BusyDate(string workedID, string customerID, DateTime busDate)
         {
             this.workedID = workedID;
             this.customerID = customerID;
@@ -24,7 +24,7 @@ namespace WUNI.Class
 
         public string WorkedID { get => workedID; set => workedID = value; }
         public string CustomerID { get => customerID; set => customerID = value; }
-        public DateOnly BusDate { get => busDate; set => busDate = value; }
+        public DateTime BusDate { get => busDate; set => busDate = value; }
     }
 
 
