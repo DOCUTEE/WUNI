@@ -33,10 +33,10 @@ namespace WUNI.DAOClass
 
         public string GetFieldFrom(string id)
         {
-            string query = string.Format("Select Field from {0} where Field = '{1}'", this.tableName, id);
+            string query = string.Format("Select Field from {0} where FieldID = '{1}'", this.tableName, id);
 
-            DataTable da = conn.AdapterExcute(query);
-            return da.Rows[0][0].ToString();
+            DataRow da = conn.AdapterExcute(query).Rows[0];
+            return da[0].ToString();
         }
     }
 }

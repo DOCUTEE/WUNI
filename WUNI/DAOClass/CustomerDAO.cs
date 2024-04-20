@@ -39,7 +39,7 @@ namespace WUNI.DAOClass
                 string id = row[0].ToString();
                 string citizenID = row[1].ToString();
                 string name = row[2].ToString();
-                DateOnly birth = DateOnly.Parse(row[3].ToString());
+                DateTime birth = DateTime.Parse(row[3].ToString());
                 string gender = row[4].ToString();
                 string address = row[5].ToString();
                 string mail = row[6].ToString();

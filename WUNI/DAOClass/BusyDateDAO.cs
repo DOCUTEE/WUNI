@@ -20,7 +20,7 @@ namespace WUNI.DAOClass
         internal void Add(BusyDate busyDate)
         {
             string sqlStr = string.Format("Insert into {0} (WorkerID, CustomerID, BusyDate)" +
-                "Values ('{1}', '{2}', '{3}'",
+                "Values ('{1}', '{2}', '{3}')",
                 this.tableName, busyDate.WorkedID, busyDate.CustomerID, busyDate.BusDate);
 
             this.conn.CommandExecute(sqlStr);
