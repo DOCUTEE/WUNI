@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WUNI.Class;
+using WUNI.DAOClass;
 using WUNI.WINDOWS.UC;
 
 namespace WUNI.WINDOWS.WorkerPages
@@ -23,47 +24,38 @@ namespace WUNI.WINDOWS.WorkerPages
     public partial class PWorkerFindJob : Page
     {
         private string workerID;
-        private List<Order> orders;
         public PWorkerFindJob()
         {
             InitializeComponent();
-            //Đoạn code này chỉ là mẫu
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-            ufgOrders.Children.Add(new UCOrderCard());
-
         }
-        public PWorkerFindJob(List<Order> orders, string workerID)
+        public PWorkerFindJob(string workerID)
         {
             InitializeComponent();
-            this.Orders = orders;
+            this.workerID = workerID;
+            ufgOrders.Children.Clear();
+            OrderDAO orderDAO = new OrderDAO();
+            List<Order> orders = orderDAO.GetAvailableOrder();
             foreach (Order order in orders)
             {
-                UCOrderCard card = new UCOrderCard(order);
+                UCOrderCard card = new UCOrderCard(order,this.workerID);
                 ufgOrders.Children.Add(card);
             }
-            this.workerID = workerID;
         }
 
-        internal List<Order> Orders { get => orders; set => orders = value; }
+       
 
         private void btnBookingMe_Click(object sender, RoutedEventArgs e)
         {
-            
+            ufgOrders.Children.Clear();
+            QueueDAO queueDAO = new QueueDAO();
+            List<string> orderIDs = queueDAO.GetOrderIDsOf(this.workerID);
+            OrderDAO orderDAO = new OrderDAO();
+            List<Order>orders = orderDAO.GetOrdersFrom(orderIDs);
+            foreach (Order order in orders)
+            {
+                UCCardBookingMe card = new UCCardBookingMe(order,this.workerID);
+                ufgOrders.Children.Add(card);
+            }
         }
     }
 }

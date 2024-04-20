@@ -30,7 +30,7 @@
         <TextBlock x:Name="txbAddress" Grid.Row="4" Text="Địa chỉ" FontSize="16" TextWrapping="WrapWithOverflow" Margin="10,0,10,0"></TextBlock>
         <TextBlock x:Name="txbPhoneNumber" Grid.Row="5" Text="Số điện thoại" FontSize="16" Margin="10,0,10,0"></TextBlock>
         <TextBlock x:Name="txbIssueDate" Grid.Row="6" Text="Ngày làm" FontSize="16" Margin="10,0,10,0"></TextBlock>
-        <Border x:Name="btnConfirm" Grid.Row="7" Margin="20,0,20,5" Background="#002B5B" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Border x:Name="btnConfirm" Grid.Row="7" Margin="20,0,20,5" Background="#002B5B" CornerRadius="10" MouseLeftButtonDown="btnConfirm_MouseLeftButtonDown">
             <Label x:Name ="lblConfirm" Foreground="White" Content="Nhận việc" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
         </Border>
     </Grid>

@@ -38,7 +38,6 @@ namespace WUNI.DAOClass
 
             }
             return reviews;
-
         }
         public float StarAvgOf(string workerID)
         {
@@ -57,6 +56,25 @@ namespace WUNI.DAOClass
                this.tableName, review.ReviewID, review.CustomerID, review.WorkerID, review.Comment, review.ReviewImage, review.StarNumber);
             this.conn.CommandExecute(sqlStr);
 
+        }
+
+        public Review GetReviewFrom(string reviewID)
+        {
+            string query = string.Format("Select * from {0} Where ReviewID = '{1}'",this.tableName,reviewID);
+            DataTable da = conn.AdapterExcute(query);
+            if (da.Rows.Count != 0)
+            {
+                Review review = new Review(
+                    da.Rows[0]["ReviewID"].ToString(),
+                    da.Rows[0]["CustomerID"].ToString(),
+                    da.Rows[0]["WorkerID"].ToString(),
+                    da.Rows[0]["Comment"].ToString(),
+                    da.Rows[0]["ReviewImage"].ToString(),
+                    int.Parse(da.Rows[0]["StarNumber"].ToString())
+                );
+                return review;
+            }
+            return new Review();
         }
     }
 }

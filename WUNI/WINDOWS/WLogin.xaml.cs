@@ -37,7 +37,19 @@ namespace WUNI.WINDOWS
 
         private void btnLoginWorker_Click(object sender, RoutedEventArgs e)
         {
-            //Thịnh code đăng nhập để kiểm tra xem tài khoản đã tồn tại hay chưa nếu rồi thì vào window WWorkerMain.xaml
+            WorkerAccountDAO workerAccountDAO = new WorkerAccountDAO();
+            string workedID = workerAccountDAO.GetWorkerID(txbUsername.Text, pwbPassword.Password.ToString());
+            if (workedID != "0")
+            {
+                WWorkerMain wWorkerMain = new WWorkerMain(workedID);
+                MessageBox.Show(workedID.ToString());
+                wWorkerMain.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu");
+            }
         }
 
         private void btnLoginCustomer_Click(object sender, RoutedEventArgs e)

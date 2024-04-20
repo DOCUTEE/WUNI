@@ -14,25 +14,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WUNI.Class;
-using WUNI.DAOClass;
 
 namespace WUNI.WINDOWS.UC
 {
     /// <summary>
-    /// Interaction logic for UCOrderCard.xaml
+    /// Interaction logic for UCCardBookingMe.xaml
     /// </summary>
-    public partial class UCOrderCard : UserControl
+    public partial class UCCardBookingMe : UserControl
     {
         private Order order;
         private string workerID;
-        public UCOrderCard()
+        public UCCardBookingMe()
         {
             InitializeComponent();
-            string path = Environment.CurrentDirectory;
-            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
-            issueImage.ImageSource = new BitmapImage(new Uri(path1 + "\\Logo\\WUNI.jpg"));
         }
-        public UCOrderCard(Order order, string workerID)
+        public UCCardBookingMe(Order order,string workerID)
         {
             InitializeComponent();
             string path = Environment.CurrentDirectory;
@@ -46,31 +42,15 @@ namespace WUNI.WINDOWS.UC
             txbAddress.Text = "Địa chỉ: " + this.order.GetAddress();
             txbPhoneNumber.Text = "Số điện thoại: " + this.order.GetPhoneNumber();
             txbIssueDate.Text = "Ngày đăng: " + this.order.IssueDate.ToString();
+
         }
-        
+
         private void btnConfirm_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             btnConfirm.Background = (Brush)new BrushConverter().ConvertFrom("#F5F5F5");
             lblConfirm.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
             lblConfirm.Content = "Đã nhận";
-            BusyDate busyDate = new BusyDate(
-                this.workerID,
-                this.order.CustomerID,
-                this.order.IssueDate
-            );
-            BusyDateDAO busyDateDAO = new BusyDateDAO();
-            busyDateDAO.Add( busyDate );
-            Worked worked = new Worked(
-                this.order.OrderID,
-                this.workerID
-            );
-           
-            WorkedDAO workedDAO = new WorkedDAO();
-            workedDAO.Add( worked );
-            OrderDAO orderDAO = new OrderDAO();
-            //MessageBox.Show(order.OrderID);
-            orderDAO.UpdateIsWorked(order.OrderID);
+            //Thịnh làm xác nhận như mẫu UCOrderCard.xaml.cs
         }
-        
     }
 }

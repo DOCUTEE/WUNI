@@ -45,7 +45,8 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            
+            fContent.NavigationService.Navigate(new PWorkerFindJob(this.workerID));
+
         }
 
         private void btnFindWork_MouseEnter(object sender, MouseEventArgs e)
@@ -133,7 +134,7 @@ namespace WUNI.WINDOWS
             btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
-            //Thịnh
+            fContent.NavigationService.Navigate(new PWorkerFindJob(this.workerID));
         }
 
         private void btnHistory_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -141,7 +142,7 @@ namespace WUNI.WINDOWS
             btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
-            //Thịnh
+            fContent.NavigationService.Navigate(new PWorkerHistory(this.workerID));
         }
 
         private void btnAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

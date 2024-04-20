@@ -33,7 +33,7 @@ namespace WUNI.DAOClass
             this.conn.CommandExecute(sqlStr);
         }
 
-        List<string> GetOrderIDsOf(string workerID)
+        public List<string> GetOrderIDsOf(string workerID)
         {
             List<string> orderIDs = new List<string>();
             string sqlStr = string.Format("select * From {0} where WorkerID = '{1}'", this.tableName, workerID);
