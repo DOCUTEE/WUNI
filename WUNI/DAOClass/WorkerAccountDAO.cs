@@ -18,11 +18,14 @@ namespace WUNI.DAOClass
             this.conn = new DBConnection();
         }
        
-        internal bool checkLogin(WorkerAccount workerAccount)
+        internal string GetWorkerID(string userName, string passWord)
         {
-            string sqlStr = string.Format("Select * from {0} where Passwords = '{1}' and UserName = '{2}'", this.tableName, workerAccount.Passwords, workerAccount.UserName);
+            string sqlStr = string.Format("Select * from {0} where Passwords = '{1}' and UserName = '{2}'", this.tableName, passWord, userName);
             DataTable da = conn.AdapterExcute(sqlStr);
-            return da.Rows.Count > 0;
+            if (da.Rows.Count > 0)
+                return da.Rows[0][2].ToString();
+            return "0";
+
 
         }
 
@@ -34,12 +37,12 @@ namespace WUNI.DAOClass
             conn.CommandExecute(sqlStr);
         }
 
-        public string GetWorkerID(WorkerAccount workerAccount)
-        { 
-            string sqlStr = string.Format("Select WorkerID from {0} where UserName = '{1}'", this.tableName, workerAccount.UserName);
-            DataTable da = this.conn.AdapterExcute(sqlStr);
-            return da.Rows[0][0].ToString();
-        }
+        //public string GetWorkerID(WorkerAccount workerAccount)
+        //{ 
+        //    string sqlStr = string.Format("Select WorkerID from {0} where UserName = '{1}'", this.tableName, workerAccount.UserName);
+        //    DataTable da = this.conn.AdapterExcute(sqlStr);
+        //    return da.Rows[0][0].ToString();
+        //}
 
     }
 }

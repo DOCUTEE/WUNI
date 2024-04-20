@@ -13,7 +13,7 @@ namespace WUNI.Class
         private string customerID;
         private string citizenID;
         private string name;
-        private DateOnly birth;
+        private DateTime birth;
         private string gender;
         private string address;
         private string mail;
@@ -21,9 +21,21 @@ namespace WUNI.Class
         private string description;
         private string profileImage;
 
-        public Customer(string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        public Customer(string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
         {
-            this.customerID = getLastCustomerID();
+           Init(getLastCustomerID(), citizenID, name, birth , gender, address, mail, phoneNumber, description, profileImage);
+           
+        }
+        public Customer(string customerID, string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        {
+            Init(customerID, citizenID, name, birth , gender,address, mail, phoneNumber, description,profileImage);
+
+        }
+
+
+        private void Init(string customerID, string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
+        {
+            this.customerID = customerID;
             this.citizenID = citizenID;
             this.name = name;
             this.birth = birth;
@@ -33,8 +45,8 @@ namespace WUNI.Class
             this.phoneNumber = phoneNumber;
             this.description = description;
             this.profileImage = profileImage;
-        }
 
+        }
         private string getLastCustomerID()
         {
             CustomerDAO customerDAO = new CustomerDAO();
@@ -44,7 +56,7 @@ namespace WUNI.Class
         public string CustomerID { get => customerID; set => customerID = value; }
         public string CitizenID { get => citizenID; set => citizenID = value; }
         public string Name { get => name; set => name = value; }
-        public DateOnly Birth { get => birth; set => birth = value; }
+        public DateTime Birth { get => birth; set => birth = value; }
         public string Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; }
         public string Mail { get => mail; set => mail = value; }
