@@ -6,32 +6,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="WLogin.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="WRegisterCustomer.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="WRegisterWorker.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="WWhoRegister.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="WLogin.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="WRegisterCustomer.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="WRegisterWorker.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="WWhoRegister.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
 </Project>
