@@ -46,7 +46,9 @@ namespace WUNI.WINDOWS.WorkerPages
 
         private void btnAnalysis_Click(object sender, RoutedEventArgs e)
         {
-
+            WWorkerAnalysis wWorkerAnalysis = new WWorkerAnalysis(this.workerID);
+            wWorkerAnalysis.Show();
+            
         }
     }
 }

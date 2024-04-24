@@ -14,7 +14,7 @@ namespace WUNI.Class
         private string workerID;
         private string citizenID;
         private string name;
-        private DateOnly birth;
+        private DateTime birth;
         private string gender;
         private string address;
         private string mail;
@@ -26,16 +26,16 @@ namespace WUNI.Class
         private string profileImage;
 
 
-        public Worker(string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
+        public Worker(string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
         {
             Init(getLastWorkerID(), citizenID, name, birth, gender, address, mail, phoneNumber, pricePerHour, fieldID, description, rating, profileImage);
         }
 
-        public Worker(string workerID, string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
+        public Worker(string workerID, string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
         {
             Init(workerID, citizenID, name, birth, gender, address, mail, phoneNumber, pricePerHour, fieldID, description, rating, profileImage);
         }
-        private void Init(string workerID, string citizenID, string name, DateOnly birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
+        private void Init(string workerID, string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, float pricePerHour, string fieldID, string description, float rating, string profileImage)
         {
             this.workerID = workerID;
             this.citizenID = citizenID;
@@ -49,7 +49,7 @@ namespace WUNI.Class
             this.fieldID = fieldID;
             this.description = description;
             this.rating = rating;
-            this.profileImage = profileImage;
+            this.profileImage = String.Format("\\WorkerImage\\{0}.png",this.WorkerID);
         }
 
 
@@ -64,7 +64,7 @@ namespace WUNI.Class
         public string WorkerID { get => workerID; set => workerID = value; }
         public string CitizenID { get => citizenID; set => citizenID = value; }
         public string Name { get => name; set => name = value; }
-        public DateOnly Birth { get => birth; set => birth = value; }
+        public DateTime Birth { get => birth; set => birth = value; }
         public string Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; }
         public string Mail { get => mail; set => mail = value; }

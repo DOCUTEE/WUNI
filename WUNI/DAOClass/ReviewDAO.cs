@@ -44,6 +44,7 @@ namespace WUNI.DAOClass
 
             string query = string.Format("SELECT AVG(StarNumber) AS agvStar FROM {0} WHERE WorkerID = '{1}' GROUP BY WorkerID", this.tableName, workerID);
             DataTable da = this.conn.AdapterExcute(query);
+            if (da.Rows.Count == 0) return 0;
             return float.Parse(da.Rows[0][0].ToString());
 
 

@@ -46,5 +46,10 @@ namespace WUNI.WINDOWS
                 imgProfile.Source = bitmap;
             }
         }
+
+        private void btnRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //Thịnh code đăng ký
+        }
     }
 }

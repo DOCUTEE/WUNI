@@ -150,7 +150,7 @@ namespace WUNI.WINDOWS
             btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
-            //Thịnh
+            //fContent.NavigationService.Navigate(new)
         }
 
         private void btnSignOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

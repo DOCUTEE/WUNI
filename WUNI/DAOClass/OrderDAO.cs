@@ -122,6 +122,12 @@ namespace WUNI.DAOClass
             string query = string.Format("Update {0} Set IsWorked = 1 Where OrderID = '{1}'", this.tableName, orderID);
             conn.CommandExecute(query);
         }
+        public int NumberOf(string workerID)
+        {
+            string query = string.Format("select COUNT(*) from {0} where WorkerID = '{1}'", this.tableName, workerID);
+            DataTable da = this.conn.AdapterExcute(query);
+            return int.Parse(da.Rows[0][0].ToString());
+        }
         
         //HUYGAAAAA
     }

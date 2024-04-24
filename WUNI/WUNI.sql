@@ -22,7 +22,7 @@ CREATE TABLE Worker(
 	Birth Date,
 	Gender varchar(10),
 	Address nvarchar(255),
-	Mail varchar(50) unique,
+	Mail varchar(50),
 	PhoneNumber varchar(10),
 	PricePerHour float,
 	FieldID varchar(5),                
@@ -30,6 +30,8 @@ CREATE TABLE Worker(
 	Rating float,                      -- khoong dien
 	ProfileImage varchar(100)
 );
+
+
 
 CREATE TABLE Customer(
 	CustomerID varchar(10) primary Key,
@@ -53,23 +55,23 @@ CREATE TABLE Field(
 	Field nvarchar(50)
 );
 
-
+Drop table Field
 INSERT INTO Field (FieldID, Field) VALUES
-('DV001', 'Điện gia dụng'),
-('DV002', 'Điện tử'),
-('DV003', 'Điện lạnh'),
-('DV004', 'Giữ trẻ'),
-('DV005', 'Vận chuyển'),
-('DV006', 'Thú cưng'),
-('DV007', 'Vệ sinh'),
-('DV008', 'Làm đẹp'),
-('DV009', 'Xây dựng'),
-('DV010', 'Nội thất'),
-('DV011', 'Sửa chữa xe'),
-('DV012', 'Sửa chữa nước'),
-('DV013', 'Sữa chữa máy móc'),
-('DV014', 'Làm vườn'),
-('DV015', 'Giúp việc')
+('1', 'Điện gia dụng'),
+('2', 'Điện tử'),
+('3', 'Điện lạnh'),
+('4', 'Giữ trẻ'),
+('5', 'Vận chuyển'),
+('6', 'Thú cưng'),
+('7', 'Vệ sinh'),
+('8', 'Làm đẹp'),
+('9', 'Xây dựng'),
+('10', 'Nội thất'),
+('11', 'Sửa chữa xe'),
+('12', 'Sửa chữa nước'),
+('13', 'Sữa chữa máy móc'),
+('14', 'Làm vườn'),
+('15', 'Giúp việc')
 
 --SELECT MAX(WorkerID) FROM Worker;
 --SELECT MAX(FieldID) FROM Field
@@ -129,3 +131,7 @@ Create table Review(
 	ReviewImage varchar(100), 
 	StarNumber int
 );
+
+select * from Worker
+select * from WorkerAccount
+SELECT MAX(WorkerID) FROM Worker

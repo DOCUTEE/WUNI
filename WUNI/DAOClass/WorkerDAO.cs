@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Xml.Linq;
@@ -45,7 +46,10 @@ namespace WUNI.DAOClass
             if (da.Rows.Count > 0)
             {
                 workerID = da.Rows[0][0].ToString();
-                int num= int.Parse(workerID);
+                MessageBox.Show(workerID);
+                int num;
+                if (workerID != "") num = int.Parse(workerID);
+                else num = 1;
                 num++;
                 workerID = num.ToString();
             }
@@ -68,7 +72,7 @@ namespace WUNI.DAOClass
                 string workerID = workerRow[0].ToString();
                 string citizenID = workerRow[1].ToString();
                 string name = workerRow[2].ToString();
-                DateOnly birth = DateOnly.Parse(workerRow[3].ToString());
+                DateTime birth = DateTime.Parse(workerRow[3].ToString());
                 string gender = workerRow[4].ToString();
                 string address = workerRow[5].ToString();
                 string mail = workerRow[6].ToString();
@@ -99,7 +103,7 @@ namespace WUNI.DAOClass
                 string id = workerRow[0].ToString();
                 string citizenID = workerRow[1].ToString();
                 string name = workerRow[2].ToString();
-                DateOnly birth = DateOnly.Parse(workerRow[3].ToString());
+                DateTime birth = DateTime.Parse(workerRow[3].ToString());
                 string gender = workerRow[4].ToString();
                 string address = workerRow[5].ToString();
                 string mail = workerRow[6].ToString();
@@ -115,6 +119,17 @@ namespace WUNI.DAOClass
                     field, description, rating, profileImage);
             }
             return worker;
+        }
+        public List<string> WorderIDs()
+        {
+            string query = string.Format("Select WorkerID from {0}",this.tableName);
+            DataTable da = this.conn.AdapterExcute(query);
+            List<string> IDs = new List<string>();
+            foreach(DataRow row in da.Rows)
+            {
+                IDs.Add(row[0].ToString());
+            }
+            return IDs;
         }
     }
 }
