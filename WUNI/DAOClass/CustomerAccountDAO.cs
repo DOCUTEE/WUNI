@@ -35,5 +35,14 @@ namespace WUNI.DAOClass
 
             conn.CommandExecute(sqlStr);
         }
+        internal string GetCustomerID(string userName, string passWord)
+        {
+            string sqlStr = string.Format("Select * from {0} where Passwords = '{1}' and UserName = '{2}'", this.tableName, passWord, userName);
+            DataTable da = conn.AdapterExcute(sqlStr);
+            if (da.Rows.Count > 0)
+                return da.Rows[0][2].ToString();
+            return "0";
+
+        }
     }
 }

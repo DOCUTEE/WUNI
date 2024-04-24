@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using WUNI.Class;
 
@@ -53,7 +54,7 @@ namespace WUNI.DAOClass
             return customer;
         }
 
-
+        
 
         public string getLastCustomerID()
         {
@@ -62,8 +63,11 @@ namespace WUNI.DAOClass
             string sqlStr = string.Format("SELECT MAX(CustomerID) FROM Customer");
             da = this.conn.AdapterExcute(sqlStr);
 
-            if (da.Rows.Count > 0)
+            
+            if (da.Rows.Count >0 && da.Rows[0][0].ToString() != "" )
             {
+           
+
                 customerID = da.Rows[0][0].ToString();
                 int num = int.Parse(customerID);
                 num++;

@@ -7,17 +7,11 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="WINDOWS\WorkerPages\PWorkerInformation.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="WINDOWS\WWorkerAnalysis.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="WINDOWS\WorkerPages\PWorkerInformation.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="WINDOWS\WWorkerAnalysis.xaml">
       <SubType>Designer</SubType>
     </Page>

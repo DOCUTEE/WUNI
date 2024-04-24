@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomerImage\**" />
+    <Compile Remove="WorkerImage\**" />
+    <EmbeddedResource Remove="CustomerImage\**" />
+    <EmbeddedResource Remove="WorkerImage\**" />
+    <None Remove="CustomerImage\**" />
+    <None Remove="WorkerImage\**" />
+    <Page Remove="CustomerImage\**" />
+    <Page Remove="WorkerImage\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
@@ -25,11 +36,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CustomerImage\" />
-    <Folder Include="WorkerImage\" />
   </ItemGroup>
 
 </Project>
