@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[Order] (
 	WorkerID varchar(10) 
 );
 select * from [dbo].[Order];
-
+delete from [dbo].[Order]
 Update [dbo].[Order] Set IsWorked = 1 Where OrderID = '1'
 
 

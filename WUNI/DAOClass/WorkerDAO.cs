@@ -107,7 +107,7 @@ namespace WUNI.DAOClass
                 string mail = workerRow[6].ToString();
                 string phoneNumber = workerRow[7].ToString();
                 float pricePerHour = float.Parse(workerRow[8].ToString());
-                string field = workerID[9].ToString();
+                string field = workerRow[9].ToString();
                 string description = workerRow[10].ToString();
                 float rating = float.Parse(workerRow[11].ToString());
                 string profileImage = workerRow[12].ToString();
