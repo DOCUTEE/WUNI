@@ -122,4 +122,3 @@ Create table Review(
 );
 
 
-select * from customerAccount

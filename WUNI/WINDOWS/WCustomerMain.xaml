@@ -7,6 +7,74 @@
         mc:Ignorable="d"
         Title="WCustomerMain" Height="900" Width="1440">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#F9F5EB">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="btnFindWork" Grid.Row="1" Background="#E4DCCF" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnFindWork_MouseEnter" MouseLeave="btnFindWork_MouseLeave" MouseLeftButtonDown="btnFindWork_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iconFindWork"  Grid.Column="0" Source="/Logo/FindIcon.png" Height="32" Width="32"></Image>
+                    <Label Grid.Column="1" Content="Dịch vụ" FontSize ="30" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+            <Border x:Name="btnCreateOrder" Grid.Row="2" Background="#F9F5EB" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnCreateOrder_MouseEnter" MouseLeave="btnCreateOrder_MouseLeave" MouseLeftButtonDown="btnCreateOrder_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iconCreateOrder" Grid.Column="0" Source="/Logo/FindIcon.png" Height="32" Width="32"></Image>
+                    <Label Grid.Column="1" Content="Rao việc" FontSize ="30" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+            <Border x:Name="btnHistory" Grid.Row="3" Background="#F9F5EB" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnHistory_MouseEnter" MouseLeave="btnHistory_MouseLeave" MouseLeftButtonDown="btnHistory_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iconHistory" Grid.Column="0" Source="/Logo/HistoryIcon.png" Height="32" Width="32"></Image>
+                    <Label Grid.Column="1" Content="Lịch sử" FontSize ="30" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+            <Border x:Name="btnAccount" Grid.Row="4" Background="#F9F5EB" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnAccount_MouseEnter" MouseLeave="btnAccount_MouseLeave" MouseLeftButtonDown="btnAccount_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iconAccount" Grid.Column="0" Source="/Logo/AccountIcon.png" Height="32" Width="32"></Image>
+                    <Label Grid.Column="1" Content="Tài khoản" FontSize ="30" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+            <Border x:Name="btnSignOut" Opacity="0.5" Grid.Row="6" Background="#F9F5EB" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnSignOut_MouseEnter" MouseLeave="btnSignOut_MouseLeave" MouseLeftButtonDown="btnSignOut_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iconSignOut" Grid.Column="0" Source="/Logo/SignOutIcon.png" Height="32" Width="32"></Image>
+                    <Label Grid.Column="1" Content="Đăng xuất" FontSize ="30" VerticalAlignment="Center"></Label>
+                </Grid>
+            </Border>
+        </Grid>
+        <Frame x:Name="fContent" Grid.Column="1" NavigationUIVisibility="Hidden">
+
+        </Frame>
+
     </Grid>
 </Window>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WUNI.WINDOWS.UC.UCServiceCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WUNI.WINDOWS.UC"
+         d:DesignHeight="240" d:DesignWidth="240">
+    <Grid Margin="5,5,5,5">
+        <!--Create a user control have 1 image and title buttom, border 4 corner-->
+        <Border x:Name="borderServiceCard" CornerRadius="10" Background="#EFEFEF" MouseEnter="borderServiceCard_MouseEnter" MouseLeave="borderServiceCard_MouseLeave" MouseLeftButtonDown="borderServiceCard_MouseLeftButtonDown">
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <Border.Background CornerRadius="20,20,0,0">
+                        <ImageBrush x:Name="imgService"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                <Label x:Name="lblService" Grid.Row="1" Opacity="0.5" FontSize="18" Content="Dịch vụ tại đây" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" FontFamily="Bahnschrift"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
