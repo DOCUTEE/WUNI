@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WUNI.DAOClass
 {
@@ -19,7 +20,7 @@ namespace WUNI.DAOClass
         public List<string> getAllService()
         {
             List<string> fields = new List<string>();
-            string sqlStr = string.Format("Select Field from {0}", this.tableName);
+            string sqlStr = string.Format("Select Field from {0} order by Cast(FieldID as INT)", this.tableName);
            
             DataTable da = conn.AdapterExcute(sqlStr);
             foreach (DataRow dr in da.Rows)
@@ -34,7 +35,6 @@ namespace WUNI.DAOClass
         public string GetFieldFrom(string id)
         {
             string query = string.Format("Select Field from {0} where FieldID = '{1}'", this.tableName, id);
-
             DataRow da = conn.AdapterExcute(query).Rows[0];
             return da[0].ToString();
         }

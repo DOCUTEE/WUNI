@@ -5,8 +5,7 @@ CREATE TABLE WorkerAccount(
 	WorkerID varchar(10)
 );
 
-Insert into WorkerAccount(UserName,Passwords,WorkerID)
-values ('Quang1','123456','1');
+
 
 
 CREATE TABLE CustomerAccount(
@@ -54,7 +53,9 @@ CREATE TABLE Field(
 	FieldID varchar(5) primary key,
 	Field nvarchar(50)
 );
-
+delete from Field
+select * from Field
+order by Cast(FieldID as Int);
 Drop table Field
 INSERT INTO Field (FieldID, Field) VALUES
 ('1', 'Điện gia dụng'),
@@ -96,12 +97,12 @@ CREATE TABLE [dbo].[Order] (
 	WorkerID varchar(10) 
 );
 select * from [dbo].[Order];
-
+delete from [dbo].[Order]
 Update [dbo].[Order] Set IsWorked = 1 Where OrderID = '1'
 
 
 insert into [dbo].[Order](OrderID,FieldID,CustomerID,IsWorked,Description,IssueImage,IssueDate,isQueue,WorkerID)
-values ('1','DV001','1',0,'Sửa laptop','\Logo\WUNI.jpg','2024-03-12',0,'1');
+values ('1','1','1',0,'Sửa laptop','\Logo\WUNI.jpg','2024-03-12',0,'1');
 
 delete from [dbo].[Order];
 
@@ -134,4 +135,6 @@ Create table Review(
 
 select * from Worker
 select * from WorkerAccount
+delete from Worker 
+delete from WorkerAccount
 SELECT MAX(WorkerID) FROM Worker

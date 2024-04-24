@@ -70,8 +70,8 @@ namespace WUNI.WINDOWS
                 5,
                 "HUYGA"
             );
-            WorkerDAO workerDAO = new WorkerDAO();
-            workerDAO.Add( worker );
+            MessageBox.Show(worker.FieldID);
+            
             
             //Copy and  paste image of the worker into WorkerImage Folder
             BitmapImage bitmapImage = imgProfile.Source as BitmapImage;
@@ -88,6 +88,8 @@ namespace WUNI.WINDOWS
                 txpPassword.Password.ToString(),
                 worker.WorkerID
             );
+            WorkerDAO workerDAO = new WorkerDAO();
+            workerDAO.Add(worker);
             WorkerAccountDAO workerAccountDAO = new WorkerAccountDAO();
             workerAccountDAO.Add(workerAccount);
             this.Close();

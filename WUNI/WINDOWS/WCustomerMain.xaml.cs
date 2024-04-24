@@ -19,15 +19,15 @@ namespace WUNI.WINDOWS
     /// </summary>
     public partial class WCustomerMain : Window
     {
-        private string workerID;
+        private string customerID;
         public WCustomerMain()
         {
             InitializeComponent();
         }
-        public WCustomerMain(string workerID)
+        public WCustomerMain(string customerID)
         {
             InitializeComponent();
-            this.workerID = workerID;
+            this.customerID = customerID;
         }
     }
 }
