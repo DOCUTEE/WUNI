@@ -31,8 +31,6 @@ namespace WUNI.DAOClass
                     this.tableName, worker.WorkerID, worker.CitizenID, worker.Name, worker.Birth, worker.Gender,
                     worker.Address, worker.Mail, worker.PhoneNumber, worker.PricePerHour, worker.FieldID, worker.Description, 0.0, worker.ProfileImage);
             this.conn.CommandExecute(sqlStr);
-
-
         }
 
 
@@ -49,7 +47,7 @@ namespace WUNI.DAOClass
                 MessageBox.Show(workerID);
                 int num;
                 if (workerID != "") num = int.Parse(workerID);
-                else num = 1;
+                else num = 0;
                 num++;
                 workerID = num.ToString();
             }
