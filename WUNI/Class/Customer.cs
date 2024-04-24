@@ -44,7 +44,7 @@ namespace WUNI.Class
             this.mail = mail;
             this.phoneNumber = phoneNumber;
             this.description = description;
-            this.profileImage = profileImage;
+            this.profileImage = String.Format("\\CustomerImage\\{0}.png", this.customerID); ;
 
         }
         private string getLastCustomerID()
