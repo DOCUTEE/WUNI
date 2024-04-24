@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WUNI.WINDOWS.WorkerPages;
+using WUNI.WINDOWS.CustomerPages;
 
 namespace WUNI.WINDOWS
 {
@@ -38,25 +39,25 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            fContent.NavigationService.Navigate(new PCustomerFindService(this.customerID));
+            fContent.NavigationService.Navigate(new PCustomerServices(this.customerID));
         }
-        private void btnFindWork_MouseEnter(object sender, MouseEventArgs e)
+        private void btnFindService_MouseEnter(object sender, MouseEventArgs e)
         {
             SolidColorBrush temp = (SolidColorBrush)new BrushConverter().ConvertFrom("#E4DCCF");
-            SolidColorBrush backgroundBrush = btnFindWork.Background as SolidColorBrush;
+            SolidColorBrush backgroundBrush = btnFindService.Background as SolidColorBrush;
             if (backgroundBrush != null && backgroundBrush.Color != temp.Color)
             {
-                btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#EFEFEF");
+                btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#EFEFEF");
             }
         }
 
-        private void btnFindWork_MouseLeave(object sender, MouseEventArgs e)
+        private void btnFindService_MouseLeave(object sender, MouseEventArgs e)
         {
             SolidColorBrush temp = (SolidColorBrush)new BrushConverter().ConvertFrom("#E4DCCF");
-            SolidColorBrush backgroundBrush = btnFindWork.Background as SolidColorBrush;
+            SolidColorBrush backgroundBrush = btnFindService.Background as SolidColorBrush;
             if (backgroundBrush != null && backgroundBrush.Color != temp.Color)
             {
-                btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
+                btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             }
         }
 
@@ -120,9 +121,9 @@ namespace WUNI.WINDOWS
             }
         }
 
-        private void btnFindWork_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void btnFindService_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
+            btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnCreateOrder.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
@@ -131,7 +132,7 @@ namespace WUNI.WINDOWS
 
         private void btnHistory_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
+            btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnCreateOrder.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
@@ -140,7 +141,7 @@ namespace WUNI.WINDOWS
 
         private void btnAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
+            btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnCreateOrder.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
@@ -176,7 +177,7 @@ namespace WUNI.WINDOWS
 
         private void btnCreateOrder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            btnFindWork.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
+            btnFindService.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnCreateOrder.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");

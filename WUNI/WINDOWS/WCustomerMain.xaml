@@ -21,7 +21,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
-            <Border x:Name="btnFindWork" Grid.Row="1" Background="#E4DCCF" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnFindWork_MouseEnter" MouseLeave="btnFindWork_MouseLeave" MouseLeftButtonDown="btnFindWork_MouseLeftButtonDown">
+            <Border x:Name="btnFindService" Grid.Row="1" Background="#E4DCCF" Margin="5,5,5,5" CornerRadius="10" MouseEnter="btnFindService_MouseEnter" MouseLeave="btnFindService_MouseLeave" MouseLeftButtonDown="btnFindService_MouseLeftButtonDown">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

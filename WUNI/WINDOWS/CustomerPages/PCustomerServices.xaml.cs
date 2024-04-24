@@ -20,9 +20,16 @@ namespace WUNI.WINDOWS.CustomerPages
     /// </summary>
     public partial class PCustomerServices : Page
     {
+        private string customerID;
         public PCustomerServices()
         {
             InitializeComponent();
+        }
+        public PCustomerServices(string customerID)
+        {
+            InitializeComponent();
+            this.customerID = customerID;
+            //Thịnh lấy ra 1 list các Field rồi truyền vào UCServiceCard xong đem UC đưa vào uniformGrid ufgServices.
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WUNI.Class;
 
 namespace WUNI.WINDOWS.UC
 {
@@ -20,9 +21,32 @@ namespace WUNI.WINDOWS.UC
     /// </summary>
     public partial class UCServiceCard : UserControl
     {
+        private Field field;
         public UCServiceCard()
         {
             InitializeComponent();
+        }
+        public UCServiceCard(Field field)
+        {
+            InitializeComponent();
+            this.field = field;
+            //Thịnh gán đường dẫn ảnh imgService.source = <Đường dẫn tới Project> + \\FieldImage\\<FieldID>.png;
+            //Thịnh thay lblService = tên field;
+        }
+
+        private void borderServiceCard_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void borderServiceCard_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void borderServiceCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

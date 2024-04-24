@@ -8,7 +8,7 @@ using System.Windows.Controls.Primitives;
 
 namespace WUNI.Class
 {
-    internal class Field
+    public class Field
     {
         private string fieldID;
         private string fieldName;
