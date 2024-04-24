@@ -54,7 +54,20 @@ namespace WUNI.WINDOWS
 
         private void btnLoginCustomer_Click(object sender, RoutedEventArgs e)
         {
-            //Thịnh code đăng nhập để kiểm tra xem tài khoản đã tồn tại hay chưa nếu rồi thì vào window WCustomerMain.xaml            
+            CustomerAccountDAO customerAccountDAO = new CustomerAccountDAO();
+            string customerID = customerAccountDAO.GetCustomerID(txbUsername.Text, pwbPassword.Password.ToString());
+            if (customerID != "0")
+            {
+                WCustomerMain wCustomerMain = new WCustomerMain(customerID); ;
+                MessageBox.Show(customerID.ToString());
+                wCustomerMain.Show();
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu");
+            }
         }
     }
 }
