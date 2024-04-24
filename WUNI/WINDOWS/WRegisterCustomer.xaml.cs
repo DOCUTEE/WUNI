@@ -47,9 +47,6 @@ namespace WUNI.WINDOWS
             }
         }
 
-        private void btnRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            //Thịnh code đăng ký
-        }
+        
     }
 }
