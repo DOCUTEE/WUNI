@@ -28,6 +28,7 @@
                     <ComboBoxItem >Sắp xếp theo</ComboBoxItem>
                     <ComboBoxItem >Giá tăng dần</ComboBoxItem>
                     <ComboBoxItem >Giá giảm dần</ComboBoxItem>
+                    <ComboBoxItem >Rating giảm dần</ComboBoxItem>
                 </ComboBox>
             </Border>
         </Grid>
