@@ -24,6 +24,11 @@ namespace WUNI.DAOClass
             this.tableName = "Worker";
             this.conn = new DBConnection();
         }
+        public static string GetTimeDate()
+        {
+            string DateTime = System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+            return DateTime;
+        }
         public void Add(Worker worker)
         {
             string sqlStr = string.Format("INSERT INTO {0} (WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage)" +
@@ -128,6 +133,34 @@ namespace WUNI.DAOClass
                 IDs.Add(row[0].ToString());
             }
             return IDs;
+        }
+        public List<Worker> GetListWoker()
+        {
+            string query = string.Format("Select * from " + this.tableName);
+            DataTable da = conn.AdapterExcute(query);
+            List<Worker> listWorker = new List<Worker>();
+            foreach (DataRow dr in da.Rows)
+            {
+                var worker = new Worker(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), Convert.ToDateTime(dr[3]),
+                                        dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), float.Parse(dr[8].ToString()),
+                                        dr[9].ToString(), dr[10].ToString(), float.Parse(dr[11].ToString()), dr[12].ToString());
+                listWorker.Add(worker);
+            }
+            return listWorker;
+        }
+        public List<Worker> GetListWokerOfField(string fieldID)
+        {
+            string query = string.Format("Select * from " + this.tableName + " where FieldId = " + fieldID);
+            DataTable da = conn.AdapterExcute(query);
+            List<Worker> listWorker = new List<Worker>();
+            foreach (DataRow dr in da.Rows)
+            {
+                var worker = new Worker(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), Convert.ToDateTime(dr[3]),
+                                        dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), float.Parse(dr[8].ToString()),
+                                        dr[9].ToString(), dr[10].ToString(), float.Parse(dr[11].ToString()), dr[12].ToString());
+                listWorker.Add(worker);
+            }
+            return listWorker;
         }
     }
 }

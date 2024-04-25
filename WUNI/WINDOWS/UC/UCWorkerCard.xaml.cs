@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WUNI.Class;
 
 namespace WUNI.WINDOWS.UC
 {
@@ -20,15 +22,23 @@ namespace WUNI.WINDOWS.UC
     /// </summary>
     public partial class UCWorkerCard : UserControl
     {
-        private string workerID;
+        private String workerID;
         public UCWorkerCard()
         {
             InitializeComponent();
         }
-        public UCWorkerCard(string workerID)
+        public UCWorkerCard(Worker worker)
         {
             InitializeComponent();
-            this.workerID = workerID;
+
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
+            this.workerID = worker.WorkerID;
+            workerName.Text = worker.Name.ToString();
+            workerRating.Text = worker.Rating.ToString();
+            workerAddress.Text = worker.Address.ToString();
+            lblPhoneNumber.Text = worker.PhoneNumber.ToString();
+            imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png")); 
             //Thịnh truyền thông tin thợ vào UC này 
         }
     }

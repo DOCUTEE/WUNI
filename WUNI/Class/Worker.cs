@@ -9,7 +9,7 @@ using WUNI.DAOClass;
 
 namespace WUNI.Class
 {
-    internal class Worker
+    public class Worker
     {
         private string workerID;
         private string citizenID;

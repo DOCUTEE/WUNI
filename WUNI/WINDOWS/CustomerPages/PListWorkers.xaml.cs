@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WUNI.Class;
+using WUNI.DAOClass;
+using WUNI.WINDOWS.UC;
 namespace WUNI.WINDOWS.CustomerPages
 {
     /// <summary>
@@ -28,13 +30,20 @@ namespace WUNI.WINDOWS.CustomerPages
         public PListWorkers(Field field)
         {
             InitializeComponent();
+            
             this.field = field;
-            //Thịnh đổ danh sách worker vào đây
+            WorkerDAO workerDAO = new WorkerDAO();
+            List<Worker> workers = workerDAO.GetListWokerOfField(field.FieldID);
+            foreach (var woker in workers)
+            {
+                UCWorkerCard uCWorkerCard = new UCWorkerCard(woker);
+                ufgWorkers.Children.Add(uCWorkerCard);
+            }
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            MessageBox.Show("OK");
+        { 
         }
     }
 }
