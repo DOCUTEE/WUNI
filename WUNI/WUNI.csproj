@@ -10,12 +10,16 @@
 
   <ItemGroup>
     <Compile Remove="CustomerImage\**" />
+    <Compile Remove="ServiceImage\**" />
     <Compile Remove="WorkerImage\**" />
     <EmbeddedResource Remove="CustomerImage\**" />
+    <EmbeddedResource Remove="ServiceImage\**" />
     <EmbeddedResource Remove="WorkerImage\**" />
     <None Remove="CustomerImage\**" />
+    <None Remove="ServiceImage\**" />
     <None Remove="WorkerImage\**" />
     <Page Remove="CustomerImage\**" />
+    <Page Remove="ServiceImage\**" />
     <Page Remove="WorkerImage\**" />
   </ItemGroup>
 
@@ -36,10 +40,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ServiceImage\" />
   </ItemGroup>
 
 </Project>

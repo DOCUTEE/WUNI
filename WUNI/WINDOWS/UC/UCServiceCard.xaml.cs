@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,11 @@ namespace WUNI.WINDOWS.UC
         public UCServiceCard(Field field)
         {
             InitializeComponent();
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             this.field = field;
+            imgService.ImageSource = new BitmapImage(new Uri(path1 + "\\FieldImage\\"+ field.FieldID.ToString() + ".png", UriKind.Relative)); ;
+            lblService.Content = field.FieldName;
             //Thịnh gán đường dẫn ảnh imgService.source = <Đường dẫn tới Project> + \\FieldImage\\<FieldID>.png;
             //Thịnh thay lblService = tên field;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WUNI.Class;
+using WUNI.DAOClass;
+using WUNI.WINDOWS.UC;
 
 namespace WUNI.WINDOWS.CustomerPages
 {
@@ -27,9 +31,19 @@ namespace WUNI.WINDOWS.CustomerPages
         }
         public PCustomerServices(string customerID)
         {
-            InitializeComponent();
-            this.customerID = customerID;
             //Thịnh lấy ra 1 list các Field rồi truyền vào UCServiceCard xong đem UC đưa vào uniformGrid ufgServices.
+            InitializeComponent();
+            
+            this.customerID = customerID;
+
+            FieldDAO fieldDAO = new FieldDAO();
+            List<Field> fields = fieldDAO.GetListField();
+            foreach (var field in fields)
+            {
+                UCServiceCard uCServiceCard = new UCServiceCard(field);
+                ufgServices.Children.Add(uCServiceCard);
+            }
+            
         }
     }
 }
