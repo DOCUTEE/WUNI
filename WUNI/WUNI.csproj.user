@@ -10,7 +10,13 @@
     <Compile Update="WINDOWS\CustomerPages\PCustomerServices.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WINDOWS\CustomerPages\PListWorkers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WINDOWS\UC\UCServiceCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WINDOWS\UC\UCWorkerCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WINDOWS\WorkerPages\PWorkerInformation.xaml.cs">
@@ -24,7 +30,13 @@
     <Page Update="WINDOWS\CustomerPages\PCustomerServices.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="WINDOWS\CustomerPages\PListWorkers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WINDOWS\UC\UCServiceCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WINDOWS\UC\UCWorkerCard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WINDOWS\WorkerPages\PWorkerInformation.xaml">
