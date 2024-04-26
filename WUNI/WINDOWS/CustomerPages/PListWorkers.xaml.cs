@@ -23,6 +23,7 @@ namespace WUNI.WINDOWS.CustomerPages
     public partial class PListWorkers : Page
     {
         private Field field;
+        private List<Worker> workers;
         public PListWorkers()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace WUNI.WINDOWS.CustomerPages
             
             this.field = field;
             WorkerDAO workerDAO = new WorkerDAO();
-            List<Worker> workers = workerDAO.GetListWokerOfField(field.FieldID);
+            this.workers = workerDAO.GetListWokerOfField(field.FieldID);
             foreach (var woker in workers)
             {
                 UCWorkerCard uCWorkerCard = new UCWorkerCard(woker);
@@ -43,7 +44,32 @@ namespace WUNI.WINDOWS.CustomerPages
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        { 
+        {
+            ufgWorkers.Children.Clear();
+
+            ComboBox comboBox = sender as ComboBox;
+            var sortedWorker = this.workers;
+
+            if (comboBox.SelectedIndex == 0)
+            {
+                sortedWorker = workers.OrderBy(worker => worker.PricePerHour).ToList();
+            }
+            else if (comboBox.SelectedIndex == 1)
+            {
+                sortedWorker = workers.OrderByDescending(worker => worker.PricePerHour).ToList();
+
+            }
+            else
+            {
+                sortedWorker = workers.OrderByDescending(worker => worker.Rating).ToList();
+            }
+            foreach (var woker in sortedWorker)
+            {
+                UCWorkerCard uCWorkerCard = new UCWorkerCard(woker);
+                ufgWorkers.Children.Add(uCWorkerCard);
+            }
+
+
         }
     }
 }
