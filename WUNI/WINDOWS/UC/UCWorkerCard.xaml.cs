@@ -39,7 +39,7 @@ namespace WUNI.WINDOWS.UC
             workerAddress.Text = worker.Address.ToString();
             lblPhoneNumber.Text = worker.PhoneNumber.ToString();
             imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png")); 
-            //Thịnh truyền thông tin thợ vào UC này 
+            //Thịnh truyền thông tin thợ vào UC này 0
         }
     }
 }
