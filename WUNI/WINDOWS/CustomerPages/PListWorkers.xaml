@@ -24,7 +24,7 @@
             </Border>
             <Label Grid.Column="1" Margin="20,0,0,0" Content="Thợ + Tên ngành" FontSize="48" VerticalAlignment="Center"></Label>
             <Border Grid.Row="0" Grid.Column="2">
-                <ComboBox Margin="200,30,20,20" FontSize="26"  SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBox x:Name="cobSort" Margin="200,30,20,20" FontSize="26"  SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBoxItem >Sắp xếp theo</ComboBoxItem>
                     <ComboBoxItem >Giá tăng dần</ComboBoxItem>
                     <ComboBoxItem >Giá giảm dần</ComboBoxItem>
@@ -35,7 +35,7 @@
 
         <ScrollViewer Grid.Row="1">
 
-            <UniformGrid x:Name="ufgWorkers" Columns="2" >
+            <UniformGrid x:Name="ufgWorkers" Columns="2" VerticalAlignment="Top">
                 
             </UniformGrid>
         </ScrollViewer>

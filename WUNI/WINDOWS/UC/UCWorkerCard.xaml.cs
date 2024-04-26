@@ -35,9 +35,9 @@ namespace WUNI.WINDOWS.UC
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             this.workerID = worker.WorkerID;
             workerName.Text = worker.Name.ToString();
-            workerRating.Text = worker.Rating.ToString();
-            workerAddress.Text = worker.Address.ToString();
-            lblPhoneNumber.Text = worker.PhoneNumber.ToString();
+            workerRating.Text = "Đánh giá: " + worker.Rating.ToString();
+            workerAddress.Text = "Địa chỉ: " + worker.Address.ToString();
+            lblPhoneNumber.Text ="Số điện thoại: " +  worker.PhoneNumber.ToString();
             imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png")); 
             //Thịnh truyền thông tin thợ vào UC này 0
         }

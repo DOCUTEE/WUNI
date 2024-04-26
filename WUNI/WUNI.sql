@@ -5,6 +5,7 @@ CREATE TABLE WorkerAccount(
 	WorkerID varchar(10)
 );
 -- Thêm 20 đối tượng vào bảng với ID từ 1 đến 20
+delete from WorkerAccount
 INSERT INTO WorkerAccount (UserName, Passwords, WorkerID) VALUES
     ('user1', 'password1', '1'),
     ('user2', 'password2', '2'),
@@ -47,6 +48,7 @@ CREATE TABLE Worker(
 	ProfileImage varchar(100)
 );
 
+delete from Worker
 INSERT INTO Worker (WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage) VALUES
     ('1', 'CIT001', N'John Doe', '1990-05-15', 'Male', N'123 Main Street', 'john.doe@example.com', '1234567890', 15.0, '1', N'Construction worker', 4.5, ''),
     ('2', 'CIT002', N'Jane Smith', '1988-10-20', 'Female', N'456 Elm Street', 'jane.smith@example.com', '2345678901', 20.0, '2', N'Plumber', 4.8, ''),
@@ -147,6 +149,8 @@ CREATE TABLE Queuee(
 	WorkerID varchar(10),
 	OrderID varchar(10)
 );
+insert into Queuee(WorkerID, OrderID)
+values ('12','6')
 
 Create table Review(
 	ReviewID varchar(10) primary key,
@@ -158,3 +162,12 @@ Create table Review(
 );
 
 
+INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
+VALUES ('1', '1', '1', 0, N'Description 1', '\\IssueImage\\1.png', '2024-04-26',1, '12'),
+       ('2', '2', '1', 0, N'Description 2', '\\IssueImage\\2.png', '2024-04-27', 0, '12'),
+       ('3', '3', '1', 0, N'Description 3', '\\IssueImage\\3.png', '2024-04-28', 0, '12'),
+       ('4', '4', '1', 0, N'Description 4', '\\IssueImage\\4.png', '2024-04-29', 0, '12'),
+       ('5', '5', '1', 0, N'Description 5', '\\IssueImage\\5.png', '2024-04-30', 0, '12');
+
+    INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
+VALUES ('6', '1', '1', 0, N'Description 1', '\\IssueImage\\6.png', '2024-04-26',1, '12')

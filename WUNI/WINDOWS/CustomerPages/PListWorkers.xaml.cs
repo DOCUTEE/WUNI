@@ -45,24 +45,31 @@ namespace WUNI.WINDOWS.CustomerPages
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ufgWorkers.Children.Clear();
 
-            ComboBox comboBox = sender as ComboBox;
+
+           
             var sortedWorker = this.workers;
-
-            if (comboBox.SelectedIndex == 0)
+            bool check = false ;
+            if (cobSort.SelectedIndex == 1)
             {
+                check = true;
+                ufgWorkers.Children.Clear();
                 sortedWorker = workers.OrderBy(worker => worker.PricePerHour).ToList();
             }
-            else if (comboBox.SelectedIndex == 1)
+            else if (cobSort.SelectedIndex == 2)
             {
+                check = true;
+                ufgWorkers.Children.Clear();
                 sortedWorker = workers.OrderByDescending(worker => worker.PricePerHour).ToList();
 
             }
-            else
+            else if (cobSort.SelectedIndex == 3)
             {
+                check = true;
+                ufgWorkers.Children.Clear();
                 sortedWorker = workers.OrderByDescending(worker => worker.Rating).ToList();
             }
+            if (check)
             foreach (var woker in sortedWorker)
             {
                 UCWorkerCard uCWorkerCard = new UCWorkerCard(woker);
