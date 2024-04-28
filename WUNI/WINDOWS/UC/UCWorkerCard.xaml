@@ -40,6 +40,7 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="workerRating" Text ="Đánh giá: &lt;Số sao&gt;/5" FontSize="20" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="10"></TextBlock>
+                    <TextBlock x:Name="workerPrice" Text="(tiền)/h" FontSize="20" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="10" Grid.Column="1"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -56,7 +57,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock x:Name="lblPhoneNumber" Grid.Column="0" Margin="10,0,0,0" Text="Số điện thoại: Tại đây"></TextBlock>
                         <Grid Grid.Column="1">
-                            <Button  Content="Xem thêm..." Background="Transparent" Opacity="0.5" FontSize="18"  BorderThickness="0" ></Button>
+                            <Button x:Name="btnMore"  Content="Xem thêm..." Background="Transparent" Opacity="0.5" FontSize="18"  BorderThickness="0" Click="btnMore_Click" ></Button>
                         </Grid>
                     </Grid>
 

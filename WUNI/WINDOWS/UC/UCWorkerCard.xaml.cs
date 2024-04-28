@@ -41,5 +41,11 @@ namespace WUNI.WINDOWS.UC
             imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png")); 
             //Thịnh truyền thông tin thợ vào UC này 0
         }
+
+        private void btnMore_Click(object sender, RoutedEventArgs e)
+        {
+            //Bấm xem thêm sẽ chuyển đến trang WWorkerDetails(this.workerID)
+
+        }
     }
 }

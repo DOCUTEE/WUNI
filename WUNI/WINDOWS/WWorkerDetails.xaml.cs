@@ -19,9 +19,39 @@ namespace WUNI.WINDOWS
     /// </summary>
     public partial class WWorkerDetails : Window
     {
+        private string workerID;
         public WWorkerDetails()
         {
             InitializeComponent();
+        }
+        public WWorkerDetails(string workerID)
+        {
+            InitializeComponent();
+            this.workerID = workerID;
+            //truyền data vào page
+        }
+        
+
+        
+
+        
+
+        private void btnInfo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //bấm vào liên hệ thì mấy trang còn lại hidden
+        }
+        private void btnDescription_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //bấm vào mô tả thì mấy trang còn lại hidden
+        }
+        private void btnReviews_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //bấm vào đánh giá thì mấy trang còn lại hidden
+        }
+
+        private void btnRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
