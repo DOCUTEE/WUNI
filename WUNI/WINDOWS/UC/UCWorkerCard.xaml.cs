@@ -44,8 +44,9 @@ namespace WUNI.WINDOWS.UC
 
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {
-            //Bấm xem thêm sẽ chuyển đến trang WWorkerDetails(this.workerID)
-
+            WWorkerDetails workerDetails = new WWorkerDetails(this.workerID);
+            workerDetails.Show();
+            
         }
     }
 }
