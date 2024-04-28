@@ -24,6 +24,9 @@ namespace WUNI.WINDOWS
     public partial class WCustomerMain : Window
     {
         private string customerID;
+
+        public string CustomerID { get => customerID; set => customerID = value; }
+
         public WCustomerMain()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace WUNI.WINDOWS
         public WCustomerMain(string customerID)
         {
             InitializeComponent();
-            this.customerID = customerID;
+            this.CustomerID = customerID;
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             iconFindWork.Source = new BitmapImage(new Uri(path1 + "\\Logo\\FindIcon.png"));
@@ -39,7 +42,7 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            fContent.NavigationService.Navigate(new PCustomerServices(this.customerID));
+            fContent.NavigationService.Navigate(new PCustomerServices(this.CustomerID));
         }
         private void btnFindService_MouseEnter(object sender, MouseEventArgs e)
         {

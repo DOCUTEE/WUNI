@@ -44,7 +44,8 @@ namespace WUNI.WINDOWS.UC
 
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {
-            WWorkerDetails workerDetails = new WWorkerDetails(this.workerID);
+            WCustomerMain wCustomerMain = (WCustomerMain)Window.GetWindow(this);
+            WWorkerDetails workerDetails = new WWorkerDetails(wCustomerMain.CustomerID, this.workerID);
             workerDetails.Show();
             
         }

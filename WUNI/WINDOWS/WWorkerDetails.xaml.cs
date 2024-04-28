@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WUNI.DAOClass;
 using WUNI.Class;
+using System.Data.Common;
 namespace WUNI.WINDOWS
 {
     /// <summary>
@@ -21,14 +22,17 @@ namespace WUNI.WINDOWS
     /// </summary>
     public partial class WWorkerDetails : Window
     {
+        private string customerID;
         private string workerID;
+
         public WWorkerDetails()
         {
             InitializeComponent();
         }
-        public WWorkerDetails(string workerID)
+        public WWorkerDetails(string customerID,string workerID)
         {
             InitializeComponent();
+            this.customerID = customerID;
             this.workerID = workerID;
             WorkerDAO workerDAO = new WorkerDAO();
             Worker worker = workerDAO.GetWorkerFrom(this.workerID);
@@ -40,7 +44,8 @@ namespace WUNI.WINDOWS
             tblField.Text = fieldDAO.GetFieldFrom(worker.FieldID);
             ReviewDAO reviewDAO = new ReviewDAO();
             tblRating.Text = reviewDAO.StarAvgOf(this.workerID).ToString() + "/5";
-            
+            BusyDateDAO busyDateDAO = new BusyDateDAO();
+            busyDateDAO.
         }
         
 

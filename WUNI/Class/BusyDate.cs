@@ -19,7 +19,7 @@ namespace WUNI.Class
             this.customerID = customerID;
             this.busDate = busDate;
         }
-      
+        
 
 
         public string WorkedID { get => workedID; set => workedID = value; }
