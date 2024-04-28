@@ -160,7 +160,8 @@ Create table Review(
 	ReviewImage varchar(100), 
 	StarNumber int
 );
-
+Insert into review
+values ('1','1','1','Thợ nhiệt tình lắm','\\Review\\1.png',3)
 
 INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
 VALUES ('1', '1', '1', 0, N'Description 1', '\\IssueImage\\1.png', '2024-04-26',1, '12'),

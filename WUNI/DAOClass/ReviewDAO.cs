@@ -77,5 +77,24 @@ namespace WUNI.DAOClass
             }
             return new Review();
         }
+        public List<Review> GetReviewFromWoker(string workerID)
+        {
+            string query = string.Format("Select * from {0} where WorkerID = '{1}'", this.tableName, workerID);
+            DataTable da = conn.AdapterExcute(query);
+            List<Review>reviews = new List<Review>();
+            foreach(DataRow dr in da.Rows)
+            {
+                Review review = new Review(
+                    dr["ReviewID"].ToString(),
+                    dr["CustomerID"].ToString(),
+                    dr["WorkerID"].ToString(),
+                    dr["Comment"].ToString(),
+                    dr["ReviewImage"].ToString(),
+                    int.Parse(dr["StarNumber"].ToString())
+                    );
+                reviews.Add(review);
+            }
+            return reviews;
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace WUNI.DAOClass
         }
         internal List<DateTime> GetBusyDateOf(string workerID)
         {
-            string sqlStr = string.Format("Select BusyDate from {0} where WorkerID = ", this.tableName, workerID);
+            string sqlStr = string.Format("Select BusyDate from {0} where WorkerID = '{1}'", this.tableName, workerID);
             DataTable data = conn.AdapterExcute(sqlStr);
             List<DateTime> busyDates = new List<DateTime>();
             foreach(DataRow row in data.Rows) 

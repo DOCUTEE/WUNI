@@ -30,7 +30,7 @@ namespace WUNI.Class
             this.customerID = customerID;
             this.workerID = workerID;
             this.comment = comment;
-            this.reviewImage = reviewImage;
+            this.reviewImage = "\\ReviewImage\\" + this.reviewID.ToString() + ".png";
             this.starNumber = starNumber;
         }
 
