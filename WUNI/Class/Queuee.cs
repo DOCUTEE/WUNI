@@ -16,7 +16,7 @@ namespace WUNI.Class
         {
             this.workerID = workerID;
             this.orderID = orderID;
-            Add();
+         
         }
 
         public string WorkerID { get => workerID; set => workerID = value; }

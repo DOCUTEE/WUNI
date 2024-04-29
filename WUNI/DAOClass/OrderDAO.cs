@@ -26,7 +26,7 @@ namespace WUNI.DAOClass
             string sqlStr = string.Format("SELECT MAX(orderID) FROM {0}",this.tableName);
             da = this.conn.AdapterExcute(sqlStr);
 
-            if (da.Rows.Count > 0)
+            if (da.Rows.Count > 0 && da.Rows[0][0].ToString() != "")
             {
                 orderID = da.Rows[0][0].ToString();
                 int num = int.Parse(orderID);
@@ -43,8 +43,8 @@ namespace WUNI.DAOClass
 
         public void Add(Order order)
 {
-            string sqlStr = string.Format("Insert into {0} (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID" +
-                "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}'",
+            string sqlStr = string.Format("Insert into {0} (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)" +
+                "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
                 this.tableName, order.OrderID, order.FieldID, order.CustomerID, order.IsWorked, order.Description, order.IssueImage, order.IssueDate, order.IsQueue, order.WorkerID);
             this.conn.CommandExecute(sqlStr);
         }

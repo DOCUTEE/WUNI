@@ -20,8 +20,8 @@ namespace WUNI.DAOClass
         }
         internal void Add(Queuee queuee)
         {
-            string sqlStr = string.Format("Insert into {0} (WorkerID, OrderID" +
-                "Values ('{1}', '{2}'",
+            string sqlStr = string.Format("Insert into {0} (WorkerID, OrderID)" +
+                "Values ('{1}', '{2}')",
                 this.tableName, queuee.WorkerID, queuee.OrderID);
             conn.CommandExecute(sqlStr);
         }

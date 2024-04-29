@@ -107,6 +107,12 @@ namespace WUNI.WINDOWS
             if (dtpBookingDate.SelectedDate != null)
             {
                 //nhảy ra window tạo đơn WBookingThisWorker(string customerID, string workerID, DateTime bookingDate)
+                WBookingThisWorker wBookingThisWorker =new WBookingThisWorker(customerID,workerID,dtpBookingDate.SelectedDate.Value);
+                wBookingThisWorker.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ngày!");
             }
         }
     }

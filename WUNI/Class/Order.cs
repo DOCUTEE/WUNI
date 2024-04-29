@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WUNI.DAOClass;
@@ -33,7 +34,7 @@ namespace WUNI.Class
 
         }
 
-
+        
 
         void Init(string orderID, string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
         {
@@ -42,7 +43,7 @@ namespace WUNI.Class
             this.customerID = customerID;
             this.isWorked = false;
             this.description = description;
-            this.issueImage = issueImage;
+            this.issueImage = "\\IssueImage\\"+ orderID.ToString() + ".png";
             this.issueDate = issueDate;
             this.isQueue = false;
             this.workerID = workerID;
