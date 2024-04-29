@@ -1,0 +1,93 @@
+﻿<Window x:Class="WUNI.WINDOWS.WBookingThisWorker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WUNI.WINDOWS"
+        mc:Ignorable="d"
+        Title="WBookingThisWorker" Height="900" Width="1200">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Margin="10" CornerRadius="20" BorderThickness="2" >
+                        <Border.Background>
+                            <ImageBrush x:Name="issueImage"></ImageBrush>
+                        </Border.Background>
+                    </Border>
+                    <Button Grid.Row="1" Height="40" Width="200" Content="Chọn ảnh" FontSize="30" Margin="10" VerticalAlignment="Top" Click="Button_Click"></Button>
+                    
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Dịch vụ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Tên thợ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="SĐT thợ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Tên khách hàng:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="SĐT khách hàng:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Ngày đặt:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa chỉ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Mô tả:" FontSize="30" VerticalAlignment="Top" Margin="10,10,10,0"></TextBlock>
+                    <Border Grid.Row="0" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblField" Text="Tên dịch vụ" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblWorkerName" Text="Tên Thợ" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblPhoneNumWorker" Text="SĐT Thợ" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblCustomerName" Text="Tên khách" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblPhoneNumCustomer" Text="SĐT khách" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <DatePicker x:Name="dtpBookingDate" BorderThickness="0" FontSize="30" VerticalAlignment="Center">
+                            
+                        </DatePicker>
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBlock x:Name="tblCustomerAddress" Text="Địa chỉ khách hàng" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    </Border>
+                    <Border Grid.Row="7" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
+                        <TextBox x:Name="txbCustomerAddress" Text="Mô tả khách hàng" FontSize="30"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent"></TextBox>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Width="150" Height="50" CornerRadius="10" Background="LightSteelBlue" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">Đặt thợ</Label>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>

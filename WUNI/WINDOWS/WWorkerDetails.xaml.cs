@@ -45,6 +45,7 @@ namespace WUNI.WINDOWS
             tblField.Text = fieldDAO.GetFieldFrom(worker.FieldID);
             ReviewDAO reviewDAO = new ReviewDAO();
             tblRating.Text = reviewDAO.StarAvgOf(this.workerID).ToString() + "/5";
+            //Move busydate into dtpBookingDate
             BusyDateDAO busyDateDAO = new BusyDateDAO();
             List<DateTime>busy = busyDateDAO.GetBusyDateOf(this.workerID);
             foreach(var busyDate in busy)
@@ -102,7 +103,11 @@ namespace WUNI.WINDOWS
 
         private void btnRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+
+            if (dtpBookingDate.SelectedDate != null)
+            {
+                //nhảy ra window tạo đơn WBookingThisWorker(string customerID, string workerID, DateTime bookingDate)
+            }
         }
     }
 }

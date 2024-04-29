@@ -148,13 +148,13 @@
                     <TextBlock Text="Mô tả" Grid.Row="0" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0.7"/>
                     <TextBlock x:Name="tblDescription" Grid.Row="1" Margin="10,0,10,0" TextAlignment="Justify" HorizontalAlignment="Left" Text="" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Top" TextWrapping="Wrap" />
                 </Grid>
-                <Grid x:Name="containerReviews" Grid.Row="1" Visibility="Hidden">
+                <ScrollViewer x:Name="containerReviews" Grid.Row="1" Visibility="Hidden">
                     <UniformGrid x:Name="ufgReviews"  Columns="1" VerticalAlignment="Top">
-                        
-                    </UniformGrid>
-                </Grid>
-            </Grid>
 
+                    </UniformGrid>
+                </ScrollViewer>
+            </Grid>
+            
         </Grid>
     </Border>
 </Window>
