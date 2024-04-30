@@ -16,6 +16,9 @@
     <Compile Update="WINDOWS\CustomerPages\PListWorkers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WINDOWS\UC\UCCustomerReviewOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WINDOWS\UC\UCReview.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WINDOWS\WorkerPages\PWorkerInformation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WINDOWS\WReviewOrder.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WINDOWS\WWorkerAnalysis.xaml.cs">
@@ -45,6 +51,9 @@
     <Page Update="WINDOWS\CustomerPages\PListWorkers.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="WINDOWS\UC\UCCustomerReviewOrder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WINDOWS\UC\UCReview.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -58,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WINDOWS\WorkerPages\PWorkerInformation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WINDOWS\WReviewOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WINDOWS\WWorkerAnalysis.xaml">
