@@ -39,7 +39,7 @@ namespace WUNI.DAOClass
         {
             List<Worker> workers = new List<Worker>();
 
-            string query = string.Format("Seclect WorkerID from {0} Where CustomerID = '{1}'", this.tableName, customerID);
+            string query = string.Format("Select WorkerID from {0} Where CustomerID = '{1}'", this.tableName, customerID);
             DataTable da = conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
@@ -51,7 +51,10 @@ namespace WUNI.DAOClass
 
             }
             return workers;
-
+        }
+        public bool isLiked(string  customerID, string workerID)
+        {
+            string query = string.Format("Select * from ")
         }
     }
 }

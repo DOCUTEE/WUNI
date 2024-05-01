@@ -31,7 +31,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="workerName" Grid.Column="0" FontSize="28" Text="Tên thợ" VerticalAlignment="Center" Margin="10"></TextBlock>
-                    
+                    <Image x:Name="likeIcon" Grid.Column="1" ></Image>
 
                 </Grid>
                 <Grid Grid.Row="1">

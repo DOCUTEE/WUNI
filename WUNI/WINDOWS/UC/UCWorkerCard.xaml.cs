@@ -38,16 +38,17 @@ namespace WUNI.WINDOWS.UC
             workerRating.Text = "Đánh giá: " + worker.Rating.ToString();
             workerAddress.Text = "Địa chỉ: " + worker.Address.ToString();
             lblPhoneNumber.Text ="Số điện thoại: " +  worker.PhoneNumber.ToString();
-            imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png")); 
+            imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png"));
             workerPrice.Text = worker.PricePerHour.ToString() + "k /Giờ";
+
+            likeIcon.Source = new BitmapImage(new Uri(path1 + "\\Logo\\Heart"))
         }
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {
             WCustomerMain wCustomerMain = (WCustomerMain)Window.GetWindow(this);
             MessageBox.Show(wCustomerMain.CustomerID);
             WWorkerDetails workerDetails = new WWorkerDetails(wCustomerMain.CustomerID, this.workerID);
-            workerDetails.Show();
-            
+            workerDetails.Show();   
         }
     }
 }
