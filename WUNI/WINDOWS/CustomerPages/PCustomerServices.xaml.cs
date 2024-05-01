@@ -33,14 +33,12 @@ namespace WUNI.WINDOWS.CustomerPages
         {
             //Thịnh lấy ra 1 list các Field rồi truyền vào UCServiceCard xong đem UC đưa vào uniformGrid ufgServices.
             InitializeComponent();
-            
             this.customerID = customerID;
-
             FieldDAO fieldDAO = new FieldDAO();
             List<Field> fields = fieldDAO.GetListField();
             foreach (var field in fields)
             {
-                UCServiceCard uCServiceCard = new UCServiceCard(field);
+                UCServiceCard uCServiceCard = new UCServiceCard(field, this.customerID);
                 ufgServices.Children.Add(uCServiceCard);
             }
             
