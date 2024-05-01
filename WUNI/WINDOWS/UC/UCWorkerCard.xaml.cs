@@ -41,7 +41,7 @@ namespace WUNI.WINDOWS.UC
             imgProfile.ImageSource = new BitmapImage(new Uri(path1 + "\\WorkerImage\\" + worker.WorkerID.ToString() + ".png"));
             workerPrice.Text = worker.PricePerHour.ToString() + "k /Giờ";
 
-            likeIcon.Source = new BitmapImage(new Uri(path1 + "\\Logo\\Heart"))
+            //likeIcon.Source = new BitmapImage(new Uri(path1 + "\\Logo\\Heart"));
         }
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {

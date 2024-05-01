@@ -52,9 +52,9 @@ namespace WUNI.DAOClass
             }
             return workers;
         }
-        public bool isLiked(string  customerID, string workerID)
-        {
-            string query = string.Format("Select * from ")
-        }
+        //public bool isLiked(string  customerID, string workerID)
+        //{
+        //    string query = string.Format("Select * from ")
+        //}
     }
 }

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WUNI.Class;
+using WUNI.DAOClass;
+using WUNI.WINDOWS.UC;
 
 namespace WUNI.WINDOWS.CustomerPages
 {
@@ -30,6 +33,14 @@ namespace WUNI.WINDOWS.CustomerPages
             InitializeComponent();
             this.customerID = customerID;
             //Task: Truyền UCCustomerReviewOrder vào ufgWorkedOrders
+            WorkedDAO workedDAO = new WorkedDAO();
+            foreach (Order order in workedDAO.WorkedFor(this.customerID))
+            {
+                UCCustomerReviewOrder uCCustomerReviewOrder = new UCCustomerReviewOrder(order);
+                ufgWorkedOrders.Children.Add(uCCustomerReviewOrder);
+            }
+
+
         }
         
     }
