@@ -20,9 +20,25 @@ namespace WUNI.WINDOWS.CustomerPages
     /// </summary>
     public partial class PCreateOrder : Page
     {
+        private string customerID;
         public PCreateOrder()
         {
             InitializeComponent();
+        }
+        public PCreateOrder(string customerID)
+        {
+            InitializeComponent();
+            this.customerID = customerID;
+            //Huy: Truyền data vào
+        }
+        private void btnSelectIssueImage_Click(object sender, RoutedEventArgs e)
+        {
+            //Huy: Chọn ảnh
+        }
+
+        private void btnCreateOrder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //Huy: tạo đơn
         }
     }
 }
