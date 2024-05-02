@@ -8,23 +8,21 @@
       d:DesignHeight="900" d:DesignWidth="1200"
       Title="PListWorkers">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Border Background="#002B5B" CornerRadius="20" Margin="10,10,10,0">
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
                 <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" HorizontalAlignment="Right" Width="20" Margin="0,10,0,10" Background="#EA5455">
 
-            </Border>
-            <Label Grid.Column="1" Margin="20,0,0,0" Content="Thợ + Tên ngành" FontSize="48" VerticalAlignment="Center"></Label>
+                <Label x:Name="lblPageName" Grid.Column="0" Margin="20,0,0,0" Content="Thợ + Tên ngành" FontSize="48" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#F9F5EB" FontWeight="Bold"></Label>
             <Border Grid.Row="0" Grid.Column="2">
-                <ComboBox x:Name="cobSort" Margin="200,30,20,20" FontSize="26"  SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBox x:Name="cobSort" Margin="200,30,20,30" FontSize="26"  SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Bahnschrift">
                     <ComboBoxItem >Sắp xếp theo</ComboBoxItem>
                     <ComboBoxItem >Giá tăng dần</ComboBoxItem>
                     <ComboBoxItem >Giá giảm dần</ComboBoxItem>
@@ -32,7 +30,7 @@
                 </ComboBox>
             </Border>
         </Grid>
-
+        </Border>
         <ScrollViewer Grid.Row="1">
 
             <UniformGrid x:Name="ufgWorkers" Columns="2" VerticalAlignment="Top">

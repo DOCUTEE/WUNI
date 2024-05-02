@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WUNI.WINDOWS"
         mc:Ignorable="d"
         Title="WRegisterCustomer" Height="900" Width="1440">
-    <Grid>
+    <Grid Background="#F9F5EB">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Tạo tài khoản" FontSize="48" HorizontalAlignment="Center" ></TextBlock>
+        <TextBlock Grid.Row="0" Text="Tạo tài khoản" FontSize="48" HorizontalAlignment="Center" FontFamily="Bahnschrift" ></TextBlock>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -25,56 +25,56 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Background="#F9F5EB"  Grid.Row="0" Grid.Column="0"  BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbUserName" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Tên tài khoản">
+            <Border Background="#F9F5EB"  Grid.Row="0" Grid.Column="0"  BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbUserName" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Tên tài khoản" FontFamily="Bahnschrift">
 
                 </TextBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbName" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Họ và tên" >
+            <Border Background="#F9F5EB" Grid.Row="1" Grid.Column="0" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbName" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Họ và tên" FontFamily="Bahnschrift" >
 
                 </TextBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbAddress" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Địa chỉ" >
+            <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="0" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbAddress" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Địa chỉ" FontFamily="Bahnschrift" >
 
                 </TextBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbCitizenID" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Căn cước công dân">
+            <Border Background="#F9F5EB" Grid.Row="3" Grid.Column="0" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbCitizenID" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Căn cước công dân" FontFamily="Bahnschrift">
 
                 </TextBox>
             </Border>
-            <Border Grid.Row ="5" Grid.Column="0" Background="#F9F5EB" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbDescription" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Mô tả bản thân">
+            <Border Grid.Row ="5" Grid.Column="0" Background="#F9F5EB" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbDescription" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Mô tả bản thân" FontFamily="Bahnschrift">
 
                 </TextBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <PasswordBox x:Name="txpPassword" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" >
+            <Border Background="#F9F5EB" Grid.Row="0" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5,5,5,5" CornerRadius="10" Margin="20,20,20,20">
+                <PasswordBox x:Name="txpPassword" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" FontFamily="Bahnschrift" >
 
                 </PasswordBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbEmail" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Email">
+            <Border Background="#F9F5EB" Grid.Row="1" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbEmail" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Email" FontFamily="Bahnschrift">
 
                 </TextBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <DatePicker x:Name="dtpBirth" Margin="10,10,10,10" FontSize="26" Background="#F9F5EB" Text="Ngày sinh">
+            <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <DatePicker x:Name="dtpBirth" Margin="10,10,10,10" FontSize="26" Background="#F9F5EB" Text="Ngày sinh" FontFamily="Bahnschrift">
 
                 </DatePicker>
             </Border>
-            <Border Grid.Row="3" Background="#F9F5EB" Grid.Column="1" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="20,20,20,20">
-                <ComboBox x:Name ="cboGender" SelectedIndex="0" Margin="0,10,0,10" Opacity="1" FontSize="26" Background="#F9F5EB" BorderThickness ="0">
+            <Border Grid.Row="3" Background="#F9F5EB" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <ComboBox x:Name ="cboGender" SelectedIndex="0" Margin="0,10,0,10" Opacity="1" FontSize="26" Background="#F9F5EB" BorderThickness ="0" FontFamily="Bahnschrift">
                     <ComboBoxItem>Giới tính</ComboBoxItem>
                     <ComboBoxItem>Nam</ComboBoxItem>
                     <ComboBoxItem>Nữ</ComboBoxItem>
                     <ComboBoxItem>Khác</ComboBoxItem>
                 </ComboBox>
             </Border>
-            <Border Background="#F9F5EB" Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <TextBox x:Name="txbPhoneNumber" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Số điện thoại">
+            <Border Background="#F9F5EB" Grid.Row="4" Grid.Column="0" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
+                <TextBox x:Name="txbPhoneNumber" Margin="10,10,10,10" FontSize="26" BorderThickness="0" Background="#F9F5EB" Text="Số điện thoại" FontFamily="Bahnschrift">
 
                 </TextBox>
             </Border>
@@ -88,14 +88,14 @@
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Background="#F9F5EB" CornerRadius="10" BorderThickness="2" BorderBrush="Black" Margin="25,10,0,0">
+                    <Border Grid.Row="0" Background="#F9F5EB" CornerRadius="10" BorderBrush="#FF002B5B" BorderThickness="5" Margin="25,10,0,0">
                         <Image x:Name="imgProfile"  Stretch="UniformToFill"></Image>
                     </Border>
 
-                    <Button Grid.Row="1" Content="Chọn ảnh" FontSize="26" Margin="30,10,30,10" Click="SelectImage_Click"></Button>
+                    <Button Grid.Row="1" Content="Chọn ảnh" FontSize="26" Margin="30,10,30,10" Click="SelectImage_Click" FontFamily="Bahnschrift"></Button>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Button x:Name="btnRegister" Content="Đăng ký" Click="btnRegister_Click" Margin="10,200,10,10" FontSize="48"  Background="#EA5455" ></Button>
+                    <Button x:Name="btnRegister" Content="Đăng ký" Click="btnRegister_Click" Margin="10,200,10,10" FontSize="48"  Background="#EA5455" FontFamily="Bahnschrift" ></Button>
                 </Grid>
             </Grid>
         </Grid>

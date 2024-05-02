@@ -8,23 +8,22 @@
             d:DesignHeight="900" d:DesignWidth="1200"
       Title="PreviewOrder">
 
-    <Grid Background="White">
+    <Grid Background="#F9F5EB">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#002B5B" CornerRadius="20" Margin="10,10,10,0">
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
                 <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" HorizontalAlignment="Right" Width="20" Margin="0,10,0,10" Background="#EA5455">
-
-            </Border>
-            <Label Grid.Column="1" Margin="20,0,0,0" Content="Đánh giá" FontSize="48" VerticalAlignment="Center"></Label>
+            
+            <Label Grid.Column="0" Margin="20,0,0,0" Content="Đánh giá" FontSize="48" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#FFF9F5EB"></Label>
             
         </Grid>
+        </Border>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400"/>
@@ -35,12 +34,12 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Border CornerRadius="20,20,20,20" Grid.Row="0" Margin="20">
+                <Border BorderThickness="5" BorderBrush="#002B5B" CornerRadius="20,20,20,20" Grid.Row="0" Margin="20">
                     <Border.Background>
                         <ImageBrush x:Name="issueImage" Stretch="UniformToFill"/>
                     </Border.Background>
                 </Border>
-                <Border CornerRadius="20,20,20,20" Grid.Row="1" Margin="20">
+                <Border BorderThickness="5" BorderBrush="#002B5B" CornerRadius="20,20,20,20" Grid.Row="1" Margin="20">
                     <Border.Background>
                         <ImageBrush x:Name="reviewImage" Stretch="UniformToFill"/>
                     </Border.Background>
@@ -60,13 +59,13 @@
                     <RowDefinition Height="3*"/>
 
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="txbField" Grid.Row="0" Text="Tên ngành" Margin="10,0,10,0" FontSize="36" ></TextBlock>
-                <TextBlock x:Name="txbDescription" Grid.Row="1" TextWrapping="WrapWithOverflow" FontSize="26" VerticalAlignment="Top" Margin="10,0,10,0" Text="Mô tả vấn đề của khách hàng"></TextBlock>
-                <TextBlock x:Name="txbCustomerName"  Grid.Row="2" Text="Tên khách hàng" FontSize="28" Margin="10,0,10,0"></TextBlock>
-                <TextBlock x:Name="txbAddress" Grid.Row="3" Text="Địa chỉ" FontSize="26" TextWrapping="WrapWithOverflow" Margin="10,0,10,0"></TextBlock>
-                <TextBlock x:Name="txbPhoneNumber" Grid.Row="4" Text="Số điện thoại" FontSize="26" Margin="10,0,10,0"></TextBlock>
-                <TextBlock x:Name="txbIssueDate" Grid.Row="5" Text="Ngày làm" FontSize="26" Margin="10,0,10,0"></TextBlock>
-                <TextBlock Grid.Row="6" Text="Đánh giá" FontSize="26" Margin="10,0,10,0"></TextBlock>
+                <TextBlock x:Name="txbField" Grid.Row="0" Text="Tên ngành" Margin="10,0,10,0" FontSize="36" FontFamily="Bahnschrift" FontWeight="Bold" ></TextBlock>
+                <TextBlock x:Name="txbDescription" Grid.Row="1" TextWrapping="WrapWithOverflow" FontSize="26" VerticalAlignment="Top" Margin="10,0,10,0" Text="Mô tả vấn đề của khách hàng" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock x:Name="txbCustomerName"  Grid.Row="2" Text="Tên khách hàng" FontSize="28" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock x:Name="txbAddress" Grid.Row="3" Text="Địa chỉ" FontSize="26" TextWrapping="WrapWithOverflow" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock x:Name="txbPhoneNumber" Grid.Row="4" Text="Số điện thoại" FontSize="26" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock x:Name="txbIssueDate" Grid.Row="5" Text="Ngày làm" FontSize="26" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock Grid.Row="6" Text="Đánh giá" FontSize="26" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                 <Grid x:Name="starContainer" Grid.Row="7"  >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -77,8 +76,8 @@
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
                 </Grid>
-                <TextBlock Grid.Row="8" Text="Bình luận" FontSize="26" Margin="10,0,10,0"></TextBlock>
-                <TextBlock x:Name="txbComment" Grid.Row="9" Text="Đây là nơi bình luận" FontSize="26" Margin="10,20,20,20" TextWrapping="WrapWithOverflow"></TextBlock>
+                <TextBlock Grid.Row="8" Text="Bình luận" FontSize="26" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                <TextBlock x:Name="txbComment" Grid.Row="9" Text="Đây là nơi bình luận" FontSize="26" Margin="10,20,20,20" TextWrapping="WrapWithOverflow" FontFamily="Bahnschrift"></TextBlock>
             </Grid>
         </Grid>
         

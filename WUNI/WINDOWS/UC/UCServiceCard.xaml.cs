@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -45,19 +46,23 @@ namespace WUNI.WINDOWS.UC
         private void borderServiceCard_MouseEnter(object sender, MouseEventArgs e)
         {
             borderServiceCard.BorderThickness = new Thickness(3);
-            borderServiceCard.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFBE22");
+            borderServiceCard.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#002B5B");
+
         }
 
         private void borderServiceCard_MouseLeave(object sender, MouseEventArgs e)
         {
             borderServiceCard.BorderThickness = new Thickness(0);
-            borderServiceCard.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#00000000");
+            //borderServiceCard.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#00000000");
         }
+    
 
         private void borderServiceCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             WCustomerMain wCustomerMain = (WCustomerMain)Window.GetWindow(this);
             wCustomerMain.fContent.NavigationService.Navigate(new PListWorkers(this.field,this.customerID));
         }
+
+        
     }
 }

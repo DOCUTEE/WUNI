@@ -59,7 +59,6 @@ namespace WUNI.WINDOWS.CustomerPages
             tblAddress.Text = customer.Address;
             tblEmail.Text = customer.Mail;
             tblGender.Text = customer.Gender;
-            tblGender.Text = customer.Birth.ToString();
 
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;

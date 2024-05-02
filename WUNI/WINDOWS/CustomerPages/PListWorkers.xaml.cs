@@ -34,6 +34,7 @@ namespace WUNI.WINDOWS.CustomerPages
             InitializeComponent();
             this.customerID = customerID;
             this.field = field;
+            lblPageName.Content =field.FieldName;
             WorkerDAO workerDAO = new WorkerDAO();
             this.workers = workerDAO.GetListWokerOfField(field.FieldID);
             foreach (var worker in workers)

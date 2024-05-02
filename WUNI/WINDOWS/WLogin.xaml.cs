@@ -24,9 +24,9 @@ namespace WUNI.WINDOWS
         public WLogin()
         {
             InitializeComponent();
-            string path = Environment.CurrentDirectory;
-            string path2 = Directory.GetParent(path).Parent.Parent.FullName + "\\Logo\\Wuni.jpg";
-            imgBrand.Source = new BitmapImage(new Uri(path2));
+            //string path = Environment.CurrentDirectory;
+            //string path2 = Directory.GetParent(path).Parent.Parent.FullName + "\\Logo\\Wuni.jpg";
+            //imgBrand.Source = new BitmapImage(new Uri(path2));
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

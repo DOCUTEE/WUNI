@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WUNI.WINDOWS"
         mc:Ignorable="d"
         Title="WCustomerMain" Height="900" Width="1440">
-    <Grid>
+    <Grid Background="#F9F5EB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
             <ColumnDefinition/>

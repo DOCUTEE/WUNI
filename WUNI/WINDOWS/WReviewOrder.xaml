@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WUNI.WINDOWS"
         mc:Ignorable="d"
         Title="WReviewOrder" Height="260" Width="600">
-    <Grid>
+    <Grid Background="#F9F5EB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
             <ColumnDefinition/>
@@ -17,13 +17,13 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Border CornerRadius="20" Margin="10">
+                <Border CornerRadius="20" Margin="10" BorderThickness="5" BorderBrush="#002B5B">
                     <Border.Background>
                         <ImageBrush x:Name="issueImage"></ImageBrush>
                     </Border.Background>
                 </Border>
             </Grid>
-            <Button x:Name="btnChooseImage" Grid.Row="1" Width="150" Height="25" Content="Chọn ảnh" FontSize="18" Click="btnChooseImage_Click"></Button>
+            <Button x:Name="btnChooseImage" Grid.Row="1" Width="150" Height="25" Content="Chọn ảnh" FontSize="18" Click="btnChooseImage_Click" FontFamily="Bahnschrift" Background="#FF002B5B" Foreground="#FFF9F5EB"></Button>
         </Grid>
         
         <Grid Grid.Column="1">
@@ -44,9 +44,9 @@
                 
             </Grid>
             <Border Grid.Row="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                <TextBox x:Name="txbCustomerDescription" Text="Mô tả khách hàng" FontSize="20"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent"></TextBox>
+                <TextBox x:Name="txbCustomerDescription" Text="Mô tả khách hàng" FontSize="20"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent" FontFamily="Bahnschrift" Foreground="#FF002B5B"></TextBox>
             </Border>
-            <Button x:Name="btnReview" Grid.Row="2" Width="150" Height="30" Content="Gửi đánh giá" FontSize="20" Click="btnReview_Click"></Button>
+            <Button x:Name="btnReview" Grid.Row="2" Width="150" Height="30" Content="Gửi đánh giá" FontSize="20" Click="btnReview_Click" FontFamily="Bahnschrift" BorderBrush="#FF002B5B" Background="#FFEA5455" Foreground="#FFF9F5EB"></Button>
 
         </Grid>
     </Grid>

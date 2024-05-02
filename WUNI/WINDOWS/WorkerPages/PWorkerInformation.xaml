@@ -8,7 +8,7 @@
       d:DesignHeight="900" d:DesignWidth="1200"
       Title="PWorkerInformation">
 
-    <Border CornerRadius="10" Margin="10,10,10,10" Background="white">
+    <Border CornerRadius="10" Margin="10,10,10,10" Background="#FFF9F5EB">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -30,14 +30,14 @@
                     </Grid.RowDefinitions>
                 </Grid>
                 <Grid Grid.Row="0">
-                    <Border CornerRadius="10" >
+                    <Border CornerRadius="10" Margin="10" BorderThickness="5" BorderBrush="#002B5B">
                         <Border.Background>
                             <ImageBrush x:Name="imgWorkerProfile" Stretch="UniformToFill"/>
                         </Border.Background>
                     </Border>
                 </Grid>
                 <!--<Label Grid.Row="1"  FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Bottom" Opacity="0.5" HorizontalAlignment="Center">Kinh nghiệm</Label>-->
-               
+
             </Grid>
             <Grid Grid.Column="1" Margin="10,0,0,0">
                 <Grid.RowDefinitions>
@@ -62,11 +62,11 @@
                             <ColumnDefinition/>
 
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="tblWorkerName" Grid.Column="0" Text="Tên thợ" FontFamily="Bahnschrift" FontSize="32" VerticalAlignment="Bottom"></TextBlock>
-                        
+                        <TextBlock x:Name="tblWorkerName" Grid.Column="0" Text="Tên thợ" FontFamily="Bahnschrift" FontSize="36" VerticalAlignment="Bottom" Foreground="#FF002B5B" FontWeight="Bold"></TextBlock>
+
 
                     </Grid>
-                    <TextBlock x:Name="tblField" Text="Tên ngành nghề" Foreground="#F1C823" Grid.Row="1" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Bottom"></TextBlock>
+                    <TextBlock x:Name="tblField" Text="Tên ngành nghề" Foreground="#FFEA5455" Grid.Row="1" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Bottom"></TextBlock>
                     <Label Content="Rating"  Grid.Row="2" FontFamily="Bahnschrift" FontSize="15" VerticalAlignment="Bottom"/>
                     <TextBlock x:Name="tblRating" Text="4.9/5 "  Grid.Row="3" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center"/>
 
@@ -107,25 +107,25 @@
                         <Label Content="Số điện thoại" Grid.Row="0" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" ></Label>
                         <Label Content="Địa chỉ" Grid.Row="1" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center"></Label>
                         <Label Content="Email" Grid.Row="2" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center"></Label>
-                        <TextBlock x:Name = "tblPhoneNumber" Text="Số điện thoại tại đây"  Grid.Row="0" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" ></TextBlock>
-                        <TextBlock x:Name="tblAddress" Text="Địa chỉ tại đây" Grid.Row="1" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
-                        <TextBlock x:Name="tblEmail"  Text="Email tại đây" Grid.Row="2" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock x:Name = "tblPhoneNumber" Text="Số điện thoại tại đây"  Grid.Row="0" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFEA5455" ></TextBlock>
+                        <TextBlock x:Name="tblAddress" Text="Địa chỉ tại đây" Grid.Row="1" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFEA5455"></TextBlock>
+                        <TextBlock x:Name="tblEmail"  Text="Email tại đây" Grid.Row="2" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFEA5455"></TextBlock>
 
                     </Grid>
                     <Label Content="Thông tin cơ bản" Grid.Row="2" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Bottom" Opacity="0.7"/>
                     <Grid Grid.Row="3">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="78.334"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="78.333"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Giới tính"  Grid.Row="0" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" ></Label>
+                        <Label Content="Giới tính"  Grid.Row="0" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" Foreground="#FFEA5455" ></Label>
                         <TextBlock x:Name = "tblGender" Text="Giới tính tại đây" Grid.Row="0" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" ></TextBlock>
-                        <Label Content="Ngày sinh"  Grid.Row="1" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" ></Label>
+                        <Label Content="Ngày sinh"  Grid.Row="1" Grid.Column="0" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" Foreground="#FFEA5455" ></Label>
                         <TextBlock x:Name = "tblBirth" Text="Ngày sinh tại đây" Grid.Row="1" Grid.Column="1" FontFamily="Bahnschrift" FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" ></TextBlock>
                     </Grid>
                 </Grid>
@@ -137,7 +137,7 @@
                     </Grid.RowDefinitions>
                     <Label Content="Mô tả" Grid.Row="0" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0.7"/>
                     <TextBlock x:Name="tblDescription" Grid.Row="1" Margin="10,0,10,0" TextAlignment="Justify" HorizontalAlignment="Left" Text="Ở đây" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Top" TextWrapping="Wrap" />
-                    
+
                 </Grid>
             </Grid>
 

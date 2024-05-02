@@ -8,7 +8,7 @@
       d:DesignHeight="900" d:DesignWidth="1200"
       Title="PCreateOrder">
 
-    <Grid Background="White"> 
+    <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -25,12 +25,12 @@
                         <RowDefinition Height="300"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Margin="10" CornerRadius="20" BorderThickness="2" >
+                    <Border Grid.Row="0" Margin="10" CornerRadius="20" BorderThickness="5" BorderBrush="#FF002B5B">
                         <Border.Background>
                             <ImageBrush x:Name="issueImage"></ImageBrush>
                         </Border.Background>
                     </Border>
-                    <Button x:Name="btnSelectIssueImage" Grid.Row="1" Height="40" Width="200" Content="Chọn ảnh" FontSize="30" Margin="10" VerticalAlignment="Top" Click="btnSelectIssueImage_Click"></Button>
+                    <Button x:Name="btnSelectIssueImage" Grid.Row="1" Height="40" Width="200" Content="Chọn ảnh" FontSize="30" Margin="10" VerticalAlignment="Top" Click="btnSelectIssueImage_Click" FontFamily="Bahnschrift" Foreground="White" Background="#FF002B5B"/>
 
                 </Grid>
                 <Grid Grid.Column="1">
@@ -49,43 +49,53 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Vấn đề" FontSize="40" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Dịch vụ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Mô tả:" FontSize="30" VerticalAlignment="Top" Margin="10,10,10,0"></TextBlock>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Thông tin liên hệ" FontSize="40" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Tên khách hàng:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Ngày đặt:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa chỉ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Số điện thoại:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
-                    <Border Grid.Row="1" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <ComboBox x:Name="cboField" SelectedIndex="0" Margin="0,10,0,10" Opacity="1" FontSize="26" Background="White" BorderThickness ="0">
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Vấn đề" FontSize="40" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF002B5B"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Dịch vụ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Mô tả:" FontSize="30" VerticalAlignment="Top" Margin="10,10,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Thông tin liên hệ" FontSize="40" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF002B5B"></TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Tên khách hàng:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Ngày đặt:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa chỉ:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Số điện thoại:" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                    <Border Grid.Row="1" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <ComboBox x:Name="cboField" SelectedIndex="0" Margin="0,10,0,10" Opacity="1" FontSize="26" Background="White" BorderThickness ="0" FontFamily="Bahnschrift">
                             <ComboBoxItem>Chọn dịch vụ</ComboBoxItem>
                         </ComboBox>
                     </Border>
-                    <Border Grid.Row="2" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <TextBox x:Name="txbCustomerDescription" Text="Mô tả khách hàng" FontSize="30"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent"></TextBox>
+                    <Border Grid.Row="2" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <TextBox x:Name="txbCustomerDescription" Text="Mô tả khách hàng" FontSize="30"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent" FontFamily="Bahnschrift"></TextBox>
                     </Border>
-                    <Border Grid.Row="4" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <TextBlock x:Name="tblCustomerName" Text="Tên khách" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <Border Grid.Row="4" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <TextBlock x:Name="tblCustomerName" Text="Tên khách" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                     </Border>
 
-                    <Border Grid.Row="5" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <DatePicker x:Name="dtpBookingDate" BorderThickness="0" FontSize="30" VerticalAlignment="Center">
+                    <Border Grid.Row="5" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <DatePicker x:Name="dtpBookingDate" BorderThickness="0" FontSize="30" VerticalAlignment="Center" FontFamily="Bahnschrift">
+                            <DatePicker.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                    <GradientStop Color="#FFA3AEB9"/>
+                                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DatePicker.BorderBrush>
 
                         </DatePicker>
                     </Border>
-                    <Border Grid.Row="6" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <TextBlock x:Name="tblCustomerAddress" Text="Địa chỉ khách hàng" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <Border Grid.Row="6" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <TextBlock x:Name="tblCustomerAddress" Text="Địa chỉ khách hàng" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                     </Border>
-                    <Border Grid.Row="7" Grid.Column="1" Margin="10" CornerRadius="10" Background="#E4DCCF">
-                        <TextBlock x:Name="tblCustomerPhoneNumber" Text="" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0"></TextBlock>
+                    <Border Grid.Row="7" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                        <TextBlock x:Name="tblCustomerPhoneNumber" Text="" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                     </Border>
 
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <Border Width="150" Height="50" x:Name="btnCreateOrder" CornerRadius="10" Background="LightSteelBlue" MouseLeftButtonDown="btnCreateOrder_MouseLeftButtonDown">
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Content="Tạo đơn"/>
+                <Border Width="150" Height="50" x:Name="btnCreateOrder" CornerRadius="10" Background="#002B5B" MouseLeftButtonDown="btnCreateOrder_MouseLeftButtonDown">
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Content="Tạo đơn" FontFamily="Bahnschrift" Foreground="White"/>
                 </Border>
             </Grid>
         </Grid>
