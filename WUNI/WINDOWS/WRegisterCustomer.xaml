@@ -61,7 +61,7 @@
                 </TextBox>
             </Border>
             <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="20,20,20,20">
-                <DatePicker x:Name="dtpBirth" Margin="10,10,10,10" FontSize="26" Background="#F9F5EB" Text="Ngày sinh">
+                <DatePicker x:Name="dtpBirth" SelectedDate="4-14-2005" Margin="10,10,10,10" FontSize="26" Background="#F9F5EB" Text="Ngày sinh">
 
                 </DatePicker>
             </Border>
