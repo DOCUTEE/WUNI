@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WUNI.Class;
+using WUNI.WINDOWS.CustomerPages;
 using WUNI.WINDOWS.WorkerPages;
 
 namespace WUNI.WINDOWS
@@ -33,7 +34,7 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            fContent.NavigationService.Navigate(new PWorkerFindJob());
+            fContent.NavigationService.Navigate(new PCreateOrder("7"));
         }
         public WWorkerMain(string workerID)
         {

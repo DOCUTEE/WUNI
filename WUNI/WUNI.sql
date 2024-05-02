@@ -1,4 +1,4 @@
-﻿
+﻿use WUNI
 CREATE TABLE WorkerAccount(
 	UserName varchar(50) unique,
 	Passwords varchar(50),
@@ -85,8 +85,10 @@ CREATE TABLE Customer(
 
 CREATE TABLE Field(
 	FieldID varchar(5) primary key,
-	Field nvarchar(50)
+	Field varchar(50)
 );
+
+drop table Field
 
 INSERT INTO Field (FieldID, Field) VALUES
 ('1', 'Điện gia dụng'),
@@ -104,6 +106,8 @@ INSERT INTO Field (FieldID, Field) VALUES
 ('13', 'Sữa chữa máy móc'),
 ('14', 'Làm vườn'),
 ('15', 'Giúp việc')
+INSERT INTO Field (FieldID, Field) VALUES
+('16', 'VeSinh')
 
 --SELECT MAX(WorkerID) FROM Worker;
 --SELECT MAX(FieldID) FROM Field

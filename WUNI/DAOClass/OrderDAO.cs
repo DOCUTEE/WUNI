@@ -111,7 +111,7 @@ namespace WUNI.DAOClass
                 DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
 
-                Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                Order order = new  Order(fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add (order);
             }
             return orders;

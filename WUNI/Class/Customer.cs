@@ -21,6 +21,7 @@ namespace WUNI.Class
         private string description;
         private string profileImage;
 
+        public Customer() { }
         public Customer(string citizenID, string name, DateTime birth, string gender, string address, string mail, string phoneNumber, string description, string profileImage)
         {
            Init(getLastCustomerID(), citizenID, name, birth , gender, address, mail, phoneNumber, description, profileImage);

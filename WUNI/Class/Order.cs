@@ -8,7 +8,6 @@ using WUNI.DAOClass;
 
 namespace WUNI.Class
 {
-
     public class Order
     {
         private string orderID;
@@ -20,23 +19,27 @@ namespace WUNI.Class
         private DateTime issueDate;
         private bool isQueue;
         private string workerID;
+        public Order ()
+        {
+
+        }
 
         public Order(string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
         {
-            Init(getLastOrderID(), fieldID, customerID, description, issueImage, issueDate, workerID);
+            Init(getLastOrderID(), fieldID, customerID, description, issueDate, workerID);
 
 
         }
         public Order(string orderID, string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
         {
-            Init(orderID, fieldID, customerID, description, issueImage, issueDate, workerID);
+            Init(orderID, fieldID, customerID, description, issueDate, workerID);
 
 
         }
 
         
 
-        void Init(string orderID, string fieldID, string customerID, string description, string issueImage, DateTime issueDate, string workerID)
+        void Init(string orderID, string fieldID, string customerID, string description, DateTime issueDate, string workerID)
         {
             this.orderID = orderID;
             this.fieldID = fieldID;
