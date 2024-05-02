@@ -95,7 +95,7 @@ namespace WUNI.WINDOWS
             //Task: Đóng gói thành review rồi add vào database rồi đóng cửa sổ này
             OrderDAO orderDAO = new OrderDAO();
             Order order =orderDAO.GetOrderFrom(this.orderID);
-            Review review = new Review(this.orderID,
+            Review review = new Review(order.OrderID,
                 order.CustomerID,
                 order.WorkerID,
                 txbCustomerDescription.Text,
@@ -111,8 +111,12 @@ namespace WUNI.WINDOWS
             MessageBox.Show(targetPath);
             //Create ID for this image
             string imageID = order.OrderID;
-            string destFile = targetPath + imageID;
+            string destFile = targetPath + review.ReviewImage;
+            MessageBox.Show(destFile);
+            System.IO.File.Copy(originalPath, destFile, true);
+
             reviewDAO.Add(review);
+            this.Close();
         }
 
         private void btnChooseImage_Click(object sender, RoutedEventArgs e)
@@ -126,7 +130,6 @@ namespace WUNI.WINDOWS
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(openFileDialog.FileName);
                 bitmap.EndInit();
-
                 // Đặt ảnh cho Image control
                 issueImage.ImageSource = bitmap;
             }

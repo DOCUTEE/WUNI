@@ -35,10 +35,11 @@ namespace WUNI.WINDOWS.UC
             this.orderID = order.OrderID;
             FieldDAO fieldDAO = new FieldDAO();
             WorkerDAO workerDAO = new WorkerDAO();
+            Worker worker = workerDAO.GetWorkerFrom(order.WorkerID);
             txbDescription.Text =order.Description;
             txbField.Text = fieldDAO.GetFieldFrom(order.FieldID);
-            txbWorkerName.Text = workerDAO.GetWorkerFrom(order.WorkerID).Name;
-            txbWorkerPhoneNumber.Text = workerDAO.GetWorkerFrom(order.WorkerID).PhoneNumber;
+            txbWorkerName.Text = worker.Name;
+            txbWorkerPhoneNumber.Text = worker.PhoneNumber;
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             issueImage.ImageSource = new BitmapImage(new Uri(path1 + order.IssueImage));

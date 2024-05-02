@@ -68,7 +68,10 @@ namespace WUNI.WINDOWS.UC
             workedDAO.Add(worked);
             OrderDAO orderDAO = new OrderDAO();
             //MessageBox.Show(order.OrderID);
-            orderDAO.UpdateIsWorked(order.OrderID);
+            QueueDAO queueDAO = new QueueDAO();
+            Queuee queuee = new Queuee(this.workerID, this.order.OrderID);
+            queueDAO.RemoveOrder(queuee);
+            orderDAO.UpdateIsWorked(order.OrderID,this.workerID);
         }
     }
 }

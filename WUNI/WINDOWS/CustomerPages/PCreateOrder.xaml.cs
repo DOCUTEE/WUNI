@@ -76,7 +76,7 @@ namespace WUNI.WINDOWS.CustomerPages
             //Huy: tạo đơn
             FieldDAO fieldDAO = new FieldDAO();
             Order order = new Order(
-            fieldDAO.GetIDFieldFrom(cboField.Text),
+            cboField.SelectedIndex.ToString(),
             this.customerID,
             txbCustomerDescription.Text,
             "mimi",

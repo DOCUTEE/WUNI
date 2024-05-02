@@ -56,7 +56,7 @@ namespace WUNI.DAOClass
         {
             List<Order> orders = new List<Order>();
 
-            string sqlStr = string.Format("Select * from {0} Where IsWorked = 0", this.tableName);
+            string sqlStr = string.Format("Select * from {0} Where IsWorked = 0 and isQueue != 0", this.tableName);
             DataTable da = conn.AdapterExcute(sqlStr);
             foreach (DataRow row in da.Rows) 
             {
@@ -101,7 +101,7 @@ namespace WUNI.DAOClass
         public List<Order> Workedfor(string customerId)
         {
             List<Order> orders = new List<Order>();
-            string query = string.Format("Select * from {0} Where customerID = '{1}' and IsWorked = 1", this.tableName, customerId);
+            string query = string.Format("Select * from {0} Where customerID = '{1}'  and IsWorked = 1", this.tableName, customerId);
             DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
@@ -112,18 +112,15 @@ namespace WUNI.DAOClass
                 string issueImage = row["IssueImage"].ToString();
                 DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
-
-//                 Order order = new  Order(fieldID, customerID, description, issueImage, issueDate, workerID);
-=======
                 Order order = new Order(id, fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add (order);
             }
             return orders;
 
         }
-        public void UpdateIsWorked(string orderID)
+        public void UpdateIsWorked(string orderID, string workerID)
         {
-            string query = string.Format("Update {0} Set IsWorked = 1 Where OrderID = '{1}'", this.tableName, orderID);
+            string query = string.Format("Update {0} Set IsWorked = 1, WorkerID = '{2}' Where OrderID = '{1}'", this.tableName, orderID,workerID);
             conn.CommandExecute(query);
         }
         public int NumberOf(string workerID)

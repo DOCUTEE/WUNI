@@ -34,7 +34,8 @@ namespace WUNI.WINDOWS.CustomerPages
             this.customerID = customerID;
             //Task: Truyền UCCustomerReviewOrder vào ufgWorkedOrders
             WorkedDAO workedDAO = new WorkedDAO();
-            foreach (Order order in workedDAO.WorkedFor(this.customerID))
+            List<Order> orders = workedDAO.WorkedFor(this.customerID);
+            foreach (Order order in orders)
             {
                 UCCustomerReviewOrder uCCustomerReviewOrder = new UCCustomerReviewOrder(order);
                 ufgWorkedOrders.Children.Add(uCCustomerReviewOrder);
