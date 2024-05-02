@@ -29,8 +29,7 @@
         <ScrollViewer Grid.Row="1">
 
             <UniformGrid x:Name="ufgWorkedOrders" Columns="3" >
-
-
+                
             </UniformGrid>
         </ScrollViewer>
 

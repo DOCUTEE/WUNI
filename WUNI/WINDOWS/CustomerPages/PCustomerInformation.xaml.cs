@@ -27,6 +27,24 @@ namespace WUNI.WINDOWS.CustomerPages
         public PCustomerInformation()
         {
             InitializeComponent();
+            this.customerID = "1";
+            CustomerDAO customerDAO = new CustomerDAO();
+            Customer customer = customerDAO.GetCustomerFrom(this.customerID);
+            tblCustomerName.Text = customer.Name;
+            tblDescription.Text = customer.Description;
+            tblPhoneNumber.Text = customer.PhoneNumber;
+            tblAddress.Text = customer.Address;
+            tblEmail.Text = customer.Mail;
+            tblGender.Text = customer.Gender;
+            tblGender.Text = customer.Birth.ToString();
+            //Get list liked workers of this customer
+            LikedDAO likedDAO = new LikedDAO();
+            List<Worker> workers = likedDAO.ListLikedOf(this.customerID);
+            foreach (Worker worker in workers)
+            {
+                UCWorkerCard workerCard = new UCWorkerCard(worker, this.customerID);
+                ufgLikedWorker.Children.Add(workerCard);
+            }
         }
         public PCustomerInformation(string customerID)
         {
@@ -46,7 +64,7 @@ namespace WUNI.WINDOWS.CustomerPages
             List<Worker> workers = likedDAO.ListLikedOf(this.customerID);
             foreach(Worker worker in workers)
             {
-                UCWorkerCard workerCard = new UCWorkerCard(worker);
+                UCWorkerCard workerCard = new UCWorkerCard(worker,this.customerID);
                 ufgLikedWorker.Children.Add(workerCard);
             }
         }

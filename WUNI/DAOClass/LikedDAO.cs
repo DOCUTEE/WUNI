@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 
 using WUNI.Class;
+using System.Windows;
 
 namespace WUNI.DAOClass
 {
@@ -22,9 +23,9 @@ namespace WUNI.DAOClass
 
         public void Add(Liked liked)
         {
-            string sqlStr = string.Format("Insert into {0} (WorkerID, CustomerID)" +
-               "VALUES('{1}', '{2}'",
+            string sqlStr = string.Format("Insert into {0} (WorkerID, CustomerID) VALUES('{1}', '{2}')",
                this.tableName, liked.WorkerID, liked.CustomerID);
+            MessageBox.Show(liked.WorkerID +"|"+ liked.CustomerID);
             this.conn.CommandExecute(sqlStr);
         }
 
@@ -52,9 +53,11 @@ namespace WUNI.DAOClass
             }
             return workers;
         }
-        //public bool isLiked(string  customerID, string workerID)
-        //{
-        //    string query = string.Format("Select * from ")
-        //}
+        public bool isLiked(string  customerID, string workerID)
+        {
+            string query = string.Format("Select * from {0} where CustomerID = '{1}' and WorkerID = '{2}'", this.tableName, customerID, workerID);
+            DataTable da = conn.AdapterExcute(query);
+            return da.Rows.Count != 0;
+        }
     }
 }
