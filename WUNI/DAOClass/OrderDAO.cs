@@ -105,7 +105,7 @@ namespace WUNI.DAOClass
             DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
-                string id = row["orderID"].ToString();
+                string id = row["OrderID"].ToString();
                 string fieldID = row["FieldID"].ToString();
                 string customerID = row["CustomerID"].ToString();
                 string description = row["Description"].ToString();
@@ -113,6 +113,8 @@ namespace WUNI.DAOClass
                 DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
 
+//                 Order order = new  Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+=======
                 Order order = new Order(id, fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add (order);
             }

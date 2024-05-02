@@ -43,7 +43,7 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            fContent.NavigationService.Navigate(new PCustomerServices(this.CustomerID));
+            fContent.NavigationService.Navigate(new PCreateOrder(this.CustomerID));
         }
         private void btnFindService_MouseEnter(object sender, MouseEventArgs e)
         {
