@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using WUNI.Class;
 
 namespace WUNI.DAOClass
@@ -84,6 +85,7 @@ namespace WUNI.DAOClass
                 DataTable da =  this.conn.AdapterExcute(sqlStr);
                 foreach (DataRow row in da.Rows)
                 {
+
                     string fieldID = row["FieldID"].ToString();
                     string customerID = row["CustomerID"].ToString();
                     string description = row["Description"].ToString();
@@ -105,7 +107,7 @@ namespace WUNI.DAOClass
             DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
-                string id = row["OrderID"].ToString();
+                string id = row["OrderId"].ToString();
                 string fieldID = row["FieldID"].ToString();
                 string customerID = row["CustomerID"].ToString();
                 string description = row["Description"].ToString();

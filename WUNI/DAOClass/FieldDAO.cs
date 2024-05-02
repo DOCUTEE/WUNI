@@ -53,11 +53,6 @@ namespace WUNI.DAOClass
             return listField;
         }
 
-        public string GetIDFieldFrom(string nameField)
-        {
-            string query = string.Format("Select Field from {0} where Field = '{1}'", this.tableName, nameField);
-            DataRow da = conn.AdapterExcute(query).Rows[0];
-            return da[0].ToString();
-        }
+       
     }
 }

@@ -82,7 +82,7 @@ namespace WUNI.WINDOWS.CustomerPages
             "mimi",
             dtpBookingDate.SelectedDate.Value,
             "-1"
-           );
+           ); 
             OrderDAO orderDAO = new OrderDAO();
             orderDAO.Add(order);
             BitmapImage bitmapImage = issueImage.ImageSource as BitmapImage;
