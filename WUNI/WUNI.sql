@@ -178,3 +178,5 @@ VALUES ('1', '1', '1', 0, N'Description 1', '\\IssueImage\\1.png', '2024-04-26',
 VALUES ('6', '1', '1', 0, N'Description 1', '\\IssueImage\\6.png', '2024-04-26',1, '12')
 
 select * from Liked
+select * from [dbo].[Order]
+select * from Review

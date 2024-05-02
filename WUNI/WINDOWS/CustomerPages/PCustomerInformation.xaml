@@ -32,7 +32,7 @@
                 <Grid Grid.Row="0">
                     <Border CornerRadius="10" >
                         <Border.Background>
-                            <ImageBrush x:Name="imgWorkerProfile" Stretch="UniformToFill"/>
+                            <ImageBrush x:Name="imgCustomerProfile" Stretch="UniformToFill"/>
                         </Border.Background>
                     </Border>
                 </Grid>
@@ -127,7 +127,7 @@
 
                 <Grid x:Name="containerLikedWorker" Grid.Row="1" Visibility="Hidden">
                     <ScrollViewer>
-                        <UniformGrid x:Name="ufgLikedWorker" Columns="2">
+                        <UniformGrid x:Name="ufgLikedWorker" Columns="1">
                             
                         </UniformGrid>
                     </ScrollViewer>

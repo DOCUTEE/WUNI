@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using WUNI.DAOClass;
 using WUNI.Class;
 using WUNI.WINDOWS.UC;
+using System.IO;
 
 namespace WUNI.WINDOWS.CustomerPages
 {
@@ -59,14 +60,11 @@ namespace WUNI.WINDOWS.CustomerPages
             tblEmail.Text = customer.Mail;
             tblGender.Text = customer.Gender;
             tblGender.Text = customer.Birth.ToString();
-            //Get list liked workers of this customer
-            LikedDAO likedDAO = new LikedDAO();
-            List<Worker> workers = likedDAO.ListLikedOf(this.customerID);
-            foreach(Worker worker in workers)
-            {
-                UCWorkerCard workerCard = new UCWorkerCard(worker,this.customerID);
-                ufgLikedWorker.Children.Add(workerCard);
-            }
+
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
+            imgCustomerProfile.ImageSource = new BitmapImage(new Uri(path1 + customer.ProfileImage));
+            tblBirth.Text = customer.Birth.ToString();
         }
 
         private void btnInfo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -80,7 +78,14 @@ namespace WUNI.WINDOWS.CustomerPages
         {
             containerInfo.Visibility = Visibility.Hidden;
             containerLikedWorker.Visibility = Visibility.Visible;
-
+            ufgLikedWorker.Children.Clear();
+            LikedDAO likedDAO = new LikedDAO();
+            List<Worker> workers = likedDAO.ListLikedOf(this.customerID);
+            foreach (Worker worker in workers)
+            {
+                UCWorkerCard workerCard = new UCWorkerCard(worker, this.customerID);
+                ufgLikedWorker.Children.Add(workerCard);
+            }
         }
     }
 }
