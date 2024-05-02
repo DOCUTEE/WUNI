@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WUNI.Class;
+using WUNI.DAOClass;
 
 namespace WUNI.WINDOWS.UC
 {
@@ -51,6 +52,23 @@ namespace WUNI.WINDOWS.UC
             lblConfirm.Foreground = (Brush)new BrushConverter().ConvertFrom("#000000");
             lblConfirm.Content = "Đã nhận";
             //Thịnh làm xác nhận như mẫu UCOrderCard.xaml.cs
+            BusyDate busyDate = new BusyDate(
+               this.workerID,
+               this.order.CustomerID,
+               this.order.IssueDate
+           );
+            BusyDateDAO busyDateDAO = new BusyDateDAO();
+            busyDateDAO.Add(busyDate);
+            Worked worked = new Worked(
+                this.order.OrderID,
+                this.workerID
+            );
+
+            WorkedDAO workedDAO = new WorkedDAO();
+            workedDAO.Add(worked);
+            OrderDAO orderDAO = new OrderDAO();
+            //MessageBox.Show(order.OrderID);
+            orderDAO.UpdateIsWorked(order.OrderID);
         }
     }
 }

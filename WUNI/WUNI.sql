@@ -116,7 +116,11 @@ INSERT INTO Field (FieldID, Field) VALUES
 --INSERT INTO Worker (Passwords, WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage)
 --VALUES ('password123', 'WKR0001', '123456789', 'John Doe', '1990-01-01', 'Male', '123 Main St, City', 'john.doe@example.com', '1234567890', 15.50, 'FIELD1', 'Experienced worker', NULL, 'profile_image.jpg');
 
-
+Create table Liked(
+    WorkerID varchar(10),
+    CustomerID varchar(10),
+    primary key (WorkerID, CustomerID)
+)
 
 
 
@@ -176,3 +180,7 @@ VALUES ('1', '1', '1', 0, N'Description 1', '\\IssueImage\\1.png', '2024-04-26',
 
     INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
 VALUES ('6', '1', '1', 0, N'Description 1', '\\IssueImage\\6.png', '2024-04-26',1, '12')
+
+select * from Liked
+select * from [dbo].[Order]
+select * from Review

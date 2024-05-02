@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WUNI.WINDOWS.WorkerPages;
 using WUNI.WINDOWS.CustomerPages;
+using System.Windows.Navigation;
 
 namespace WUNI.WINDOWS
 {
@@ -131,6 +132,11 @@ namespace WUNI.WINDOWS
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             //Thịnh
+            fContent.NavigationService.Navigate(new PCustomerServices(this.CustomerID));
+            
+            
+            
+
         }
 
         private void btnHistory_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -139,7 +145,9 @@ namespace WUNI.WINDOWS
             btnCreateOrder.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
-            //Thịnh
+            //Thịnh 
+            fContent.NavigationService.Navigate(new PCustomerHistory(this.CustomerID));
+           
         }
 
         private void btnAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -149,7 +157,11 @@ namespace WUNI.WINDOWS
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#E4DCCF");
             //Thịnh
+            fContent.NavigationService.Navigate(new PCustomerInformation(this.CustomerID));
             
+
+
+
         }
         private void btnSignOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -185,6 +197,8 @@ namespace WUNI.WINDOWS
             btnHistory.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             btnAccount.Background = (Brush)new BrushConverter().ConvertFrom("#F9F5EB");
             //Thịnh
+            fContent.NavigationService.Navigate(new PCreateOrder(this.customerID));
+            
         }
     }
 }

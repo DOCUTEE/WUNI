@@ -24,18 +24,20 @@ namespace WUNI.WINDOWS.UC
     public partial class UCServiceCard : UserControl
     {
         private Field field;
+        private string customerID;
         public UCServiceCard()
         {
             InitializeComponent();
         }
-        public UCServiceCard(Field field)
+        public UCServiceCard(Field field, string customerID)
         {
             InitializeComponent();
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             this.field = field;
-            imgService.ImageSource = new BitmapImage(new Uri(path1 + "\\FieldImage\\"+ field.FieldID.ToString() + ".png", UriKind.Relative)); ;
+            imgService.ImageSource = new BitmapImage(new Uri(path1 + "\\FieldImage\\" + field.FieldID.ToString() + ".png", UriKind.Relative)); ;
             lblService.Content = field.FieldName;
+            this.customerID = customerID;
             //Thịnh gán đường dẫn ảnh imgService.source = <Đường dẫn tới Project> + \\FieldImage\\<FieldID>.png;
             //Thịnh thay lblService = tên field;
         }
@@ -55,7 +57,7 @@ namespace WUNI.WINDOWS.UC
         private void borderServiceCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             WCustomerMain wCustomerMain = (WCustomerMain)Window.GetWindow(this);
-            wCustomerMain.fContent.NavigationService.Navigate(new PListWorkers(this.field));
+            wCustomerMain.fContent.NavigationService.Navigate(new PListWorkers(this.field,this.customerID));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WUNI.Class;
+using WUNI.DAOClass;
 
 namespace WUNI.WINDOWS
 {
@@ -90,11 +93,43 @@ namespace WUNI.WINDOWS
         private void btnReview_Click(object sender, RoutedEventArgs e)
         {
             //Task: Đóng gói thành review rồi add vào database rồi đóng cửa sổ này
+            OrderDAO orderDAO = new OrderDAO();
+            Order order =orderDAO.GetOrderFrom(this.orderID);
+            Review review = new Review(this.orderID,
+                order.CustomerID,
+                order.WorkerID,
+                txbCustomerDescription.Text,
+                "",
+                this.starNum
+                );
+            ReviewDAO reviewDAO = new ReviewDAO();
+            //Copy and  paste image of the customer into customerImage Folder
+            BitmapImage bitmapImage = issueImage.ImageSource as BitmapImage;
+            string originalPath = bitmapImage.UriSource.LocalPath;
+            string path = Environment.CurrentDirectory;
+            string targetPath = Directory.GetParent(path).Parent.Parent.FullName;
+            MessageBox.Show(targetPath);
+            //Create ID for this image
+            string imageID = order.OrderID;
+            string destFile = targetPath + imageID;
+            reviewDAO.Add(review);
         }
 
         private void btnChooseImage_Click(object sender, RoutedEventArgs e)
         {
-            //Task: Chọn ảnh sau khi đã làm xong
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Tạo một BitmapImage
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(openFileDialog.FileName);
+                bitmap.EndInit();
+
+                // Đặt ảnh cho Image control
+                issueImage.ImageSource = bitmap;
+            }
         }
     }
 }

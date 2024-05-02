@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using WUNI.Class;
 
 namespace WUNI.DAOClass
@@ -65,7 +67,6 @@ namespace WUNI.DAOClass
                 string issueImage = row["IssueImage"].ToString();
                 DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
-
                 Order order = new Order(orderID,fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add(order);
 
@@ -90,7 +91,7 @@ namespace WUNI.DAOClass
                     DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                     string workerID = row["WorkerID"].ToString();
 
-                    Order order = new Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+                    Order order = new Order(id, fieldID, customerID, description, issueImage, issueDate, workerID);
                     orders.Add(order);
                 }
             }
@@ -104,6 +105,7 @@ namespace WUNI.DAOClass
             DataTable da = this.conn.AdapterExcute(query);
             foreach (DataRow row in da.Rows)
             {
+                string id = row["OrderID"].ToString();
                 string fieldID = row["FieldID"].ToString();
                 string customerID = row["CustomerID"].ToString();
                 string description = row["Description"].ToString();
@@ -111,7 +113,9 @@ namespace WUNI.DAOClass
                 DateTime issueDate = DateTime.Parse(row["IssueDate"].ToString());
                 string workerID = row["WorkerID"].ToString();
 
-                Order order = new  Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+//                 Order order = new  Order(fieldID, customerID, description, issueImage, issueDate, workerID);
+=======
+                Order order = new Order(id, fieldID, customerID, description, issueImage, issueDate, workerID);
                 orders.Add (order);
             }
             return orders;
@@ -129,6 +133,27 @@ namespace WUNI.DAOClass
             return int.Parse(da.Rows[0][0].ToString());
         }
         
+        public Order GetOrderFrom (string orderID)
+        {
+            
+            string query = string.Format("Select * from {0} where OrderID = '{1}' ", this.tableName, orderID);
+            DataTable da = this.conn.AdapterExcute(query);
+                string fieldID = da.Rows[0]["FieldID"].ToString();
+                string customerID = da.Rows[0]["CustomerID"].ToString();
+                string description = da.Rows[0]["Description"].ToString();
+                string issueImage = da.Rows[0]["IssueImage"].ToString();
+                DateTime issueDate = DateTime.Parse(da.Rows[0]["IssueDate"].ToString());
+                string workerID = da.Rows[0]["WorkerID"].ToString();
+                Order order = new Order(orderID,
+                fieldID,
+                customerID,
+                description,
+                issueImage,
+                issueDate,
+                workerID
+                );
+                return order;
+        }
         //HUYGAAAAA
     }
 }

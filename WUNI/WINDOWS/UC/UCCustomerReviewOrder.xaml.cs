@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WUNI.Class;
+using WUNI.DAOClass;
 
 namespace WUNI.WINDOWS.UC
 {
@@ -30,11 +32,24 @@ namespace WUNI.WINDOWS.UC
         {
             InitializeComponent();
             //Task: Truyền data vào đây
+            this.orderID = order.OrderID;
+            FieldDAO fieldDAO = new FieldDAO();
+            WorkerDAO workerDAO = new WorkerDAO();
+            txbDescription.Text =order.Description;
+            txbField.Text = fieldDAO.GetFieldFrom(order.FieldID);
+            txbWorkerName.Text = workerDAO.GetWorkerFrom(order.WorkerID).Name;
+            txbWorkerPhoneNumber.Text = workerDAO.GetWorkerFrom(order.WorkerID).PhoneNumber;
+            string path = Environment.CurrentDirectory;
+            string path1 = Directory.GetParent(path).Parent.Parent.FullName;
+            issueImage.ImageSource = new BitmapImage(new Uri(path1 + order.IssueImage));
+            txbIssueDate.Text = order.IssueDate.ToString();
         }
 
         private void btnReview_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //Task: Mở cửa số WReviewOrder để đánh giá
+            WReviewOrder wReviewOrder = new WReviewOrder(orderID);
+            wReviewOrder.Show();
 
         }
     }

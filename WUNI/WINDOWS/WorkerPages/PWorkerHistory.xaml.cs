@@ -48,7 +48,6 @@ namespace WUNI.WINDOWS.WorkerPages
         {
             WWorkerAnalysis wWorkerAnalysis = new WWorkerAnalysis(this.workerID);
             wWorkerAnalysis.Show();
-            
         }
     }
 }

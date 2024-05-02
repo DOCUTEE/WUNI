@@ -10,6 +10,12 @@
     <Compile Update="WINDOWS\CustomerPages\PCreateOrder.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WINDOWS\CustomerPages\PCustomerHistory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WINDOWS\CustomerPages\PCustomerInformation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WINDOWS\CustomerPages\PCustomerServices.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="WINDOWS\CustomerPages\PCreateOrder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WINDOWS\CustomerPages\PCustomerHistory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WINDOWS\CustomerPages\PCustomerInformation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WINDOWS\CustomerPages\PCustomerServices.xaml">
