@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using WUNI.DAOClass;
 
 namespace WUNI.Class
@@ -49,18 +50,81 @@ namespace WUNI.Class
             this.fieldID = fieldID;
             this.description = description;
             this.rating = rating;
-            this.profileImage = String.Format("\\WorkerImage\\{0}.png",this.WorkerID);
+            this.profileImage = String.Format("\\WorkerImage\\{0}.png", this.WorkerID);
         }
 
 
 
+        public bool IsInputNotEmpty()
+        {
+            return
+                   !string.IsNullOrWhiteSpace(citizenID) &&
+                   !string.IsNullOrWhiteSpace(name) &&
+                   birth != DateTime.MinValue &&
+                   !string.IsNullOrWhiteSpace(gender) &&
+                   !string.IsNullOrWhiteSpace(address) &&
+                   !string.IsNullOrWhiteSpace(mail) &&
+                   !string.IsNullOrWhiteSpace(phoneNumber) &&
+                   pricePerHour > 0 &&
+                   !string.IsNullOrWhiteSpace(fieldID) &&
+                   !string.IsNullOrWhiteSpace(description) &&
+                   rating >= 0 &&
+                   !string.IsNullOrWhiteSpace(profileImage) &&
+                   this.fieldID != "0" && this.pricePerHour >= 0 && this.gender != "Giới tính";
+        }
+
+        public bool IsMailValid()
+        {
+            string m = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            Regex r = new Regex(m);
+            return r.IsMatch(mail);
+        }
+
+        public bool IsValidAge()
+        {
+            return ((DateTime.Now.Year - birth.Year) >= 18);
+
+        }
+
+        public bool IsValidPhone()
+        {
+            string m = @"^\d{3}-\d{4}-\d{3}$";
+            Regex r = new Regex(m);
+            return r.IsMatch(phoneNumber);
+        }
         private string getLastWorkerID()
         {
-            WorkerDAO workerDAO= new WorkerDAO();
+            WorkerDAO workerDAO = new WorkerDAO();
             return workerDAO.getLastWorkerID();
 
         }
-  
+
+        public bool CheckInput()
+        {
+            bool flag = true;
+            if (!IsInputNotEmpty())
+            {
+                flag = false;
+                MessageBox.Show("Tồn tại ô chưa điền");
+            }
+            else if (!IsMailValid())
+            {
+                flag = false;
+                MessageBox.Show("Email không phù hợp");
+            }
+            else if (!IsValidAge())
+            {
+                MessageBox.Show("Người dùng phải lớn hơn 17 tuổi");
+                flag = false;
+            }
+            else if (!IsValidPhone())
+            {
+                flag = false;
+                MessageBox.Show("Số điện thoại không hợp lệ");
+            }
+            return flag;
+        }
+
         public string WorkerID { get => workerID; set => workerID = value; }
         public string CitizenID { get => citizenID; set => citizenID = value; }
         public string Name { get => name; set => name = value; }
@@ -75,4 +139,9 @@ namespace WUNI.Class
         public float Rating { get => rating; set => rating = value; }
         public string ProfileImage { get => profileImage; set => profileImage = value; }
     }
+
+    //public bool Authentication(Worker worker)
+    //{
+       
+    //}
 }

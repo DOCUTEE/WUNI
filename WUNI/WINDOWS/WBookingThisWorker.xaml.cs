@@ -36,6 +36,13 @@ namespace WUNI.WINDOWS
             //truyền data vào
             this.customerID = customerID;
             this.workerID = workerID;
+
+
+            dtpBookingDate.SelectedDate = DateTime.Today;
+            dtpBookingDate.DisplayDateStart = DateTime.Today;
+
+
+
             WorkerDAO workerDAO = new WorkerDAO();
             Worker worker = workerDAO.GetWorkerFrom(workerID);
             CustomerDAO customerDAO = new CustomerDAO();

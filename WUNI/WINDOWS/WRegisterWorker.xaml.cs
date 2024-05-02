@@ -34,6 +34,12 @@ namespace WUNI.WINDOWS
                 cboField.Items.Add(service);
                 //MessageBox.Show(service);
             }
+
+            string path = Environment.CurrentDirectory;
+            string path2 = Directory.GetParent(path).Parent.Parent.FullName + "\\Logo\\Wuni.jpg";
+            imgProfile.Source = new BitmapImage(new Uri(path2));
+
+
         }
         public void SelectImage_Click(object sender, RoutedEventArgs e)
         {
@@ -67,9 +73,10 @@ namespace WUNI.WINDOWS
                 float.Parse(txbPricePerHour.Text),
                 cboField.SelectedIndex.ToString(),
                 txbDescription.Text,
-                5,
+                0,
                 "HUYGA"
             );
+          
             MessageBox.Show(worker.FieldID);
             
             
@@ -89,10 +96,13 @@ namespace WUNI.WINDOWS
                 worker.WorkerID
             );
             WorkerDAO workerDAO = new WorkerDAO();
-            workerDAO.Add(worker);
-            WorkerAccountDAO workerAccountDAO = new WorkerAccountDAO();
-            workerAccountDAO.Add(workerAccount);
-            this.Close();
+            if (worker.CheckInput() && workerAccount.ValidateInput() && workerAccount.IsUniqueUserName())
+            {
+                workerDAO.Add(worker);
+                WorkerAccountDAO workerAccountDAO = new WorkerAccountDAO();
+                workerAccountDAO.Add(workerAccount);
+                this.Close();
+            }
         }
     }
 }
