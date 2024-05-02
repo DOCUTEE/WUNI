@@ -40,7 +40,7 @@ CREATE TABLE Worker(
 	Gender varchar(10),
 	Address nvarchar(255),
 	Mail varchar(50),
-	PhoneNumber varchar(10),
+	PhoneNumber varchar(12),
 	PricePerHour float,
 	FieldID varchar(5),                
 	Description nvarchar(2000),
@@ -48,6 +48,7 @@ CREATE TABLE Worker(
 	ProfileImage varchar(100)
 );
 
+drop table Worker
 delete from Worker
 INSERT INTO Worker (WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage) VALUES
     ('1', 'CIT001', N'John Doe', '1990-05-15', 'Male', N'123 Main Street', 'john.doe@example.com', '1234567890', 15.0, '1', N'Construction worker', 4.5, ''),
