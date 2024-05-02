@@ -47,7 +47,6 @@ namespace WUNI.WINDOWS.UC
             bool isLiked = likedDAO.isLiked(this.customerID,this.workerID);
             if (isLiked) likeIcon.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HeartRed.png"));
             else likeIcon.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HeartBlank.png"));
-
         }
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {
