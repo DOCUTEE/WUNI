@@ -31,7 +31,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="workerName" Grid.Column="0" FontSize="28" Text="Tên thợ" VerticalAlignment="Center" Margin="10"></TextBlock>
-                    
+                    <Image x:Name="likeIcon" Source="C:\Users\quang\Desktop\WUNI\WUNI\Logo\HeartBlank.png" Grid.Column="1" MouseLeftButtonDown="likeIcon_MouseLeftButtonDown" ></Image>
 
                 </Grid>
                 <Grid Grid.Row="1">
@@ -44,7 +44,6 @@
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
-
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -60,7 +59,6 @@
                             <Button x:Name="btnMore"  Content="Xem thêm..." Background="Transparent" Opacity="0.5" FontSize="18"  BorderThickness="0" Click="btnMore_Click" ></Button>
                         </Grid>
                     </Grid>
-
                 </Grid>
             </Grid>
 

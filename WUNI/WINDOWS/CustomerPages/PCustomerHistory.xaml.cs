@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,28 +19,29 @@ using WUNI.WINDOWS.UC;
 namespace WUNI.WINDOWS.CustomerPages
 {
     /// <summary>
-    /// Interaction logic for PCustomerServices.xaml
+    /// Interaction logic for PCustomerHistory.xaml
     /// </summary>
-    public partial class PCustomerServices : Page
+    public partial class PCustomerHistory : Page
     {
         private string customerID;
-        public PCustomerServices()
+        public PCustomerHistory()
         {
             InitializeComponent();
         }
-        public PCustomerServices(string customerID)
+        public PCustomerHistory(string customerID)
         {
-            //Thịnh lấy ra 1 list các Field rồi truyền vào UCServiceCard xong đem UC đưa vào uniformGrid ufgServices.
             InitializeComponent();
             this.customerID = customerID;
-            FieldDAO fieldDAO = new FieldDAO();
-            List<Field> fields = fieldDAO.GetListField();
-            foreach (var field in fields)
+            //Task: Truyền UCCustomerReviewOrder vào ufgWorkedOrders
+            WorkedDAO workedDAO = new WorkedDAO();
+            foreach (Order order in workedDAO.WorkedFor(this.customerID))
             {
-                UCServiceCard uCServiceCard = new UCServiceCard(field, this.customerID);
-                ufgServices.Children.Add(uCServiceCard);
+                UCCustomerReviewOrder uCCustomerReviewOrder = new UCCustomerReviewOrder(order);
+                ufgWorkedOrders.Children.Add(uCCustomerReviewOrder);
             }
-            
+
+
         }
+
     }
 }

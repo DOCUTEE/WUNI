@@ -53,7 +53,7 @@ namespace WUNI.DAOClass
         public void Add(Review review)
         {
             string sqlStr = string.Format("Insert into {0} (ReviewID, CustomerID, WorkerID, Comment, ReviewImage, StarNumber)" +
-               "VALUES('{1}', '{2}',  '{3}', '{4}', '{5}', '{6}'",
+               "VALUES('{1}', '{2}',  '{3}', '{4}', '{5}', {6})",
                this.tableName, review.ReviewID, review.CustomerID, review.WorkerID, review.Comment, review.ReviewImage, review.StarNumber);
             this.conn.CommandExecute(sqlStr);
 
