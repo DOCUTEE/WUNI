@@ -62,7 +62,6 @@
             </Border>
             <Border Background="#F9F5EB" Grid.Row="2" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">
                 <DatePicker x:Name="dtpBirth" Margin="10,10,10,10" FontSize="26" Background="#F9F5EB" Text="Ngày sinh" FontFamily="Bahnschrift">
-
                 </DatePicker>
             </Border>
             <Border Grid.Row="3" Background="#F9F5EB" Grid.Column="1" BorderBrush="#FF002B5B" BorderThickness="5" CornerRadius="10" Margin="20,20,20,20">

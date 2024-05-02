@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 using WUNI.DAOClass;
 
 namespace WUNI.Class
@@ -53,7 +55,67 @@ namespace WUNI.Class
             CustomerDAO customerDAO = new CustomerDAO();
             return customerDAO.getLastCustomerID();
 
-        }   
+        }
+
+        public bool IsInputNotEmpty()
+        {
+            return
+                   !string.IsNullOrWhiteSpace(citizenID) &&
+                   !string.IsNullOrWhiteSpace(name) &&
+                   birth != DateTime.MinValue &&
+                   !string.IsNullOrWhiteSpace(gender) &&
+                   !string.IsNullOrWhiteSpace(address) &&
+                   !string.IsNullOrWhiteSpace(mail) &&
+                   !string.IsNullOrWhiteSpace(phoneNumber) &&
+                   !string.IsNullOrWhiteSpace(description) &&
+                   !string.IsNullOrWhiteSpace(profileImage) && this.gender != "Giới tính";
+        }
+
+        public bool IsMailValid()
+        {
+            string m = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            Regex r = new Regex(m);
+            return r.IsMatch(mail);
+        }
+
+        public bool IsValidAge()
+        {
+            return ((DateTime.Now.Year - birth.Year) >= 18);
+
+        }
+
+        public bool IsValidPhone()
+        {
+            string m = @"^\d{3}-\d{4}-\d{3}$";
+            Regex r = new Regex(m);
+            return r.IsMatch(phoneNumber);
+        }
+
+        public bool CheckInput()
+        {
+            bool flag = true;
+            if (!IsInputNotEmpty())
+            {
+                flag = false;
+                MessageBox.Show("Tồn tại ô chưa điền");
+            }
+            else if (!IsMailValid())
+            {
+                flag = false;
+                MessageBox.Show("Email không phù hợp");
+            }
+            else if (!IsValidAge())
+            {
+                MessageBox.Show("Người dùng phải lớn hơn 17 tuổi");
+                flag = false;
+            }
+            else if (!IsValidPhone())
+            {
+                flag = false;
+                MessageBox.Show("Số điện thoại không hợp lệ");
+            }
+            return flag;
+        }
         public string CustomerID { get => customerID; set => customerID = value; }
         public string CitizenID { get => citizenID; set => citizenID = value; }
         public string Name { get => name; set => name = value; }

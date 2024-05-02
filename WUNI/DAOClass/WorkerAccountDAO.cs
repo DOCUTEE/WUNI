@@ -37,6 +37,15 @@ namespace WUNI.DAOClass
             conn.CommandExecute(sqlStr);
         }
 
+        public bool IsUniqueUserName(string userName)
+        {
+            string query = string.Format("Select UserName from {0} where UserName = '{1}'", this.tableName, userName);
+            DataTable da = conn.AdapterExcute(query);
+            if (da.Rows.Count > 0 && da.Rows[0][0].ToString() != "")
+                return false;
+            return true;
+        }
+
         //public string GetWorkerID(WorkerAccount workerAccount)
         //{ 
         //    string sqlStr = string.Format("Select WorkerID from {0} where UserName = '{1}'", this.tableName, workerAccount.UserName);
