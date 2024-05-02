@@ -46,13 +46,11 @@ namespace WUNI.DAOClass
             string sqlStr = string.Format("SELECT MAX(WorkerID) FROM Worker");
             da = this.conn.AdapterExcute(sqlStr);
 
-            if (da.Rows.Count > 0)
+            if (da.Rows.Count > 0 && da.Rows[0][0].ToString() != "")
             {
                 workerID = da.Rows[0][0].ToString();
-                MessageBox.Show(workerID);
                 int num;
-                if (workerID != "") num = int.Parse(workerID);
-                else num = 0;
+                num = int.Parse(workerID);
                 num++;
                 workerID = num.ToString();
             }
@@ -162,5 +160,7 @@ namespace WUNI.DAOClass
             }
             return listWorker;
         }
+
+        
     }
 }
