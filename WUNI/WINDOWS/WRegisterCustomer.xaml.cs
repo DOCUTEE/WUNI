@@ -26,6 +26,9 @@ namespace WUNI.WINDOWS
         public WRegisterCustomer()
         {
             InitializeComponent();
+            string path = Environment.CurrentDirectory;
+            string path2 = Directory.GetParent(path).Parent.Parent.FullName + "\\Logo\\Wuni.jpg";
+            imgProfile.Source = new BitmapImage(new Uri(path2));
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -42,8 +45,7 @@ namespace WUNI.WINDOWS
             txbDescription.Text,
             "HUYGA"
             );
-        CustomerDAO customerDAO = new CustomerDAO();
-        customerDAO.Add(customer);
+      
             //Copy and  paste image of the customer into customerImage Folder
             BitmapImage bitmapImage = imgProfile.Source as BitmapImage;
             string originalPath = bitmapImage.UriSource.LocalPath;
@@ -59,9 +61,15 @@ namespace WUNI.WINDOWS
                 txpPassword.Password.ToString(),
                 customer.CustomerID
             );
-            CustomerAccountDAO customerAccountDAO = new CustomerAccountDAO();
-            customerAccountDAO.Add(customerAccount);
-            this.Close();
+
+            if (customer.CheckInput() && customerAccount.ValidateInput() && customerAccount.IsUniqueUserName())
+            {
+                CustomerDAO customerDAO = new CustomerDAO();
+                customerDAO.Add(customer);
+                CustomerAccountDAO customerAccountDAO = new CustomerAccountDAO();
+                customerAccountDAO.Add(customerAccount);
+                this.Close();
+            }
 
 
         }
