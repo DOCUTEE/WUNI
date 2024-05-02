@@ -76,13 +76,13 @@ namespace WUNI.WINDOWS.CustomerPages
             //Huy: tạo đơn
             FieldDAO fieldDAO = new FieldDAO();
             Order order = new Order(
-            fieldDAO.GetIDFieldFrom(cboField.Text),
+            cboField.SelectedIndex.ToString(),
             this.customerID,
             txbCustomerDescription.Text,
             "mimi",
             dtpBookingDate.SelectedDate.Value,
             "-1"
-           );
+           ); 
             OrderDAO orderDAO = new OrderDAO();
             orderDAO.Add(order);
             BitmapImage bitmapImage = issueImage.ImageSource as BitmapImage;
