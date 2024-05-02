@@ -53,7 +53,7 @@ namespace WUNI.WINDOWS.UC
             Review review = reviewDAO.GetReviewFrom(this.order.OrderID);
             //Find WWorkerMain.xaml
             FrameworkElement frameworkElement = this as FrameworkElement;
-            while(frameworkElement.GetType().ToString() != new WWorkerMain().GetType().ToString())
+            while(frameworkElement.GetType().ToString() != new WWorkerMain(this.workerID).GetType().ToString())
             {
                 frameworkElement = VisualTreeHelper.GetParent(frameworkElement) as FrameworkElement;
             }

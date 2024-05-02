@@ -86,7 +86,14 @@ namespace WUNI.WINDOWS
             }
             if (cnt == 0) borderAVGNumber.Width = 0;
             txbOrderQuantity.Text = numberOrderThis.ToString();
-            txbOrderAVGQuantity.Text = avg.ToString();   
+            txbOrderAVGQuantity.Text = avg.ToString();
+            //
+            
+            WorkedDAO workedDAO = new WorkedDAO();
+            List<string> IDList = workedDAO.GetOrderIDList(this.workerID);
+            Worker worker = workerDAO.GetWorkerFrom(workerID);
+            txbSalary.Text = (worker.PricePerHour * (float)IDList.Count).ToString();
+            
         }
         private double min(double a, double b)
         {

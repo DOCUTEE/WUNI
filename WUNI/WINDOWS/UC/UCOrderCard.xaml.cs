@@ -69,7 +69,7 @@ namespace WUNI.WINDOWS.UC
             workedDAO.Add( worked );
             OrderDAO orderDAO = new OrderDAO();
             //MessageBox.Show(order.OrderID);
-            orderDAO.UpdateIsWorked(order.OrderID);
+            orderDAO.UpdateIsWorked(order.OrderID,this.workerID);
         }
         
     }

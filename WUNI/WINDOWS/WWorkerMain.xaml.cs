@@ -34,7 +34,6 @@ namespace WUNI.WINDOWS
             iconHistory.Source = new BitmapImage(new Uri(path1 + "\\Logo\\HistoryIcon.png"));
             iconAccount.Source = new BitmapImage(new Uri(path1 + "\\Logo\\AccountIcon.png"));
             iconSignOut.Source = new BitmapImage(new Uri(path1 + "\\Logo\\SignOutIcon.png"));
-            fContent.NavigationService.Navigate(new PCreateOrder("7"));
         }
         public WWorkerMain(string workerID)
         {

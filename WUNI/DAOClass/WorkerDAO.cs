@@ -95,30 +95,27 @@ namespace WUNI.DAOClass
 
         public Worker GetWorkerFrom(string workerID)
         {
-            Worker worker = null;
             string query = string.Format("select * from {0} where WorkerID = '{1}'", this.tableName, workerID);
             DataTable da = this.conn.AdapterExcute(query);
-            foreach (DataRow workerRow in da.Rows)
-            {
+            
+                string id = da.Rows[0][1].ToString();
+                string citizenID = da.Rows[0][1].ToString();
+                string name = da.Rows[0][2].ToString();
+                DateTime birth = DateTime.Parse(da.Rows[0][3].ToString());
+                string gender = da.Rows[0][4].ToString();
+                string address = da.Rows[0][5].ToString();
+                string mail = da.Rows[0][6].ToString();
+                string phoneNumber = da.Rows[0][7].ToString();
+                float pricePerHour = float.Parse(da.Rows[0][8].ToString());
+                string field = da.Rows[0][9].ToString();
+                string description = da.Rows[0][10].ToString();
+                float rating = float.Parse(da.Rows[0][11].ToString());
+                string profileImage = da.Rows[0][12].ToString();
 
-                string id = workerRow[0].ToString();
-                string citizenID = workerRow[1].ToString();
-                string name = workerRow[2].ToString();
-                DateTime birth = DateTime.Parse(workerRow[3].ToString());
-                string gender = workerRow[4].ToString();
-                string address = workerRow[5].ToString();
-                string mail = workerRow[6].ToString();
-                string phoneNumber = workerRow[7].ToString();
-                float pricePerHour = float.Parse(workerRow[8].ToString());
-                string field = workerRow[9].ToString();
-                string description = workerRow[10].ToString();
-                float rating = float.Parse(workerRow[11].ToString());
-                string profileImage = workerRow[12].ToString();
-
-                worker = new Worker(workerID, citizenID, name,
+                Worker worker = new Worker(workerID, citizenID, name,
                     birth, gender, address, mail, phoneNumber, pricePerHour,
                     field, description, rating, profileImage);
-            }
+            
             return worker;
         }
         public List<string> WorderIDs()

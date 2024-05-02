@@ -4,27 +4,7 @@ CREATE TABLE WorkerAccount(
 	Passwords varchar(50),
 	WorkerID varchar(10)
 );
--- Thêm 20 đối tượng vào bảng với ID từ 1 đến 20
-delete from WorkerAccount
-INSERT INTO WorkerAccount (UserName, Passwords, WorkerID) VALUES
-    ('user1', 'password1', '1'),
-    ('user2', 'password2', '2'),
-    ('user3', 'password3', '3'),
-    ('user4', 'password4', '4'),
-    ('user5', 'password5', '5'),
-    ('user6', 'password6', '6'),
-    ('user7', 'password7', '7'),
-    ('user8', 'password8', '8'),
-    ('user9', 'password9', '9'),
-    ('user10', 'password10', '10'),
-    ('user11', 'password11', '11'),
-    ('user12', 'password12', '12'),
-    ('user13', 'password13', '13'),
-    ('user14', 'password14', '14'),
-    ('user15', 'password15', '15'),
-    ('user16', 'password16', '16'),
-    ('user17', 'password17', '17');
-  
+
   
 CREATE TABLE CustomerAccount(
 	UserName varchar(50) unique,
@@ -89,8 +69,6 @@ CREATE TABLE Field(
 	Field varchar(50)
 );
 
-drop table Field
-
 INSERT INTO Field (FieldID, Field) VALUES
 ('1', 'Điện gia dụng'),
 ('2', 'Điện tử'),
@@ -107,15 +85,6 @@ INSERT INTO Field (FieldID, Field) VALUES
 ('13', 'Sữa chữa máy móc'),
 ('14', 'Làm vườn'),
 ('15', 'Giúp việc')
-INSERT INTO Field (FieldID, Field) VALUES
-('16', 'VeSinh')
-
---SELECT MAX(WorkerID) FROM Worker;
---SELECT MAX(FieldID) FROM Field
-
-
---INSERT INTO Worker (Passwords, WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage)
---VALUES ('password123', 'WKR0001', '123456789', 'John Doe', '1990-01-01', 'Male', '123 Main St, City', 'john.doe@example.com', '1234567890', 15.50, 'FIELD1', 'Experienced worker', NULL, 'profile_image.jpg');
 
 Create table Liked(
     WorkerID varchar(10),
@@ -136,11 +105,6 @@ CREATE TABLE [dbo].[Order] (
     isQueue bit,
 	WorkerID varchar(10) 
 );
-select * from [dbo].[Order];
-delete from [dbo].[Order]
-Update [dbo].[Order] Set IsWorked = 1 Where OrderID = '1'
-
-
 CREATE TABLE Worked (
     OrderID VARCHAR(10),
     WorkerID VARCHAR(10),
@@ -158,8 +122,6 @@ CREATE TABLE Queuee(
 	WorkerID varchar(10),
 	OrderID varchar(10)
 );
-insert into Queuee(WorkerID, OrderID)
-values ('12','6')
 
 Create table Review(
 	ReviewID varchar(10) primary key,
@@ -169,19 +131,11 @@ Create table Review(
 	ReviewImage varchar(100), 
 	StarNumber int
 );
-Insert into review
-values ('1','1','1','Thợ nhiệt tình lắm','\\Review\\1.png',3)
+--(select * from Worker 
+--inner join Worked
+--on Worker.wokerID = Worked.WorkerID)
+-- as  AVGsalary
 
-INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
-VALUES ('1', '1', '1', 0, N'Description 1', '\\IssueImage\\1.png', '2024-04-26',1, '12'),
-       ('2', '2', '1', 0, N'Description 2', '\\IssueImage\\2.png', '2024-04-27', 0, '12'),
-       ('3', '3', '1', 0, N'Description 3', '\\IssueImage\\3.png', '2024-04-28', 0, '12'),
-       ('4', '4', '1', 0, N'Description 4', '\\IssueImage\\4.png', '2024-04-29', 0, '12'),
-       ('5', '5', '1', 0, N'Description 5', '\\IssueImage\\5.png', '2024-04-30', 0, '12');
 
-    INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
-VALUES ('6', '1', '1', 0, N'Description 1', '\\IssueImage\\6.png', '2024-04-26',1, '12')
-
-select * from Liked
-select * from [dbo].[Order]
-select * from Review
+delete from Review
+select * from worker
