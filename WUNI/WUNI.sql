@@ -5,6 +5,7 @@ CREATE TABLE WorkerAccount(
 	WorkerID varchar(10)
 );
 
+drop table CustomerAccount
   
 CREATE TABLE CustomerAccount(
 	UserName varchar(50) unique,
@@ -29,7 +30,7 @@ CREATE TABLE Worker(
 );
 
 drop table Worker
-delete from Worker
+
 INSERT INTO Worker (WorkerID, CitizenID, Name, Birth, Gender, Address, Mail, PhoneNumber, PricePerHour, FieldID, Description, Rating, ProfileImage) VALUES
     ('1', 'CIT001', N'John Doe', '1990-05-15', 'Male', N'123 Main Street', 'john.doe@example.com', '1234567890', 15.0, '1', N'Construction worker', 4.5, ''),
     ('2', 'CIT002', N'Jane Smith', '1988-10-20', 'Female', N'456 Elm Street', 'jane.smith@example.com', '2345678901', 20.0, '2', N'Plumber', 4.8, ''),
@@ -57,42 +58,43 @@ CREATE TABLE Customer(
 	Gender varchar(10),
 	Address nvarchar(255),
 	Mail varchar(50) unique,
-	PhoneNumber varchar(10),
+	PhoneNumber varchar(12),
 	Description nvarchar(2000),
 	ProfileImage varchar(100)
 );
-
-
+drop table Customer
 
 CREATE TABLE Field(
 	FieldID varchar(5) primary key,
-	Field varchar(50)
+	Field nvarchar(50)
 );
+drop table Field
 
 INSERT INTO Field (FieldID, Field) VALUES
-('1', 'Điện gia dụng'),
-('2', 'Điện tử'),
-('3', 'Điện lạnh'),
-('4', 'Giữ trẻ'),
-('5', 'Vận chuyển'),
-('6', 'Thú cưng'),
-('7', 'Vệ sinh'),
-('8', 'Làm đẹp'),
-('9', 'Xây dựng'),
-('10', 'Nội thất'),
-('11', 'Sửa chữa xe'),
-('12', 'Sửa chữa nước'),
-('13', 'Sữa chữa máy móc'),
-('14', 'Làm vườn'),
-('15', 'Giúp việc')
-
+('1', N'Điện gia dụng'),
+('2',N'Điện tử'),
+('3', N'Điện lạnh'),
+('4', N'Giữ trẻ'),
+('5', N'Vận chuyển'),
+('6', N'Thú cưng'),
+('7', N'Vệ sinh'),
+('8', N'Làm đẹp'),
+('9', N'Xây dựng'),
+('10', N'Nội thất'),
+('11', N'Sửa chữa xe'),
+('12', N'Sửa chữa nước'),
+('13', N'Sữa chữa máy móc'),
+('14', N'Làm vườn'),
+('15', N'Giúp việc')
+select * from Field
 Create table Liked(
     WorkerID varchar(10),
     CustomerID varchar(10),
     primary key (WorkerID, CustomerID)
 )
 
-
+delete WorkerAccount
+delete CustomerAccount
 
 CREATE TABLE [dbo].[Order] (
     OrderID VARCHAR(10) PRIMARY KEY,
@@ -111,7 +113,8 @@ CREATE TABLE Worked (
 
 );
 
-
+select * from [dbo].[Order]
+select * from worker
 CREATE TABLE BusyDate (
     WorkerID VARCHAR(10),
     CustomerID VARCHAR(10),
@@ -137,5 +140,4 @@ Create table Review(
 -- as  AVGsalary
 
 
-delete from Review
-select * from worker
+select * from field
