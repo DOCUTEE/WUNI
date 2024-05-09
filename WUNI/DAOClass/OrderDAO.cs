@@ -57,7 +57,7 @@ namespace WUNI.DAOClass
         {
             List<Order> orders = new List<Order>();
 
-            string sqlStr = string.Format("Select * from {0} Where IsWorked = 0 and isQueue != 0", this.tableName);
+            string sqlStr = string.Format("Select * from {0} Where IsWorked = 0 and isQueue = 0", this.tableName);
             DataTable da = conn.AdapterExcute(sqlStr);
             foreach (DataRow row in da.Rows) 
             {
