@@ -42,7 +42,8 @@ namespace WUNI.DAOClass
         
         public List<Field> GetListField()
         {
-            string query = string.Format("Select * from " + this.tableName);
+            string query = string.Format("SELECT * FROM {0} ORDER BY CAST(FieldID AS int)", this.tableName);
+
             DataTable da = conn.AdapterExcute(query);
             List<Field> listField = new List<Field>();
             foreach (DataRow dr in da.Rows)
