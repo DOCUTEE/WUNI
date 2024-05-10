@@ -93,7 +93,7 @@ namespace WUNI.WINDOWS
             string originalPath = bitmapImage.UriSource.LocalPath;
             string path = Environment.CurrentDirectory;
             string targetPath = Directory.GetParent(path).Parent.Parent.FullName;
-            MessageBox.Show(targetPath);
+            //MessageBox.Show(targetPath);
             //Create ID for this image
             string imageID = order.IssueImage;
             string destFile = targetPath + imageID;
