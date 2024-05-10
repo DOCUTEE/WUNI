@@ -42,7 +42,7 @@ namespace WUNI.WINDOWS
             if (workedID != "0")
             {
                 WWorkerMain wWorkerMain = new WWorkerMain(workedID);
-                MessageBox.Show(workedID.ToString());
+                //MessageBox.Show(workedID.ToString());
                 wWorkerMain.Show();
                 this.Close();
             }
@@ -59,7 +59,7 @@ namespace WUNI.WINDOWS
             if (customerID != "0")
             {
                 WCustomerMain wCustomerMain = new WCustomerMain(customerID); ;
-                MessageBox.Show(customerID.ToString());
+                //MessageBox.Show(customerID.ToString());
                 wCustomerMain.Show();
                 this.Close();
 
