@@ -177,10 +177,9 @@ Create table Liked(
 )
 
 
-
 CREATE TABLE [dbo].[Order] (
     OrderID VARCHAR(10) PRIMARY KEY,
-    FieldID VARCHAR(10),
+    FieldID VARCHAR(5),
     CustomerID VARCHAR(10),
     IsWorked bit,
     Description NVARCHAR(2000),
@@ -218,6 +217,8 @@ VALUES
     ('18', '2', '2', 0, N'Mô tả 18', 'IssueImage\\18.png', '2024-05-10', 1, '21'),
     ('19', '2', '3', 0, N'Mô tả 19', 'IssueImage\\19.png', '2024-05-11', 1, '21'),
     ('20', '2', '3', 0, N'Mô tả 20', 'IssueImage\\20.png', '2024-05-09', 1, '21');
+
+Select * from [dbo].[Order]
 
 
 CREATE TABLE Worked (
@@ -266,3 +267,4 @@ Create table Review(
 -- as  AVGsalary
 
 
+SELECT MAX(Cast( orderID as int)) FROM [dbo].[Order]
