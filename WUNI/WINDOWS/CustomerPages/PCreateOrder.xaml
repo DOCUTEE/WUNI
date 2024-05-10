@@ -8,36 +8,17 @@
       d:DesignHeight="900" d:DesignWidth="1200"
       Title="PCreateOrder">
 
-    <Grid>
+    <Grid Background="#FFF9F5EB">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="300"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Margin="10" CornerRadius="20" BorderThickness="5" BorderBrush="#FF002B5B">
-                        <Border.Background>
-                            <ImageBrush x:Name="issueImage"></ImageBrush>
-                        </Border.Background>
-                    </Border>
-                    <Button x:Name="btnSelectIssueImage" Grid.Row="1" Height="40" Width="200" Content="Chọn ảnh" FontSize="30" Margin="10" VerticalAlignment="Top" Click="btnSelectIssueImage_Click" FontFamily="Bahnschrift" Foreground="White" Background="#FF002B5B"/>
-
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10,10,0,0">
+                <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -64,9 +45,29 @@
                             <ComboBoxItem>Chọn dịch vụ</ComboBoxItem>
                         </ComboBox>
                     </Border>
-                    <Border Grid.Row="2" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                    <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
                         <TextBox x:Name="txbCustomerDescription" Text="Mô tả khách hàng" FontSize="30"  Margin="10" BorderThickness="0" TextWrapping="WrapWithOverflow" Background="Transparent" FontFamily="Bahnschrift"></TextBox>
                     </Border>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Margin="5" CornerRadius="20" BorderThickness="5" BorderBrush="#FF002B5B">
+                            <Border.Background>
+                                <ImageBrush x:Name="issueImage"></ImageBrush>
+                            </Border.Background>
+                        </Border>
+                        <Button x:Name="btnSelectIssueImage" Grid.Row="1" Height="40" Width="200" Content="Chọn ảnh" FontSize="30" Margin="2" VerticalAlignment="Top" Click="btnSelectIssueImage_Click" FontFamily="Bahnschrift" Foreground="White" Background="#FF002B5B"/>
+
+                    </Grid>
+                </Grid>
+                    
                     <Border Grid.Row="4" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
                         <TextBlock x:Name="tblCustomerName" Text="Tên khách" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                     </Border>
@@ -87,11 +88,9 @@
                     <Border Grid.Row="6" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
                         <TextBlock x:Name="tblCustomerAddress" Text="Địa chỉ khách hàng" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
                     </Border>
-                    <Border Grid.Row="7" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
-                        <TextBlock x:Name="tblCustomerPhoneNumber" Text="" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
-                    </Border>
-
-                </Grid>
+                <Border Grid.Row="7" Grid.Column="1" Margin="10" CornerRadius="10" Background="#FFF9F5EB" BorderThickness="5" BorderBrush="#FF002B5B">
+                    <TextBlock x:Name="tblCustomerPhoneNumber" Text="" FontSize="30" VerticalAlignment="Center" Margin="10,0,10,0" FontFamily="Bahnschrift"></TextBlock>
+                </Border>
             </Grid>
             <Grid Grid.Row="1">
                 <Border Width="150" Height="50" x:Name="btnCreateOrder" CornerRadius="10" Background="#002B5B" MouseLeftButtonDown="btnCreateOrder_MouseLeftButtonDown">

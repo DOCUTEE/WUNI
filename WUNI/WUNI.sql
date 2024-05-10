@@ -5,6 +5,7 @@ CREATE TABLE WorkerAccount(
 	WorkerID varchar(10)
 );
 
+
 INSERT INTO WorkerAccount (UserName, Passwords, WorkerID)
 VALUES 
 ('user1', '1111', '1'),
@@ -51,19 +52,19 @@ VALUES
 ('user39', '1111', '39'),
 ('user40', '1111', '40');
 
-  
+
 CREATE TABLE Worker(
 	WorkerID varchar(10) primary key,
 	CitizenID varchar(50),
-	Name nvarchar(255),
+	Name nvarchar(255) COLLATE Vietnamese_CI_AS,
 	Birth Date,
-	Gender nvarchar(10),
-	Address nvarchar(255),
+	Gender nvarchar(10) COLLATE Vietnamese_CI_AS,
+	Address nvarchar(255) COLLATE Vietnamese_CI_AS,
 	Mail varchar(50),
 	PhoneNumber varchar(12),
 	PricePerHour float,
 	FieldID varchar(5),                
-	Description nvarchar(2000),
+	Description nvarchar(2000) COLLATE Vietnamese_CI_AS,
 	Rating float,                      
 	ProfileImage varchar(100)
 );
@@ -132,13 +133,13 @@ VALUES
 CREATE TABLE Customer(
 	CustomerID varchar(10) primary Key,
 	CitizenID varchar(50),
-	Name nvarchar(255),
+	Name nvarchar(255) COLLATE Vietnamese_CI_AS,
 	Birth Date,
-	Gender varchar(10),
-	Address nvarchar(255),
+	Gender nvarchar(10) COLLATE Vietnamese_CI_AS,
+	Address nvarchar(255) COLLATE Vietnamese_CI_AS,
 	Mail varchar(50) unique,
 	PhoneNumber varchar(12),
-	Description nvarchar(2000),
+	Description nvarchar(2000) COLLATE Vietnamese_CI_AS,
 	ProfileImage varchar(100)
 );
 
@@ -150,8 +151,9 @@ VALUES
 
 CREATE TABLE Field(
 	FieldID varchar(5) primary key,
-	Field nvarchar(50)
+	Field nvarchar(50) COLLATE Vietnamese_CI_AS
 );
+
 
 INSERT INTO Field (FieldID, Field) VALUES
 ('1', N'Điện gia dụng'),
@@ -169,7 +171,6 @@ INSERT INTO Field (FieldID, Field) VALUES
 ('13', N'Tài xế'),
 ('14', N'Làm vườn'),
 ('15', N'Giúp việc')
-
 Create table Liked(
     WorkerID varchar(10),
     CustomerID varchar(10),
@@ -183,7 +184,7 @@ CREATE TABLE [dbo].[Order] (
     FieldID VARCHAR(10),
     CustomerID VARCHAR(10),
     IsWorked bit,
-    Description NVARCHAR(2000),
+    Description NVARCHAR(2000) COLLATE Vietnamese_CI_AS,
     IssueImage VARCHAR(50),
     IssueDate DATE,
     isQueue bit,
@@ -220,10 +221,10 @@ VALUES
     ('20', '2', '3', 0, N'Mô tả 20', 'IssueImage\\20.png', '2024-05-09', 1, '21');
 
 
+
 CREATE TABLE Worked (
     OrderID VARCHAR(10),
-    WorkerID VARCHAR(10),
-
+    WorkerID VARCHAR(10)
 );
 
 
@@ -232,10 +233,10 @@ CREATE TABLE BusyDate (
     CustomerID VARCHAR(10),
     BusyDate DATE
 );
-
 CREATE TABLE Queuee(
 	WorkerID varchar(10),
 	OrderID varchar(10)
+    primary key (WorkerID, OrderID)
 );
 
 INSERT INTO Queuee (WorkerID, OrderID)
@@ -250,12 +251,11 @@ VALUES
     ('21', '18'),
     ('21', '19'),
     ('21', '20');
-
 Create table Review(
 	ReviewID varchar(10) primary key,
 	CustomerID varchar(10),	
 	WorkerID varchar(10),
-	Comment nvarchar(2000),
+	Comment nvarchar(2000) COLLATE Vietnamese_CI_AS,
 	ReviewImage varchar(100), 
 	StarNumber int 
 );
