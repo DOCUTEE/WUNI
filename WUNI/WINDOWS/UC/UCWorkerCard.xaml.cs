@@ -51,7 +51,7 @@ namespace WUNI.WINDOWS.UC
         private void btnMore_Click(object sender, RoutedEventArgs e)
         {
             WCustomerMain wCustomerMain = (WCustomerMain)Window.GetWindow(this);
-            MessageBox.Show(wCustomerMain.CustomerID);
+            //MessageBox.Show(wCustomerMain.CustomerID);
             WWorkerDetails workerDetails = new WWorkerDetails(wCustomerMain.CustomerID, this.workerID);
             workerDetails.Show();   
         }
@@ -61,7 +61,7 @@ namespace WUNI.WINDOWS.UC
             string path = Environment.CurrentDirectory;
             string path1 = Directory.GetParent(path).Parent.Parent.FullName;
             LikedDAO likedDAO = new LikedDAO();
-            MessageBox.Show(this.workerID + "|" + this.customerID);
+            //MessageBox.Show(this.workerID + "|" + this.customerID);
             bool isLiked = likedDAO.isLiked(this.customerID, this.workerID);
             Liked liked = new Liked(this.workerID, this.customerID);
             if (isLiked)

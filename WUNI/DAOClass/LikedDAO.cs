@@ -25,7 +25,7 @@ namespace WUNI.DAOClass
         {
             string sqlStr = string.Format("Insert into {0} (WorkerID, CustomerID) VALUES('{1}', '{2}')",
                this.tableName, liked.WorkerID, liked.CustomerID);
-            MessageBox.Show(liked.WorkerID +"|"+ liked.CustomerID);
+            //MessageBox.Show(liked.WorkerID +"|"+ liked.CustomerID);
             this.conn.CommandExecute(sqlStr);
         }
 

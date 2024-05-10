@@ -61,7 +61,7 @@ namespace WUNI.WINDOWS
             int sum = 0, cnt = 0 ;
             foreach (string id in workerIDs)
             {
-                MessageBox.Show(id);
+                //MessageBox.Show(id);
                 int temp = orderDAO.NumberOf(id);
                 if (temp != 0)
                 {
@@ -70,7 +70,7 @@ namespace WUNI.WINDOWS
                 }
             }
             double maxWidth = 950;
-            MessageBox.Show(sum.ToString());
+            //MessageBox.Show(sum.ToString());
  
             double avg = 0;
             if (numberOrderThis != 0)

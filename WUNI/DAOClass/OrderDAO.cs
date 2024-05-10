@@ -47,7 +47,6 @@ namespace WUNI.DAOClass
         public void Add(Order order)
 
         {
-            MessageBox.Show("alooo", order.OrderID);
             string sqlStr = string.Format("Insert into {0} (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)" +
                 "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
                 this.tableName, order.OrderID, order.FieldID, order.CustomerID, order.IsWorked, order.Description, order.IssueImage, order.IssueDate, order.IsQueue, order.WorkerID);
