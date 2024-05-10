@@ -178,10 +178,9 @@ Create table Liked(
 )
 
 
-
 CREATE TABLE [dbo].[Order] (
     OrderID VARCHAR(10) PRIMARY KEY,
-    FieldID VARCHAR(10),
+    FieldID VARCHAR(5),
     CustomerID VARCHAR(10),
     IsWorked bit,
     Description NVARCHAR(2000) COLLATE Vietnamese_CI_AS,
@@ -195,14 +194,14 @@ delete [dbo].[Order]
 
 INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
 VALUES 
-    ('1', '1', '1', 0, N'Mô tả 1', 'IssueImage\\1.png', '2024-05-09', 0, '0'),
-    ('2', '1', '1', 0, N'Mô tả 2', 'IssueImage\\2.png', '2024-05-09', 0, '0'),
-    ('3', '1', '1', 0, N'Mô tả 3', 'IssueImage\\3.png', '2024-05-09', 0, '0'),
-    ('4', '2', '1', 0, N'Mô tả 4', 'IssueImage\\4.png', '2024-05-09', 0, '0'),
+    ('1', '1', '1', 0, N'Mô tả 1', 'IssueImage\\1.png', '2024-05-08', 0, '0'),
+    ('2', '1', '1', 0, N'Mô tả 2', 'IssueImage\\2.png', '2024-05-08', 0, '0'),
+    ('3', '1', '1', 0, N'Mô tả 3', 'IssueImage\\3.png', '2024-05-05', 0, '0'),
+    ('4', '2', '1', 0, N'Mô tả 4', 'IssueImage\\4.png', '2024-05-05', 0, '0'),
     ('5', '2', '2', 0, N'Mô tả 5', 'IssueImage\\5.png', '2024-05-09', 0, '0'),
-    ('6', '3', '2', 0, N'Mô tả 6', 'IssueImage\\6.png', '2024-05-09', 0, '0'),
-    ('7', '3', '2', 0, N'Mô tả 7', 'IssueImage\\7.png', '2024-05-09', 0, '0'),
-    ('8', '4', '3', 0, N'Mô tả 8', 'IssueImage\\8.png', '2024-05-09', 0, '0'),
+    ('6', '3', '2', 0, N'Mô tả 6', 'IssueImage\\6.png', '2024-05-04', 0, '0'),
+    ('7', '3', '2', 0, N'Mô tả 7', 'IssueImage\\7.png', '2024-05-04', 0, '0'),
+    ('8', '4', '3', 0, N'Mô tả 8', 'IssueImage\\8.png', '2024-05-04', 0, '0'),
     ('9', '4', '3', 0, N'Mô tả 9', 'IssueImage\\9.png', '2024-05-09', 0, '0'),
     ('10', '5', '3', 0, N'Mô tả 10', 'IssueImage\\10.png', '2024-05-09', 0, '0');
 
@@ -213,12 +212,14 @@ VALUES
     ('12', '1', '2', 0, N'Mô tả 12', 'IssueImage\\12.png', '2024-05-09', 1, '1'),
     ('13', '1', '3', 0, N'Mô tả 13', 'IssueImage\\13.png', '2024-05-09', 1, '1'),
     ('14', '1', '1', 0, N'Mô tả 14', 'IssueImage\\14.png', '2024-05-09', 1, '1'),
-    ('15', '1', '2', 0, N'Mô tả 15', 'IssueImage\\15.png', '2024-05-09', 1, '2'),
-    ('16', '2', '3', 0, N'Mô tả 16', 'IssueImage\\16.png', '2024-05-09', 1, '21'),
-    ('17', '2', '1', 0, N'Mô tả 17', 'IssueImage\\17.png', '2024-05-09', 1, '21'),
-    ('18', '2', '2', 0, N'Mô tả 18', 'IssueImage\\18.png', '2024-05-09', 1, '21'),
-    ('19', '2', '3', 0, N'Mô tả 19', 'IssueImage\\19.png', '2024-05-09', 1, '21'),
+    ('15', '1', '2', 0, N'Mô tả 15', 'IssueImage\\15.png', '2024-05-10', 1, '2'),
+    ('16', '2', '3', 0, N'Mô tả 16', 'IssueImage\\16.png', '2024-05-11', 1, '21'),
+    ('17', '2', '1', 0, N'Mô tả 17', 'IssueImage\\17.png', '2024-05-10', 1, '21'),
+    ('18', '2', '2', 0, N'Mô tả 18', 'IssueImage\\18.png', '2024-05-10', 1, '21'),
+    ('19', '2', '3', 0, N'Mô tả 19', 'IssueImage\\19.png', '2024-05-11', 1, '21'),
     ('20', '2', '3', 0, N'Mô tả 20', 'IssueImage\\20.png', '2024-05-09', 1, '21');
+
+Select * from [dbo].[Order]
 
 
 
@@ -266,3 +267,4 @@ Create table Review(
 -- as  AVGsalary
 
 
+SELECT MAX(Cast( orderID as int)) FROM [dbo].[Order]

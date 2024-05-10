@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WUNI.WINDOWS"
         mc:Ignorable="d"
         Title="WWorkerDetails" Height="900" Width="1200">
-    <Border CornerRadius="10" Margin="10,10,10,10" Background="#F9F5EB" > 
+    <Border CornerRadius="10" Margin="10,10,10,10" Background="#F9F5EB" >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -84,10 +84,10 @@
                             <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift">Liên hệ</TextBlock>
                         </Border>
                         <Border x:Name="btnDescription" Grid.Column="1" BorderThickness="2" MouseLeftButtonDown="btnDescription_MouseLeftButtonDown" >
-                            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift" >Mô tả</TextBlock>
+                            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Bahnschrift" Margin="38,0,0,-1" >Mô tả</TextBlock>
                         </Border>
                         <Border x:Name="btnReviews" Grid.Column="2" BorderThickness="2" MouseLeftButtonDown="btnReviews_MouseLeftButtonDown" >
-                            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift" >Đánh giá</TextBlock>
+                            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" FontFamily="Bahnschrift" Margin="33,0,0,-1" >Đánh giá</TextBlock>
                         </Border>
                     </Grid>
 

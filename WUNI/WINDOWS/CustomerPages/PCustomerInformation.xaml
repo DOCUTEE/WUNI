@@ -8,133 +8,133 @@
       d:DesignHeight="900" d:DesignWidth="1200"
       Title="PCustomerInformation">
 
-   
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="350"/>
-                    <RowDefinition Height="32"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="3">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                </Grid>
+            </Grid>
+            <Grid Grid.Row="0">
+                <Border CornerRadius="10" BorderThickness="5" BorderBrush="#002B5B" Margin="10">
+                    <Border.Background>
+                        <ImageBrush x:Name="imgCustomerProfile" Stretch="UniformToFill"/>
+                    </Border.Background>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Margin="10,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Border CornerRadius="10" BorderThickness="5" BorderBrush="#002B5B" Margin="10">
-                        <Border.Background>
-                            <ImageBrush x:Name="imgCustomerProfile" Stretch="UniformToFill"/>
-                        </Border.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="tblCustomerName" Grid.Column="0" Text="Tên khách hàng"  FontSize="40" VerticalAlignment="Bottom" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF002B5B"></TextBlock>
+                </Grid>
+                <Label Content="Mô tả bản thân"  Grid.Row="2"  FontSize="15" VerticalAlignment="Bottom" FontFamily="Bahnschrift"/>
+                <TextBlock x:Name="tblDescription" Text="Mô tả bản thân tại đây"  Grid.Row="3"  FontSize="25" VerticalAlignment="Center" FontFamily="Bahnschrift"/>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="btnInfo" Grid.Column="0" BorderThickness="2" MouseLeftButtonDown="btnInfo_MouseLeftButtonDown">
+                        <Label  VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift" Margin="0,13,0,0"  >Liên hệ</Label>
+                    </Border>
+                    <Border x:Name="btnLiked" Grid.Column="1" BorderThickness="2" MouseLeftButtonDown="btnLiked_MouseLeftButtonDown">
+                        <Label  VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Content="Thợ yêu thích" FontFamily="Bahnschrift" Margin="16,14,0,0" />
                     </Border>
                 </Grid>
+
             </Grid>
-            <Grid Grid.Column="1" Margin="10,0,0,0">
+            <Grid x:Name="containerInfo" Grid.Row="1" Visibility="Visible">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="350"/>
-                    <RowDefinition Height="*"/>
-
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                <Label Content="Thông tin liên hệ" Grid.Row="0"   FontSize="16" VerticalAlignment="Bottom" Opacity="0.7" FontFamily="Bahnschrift"/>
+                <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="tblCustomerName" Grid.Column="0" Text="Tên khách hàng"  FontSize="40" VerticalAlignment="Bottom" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF002B5B"></TextBlock>
-                    </Grid>
-                    <Label Content="Mô tả bản thân"  Grid.Row="2"  FontSize="15" VerticalAlignment="Bottom" FontFamily="Bahnschrift"/>
-                    <TextBlock x:Name="tblDescription" Text="Mô tả bản thân tại đây"  Grid.Row="3"  FontSize="25" VerticalAlignment="Center" FontFamily="Bahnschrift"/>
-
-                    <Grid Grid.Row="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-
-                        </Grid.ColumnDefinitions>
-                        <Border x:Name="btnInfo" Grid.Column="0" BorderThickness="2" MouseLeftButtonDown="btnInfo_MouseLeftButtonDown">
-                            <Label  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift"  >Liên hệ</Label>
-                        </Border>
-                        <Border x:Name="btnLiked" Grid.Column="1" BorderThickness="2" MouseLeftButtonDown="btnLiked_MouseLeftButtonDown">
-                            <Label  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" Content="Thợ yêu thích" FontFamily="Bahnschrift" />
-                        </Border>
-                    </Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Số điện thoại" Grid.Row="0" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" ></Label>
+                    <Label Content="Địa chỉ" Grid.Row="1" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift"></Label>
+                    <Label Content="Email" Grid.Row="2" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift"></Label>
+                    <TextBlock x:Name = "tblPhoneNumber" Text="Số điện thoại tại đây"  Grid.Row="0" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></TextBlock>
+                    <TextBlock x:Name="tblAddress" Text="Địa chỉ tại đây" Grid.Row="1" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455"></TextBlock>
+                    <TextBlock x:Name="tblEmail"  Text="Email tại đây" Grid.Row="2" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455"></TextBlock>
 
                 </Grid>
-                <Grid x:Name="containerInfo" Grid.Row="1" Visibility="Visible">
+                <Label Content="Thông tin cơ bản" Grid.Row="2"   FontSize="16" VerticalAlignment="Bottom" Opacity="0.7"/>
+                <Grid Grid.Row="3">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Thông tin liên hệ" Grid.Row="0"   FontSize="16" VerticalAlignment="Bottom" Opacity="0.7" FontFamily="Bahnschrift"/>
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Content="Số điện thoại" Grid.Row="0" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" ></Label>
-                        <Label Content="Địa chỉ" Grid.Row="1" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift"></Label>
-                        <Label Content="Email" Grid.Row="2" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift"></Label>
-                        <TextBlock x:Name = "tblPhoneNumber" Text="Số điện thoại tại đây"  Grid.Row="0" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></TextBlock>
-                        <TextBlock x:Name="tblAddress" Text="Địa chỉ tại đây" Grid.Row="1" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455"></TextBlock>
-                        <TextBlock x:Name="tblEmail"  Text="Email tại đây" Grid.Row="2" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" Foreground="#FFEA5455"></TextBlock>
-
-                    </Grid>
-                    <Label Content="Thông tin cơ bản" Grid.Row="2"   FontSize="16" VerticalAlignment="Bottom" Opacity="0.7"/>
-                    <Grid Grid.Row="3">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Content="Giới tính"  Grid.Row="0" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></Label>
-                        <TextBlock x:Name = "tblGender" Text="Giới tính tại đây" Grid.Row="0" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" ></TextBlock>
-                        <Label Content="Ngày sinh"  Grid.Row="1" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></Label>
-                        <TextBlock x:Name = "tblBirth" Text="Ngày sinh tại đây" Grid.Row="1" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" ></TextBlock>
-                    </Grid>
-                </Grid>
-
-                <Grid x:Name="containerLikedWorker" Grid.Row="1" Visibility="Hidden">
-                    <ScrollViewer>
-                        <UniformGrid x:Name="ufgLikedWorker" Columns="1" HorizontalAlignment="Left">
-                            
-                        </UniformGrid>
-                    </ScrollViewer>
-
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Giới tính"  Grid.Row="0" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></Label>
+                    <TextBlock x:Name = "tblGender" Text="Giới tính tại đây" Grid.Row="0" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" ></TextBlock>
+                    <Label Content="Ngày sinh"  Grid.Row="1" Grid.Column="0"   FontSize="28" VerticalAlignment="Center" FontFamily="Bahnschrift" Foreground="#FFEA5455" ></Label>
+                    <TextBlock x:Name = "tblBirth" Text="Ngày sinh tại đây" Grid.Row="1" Grid.Column="1"   FontSize="28" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Bahnschrift" ></TextBlock>
                 </Grid>
             </Grid>
 
+            <Grid x:Name="containerLikedWorker" Grid.Row="1" Visibility="Hidden">
+                <ScrollViewer>
+                    <UniformGrid x:Name="ufgLikedWorker" Columns="1" HorizontalAlignment="Left">
+
+                    </UniformGrid>
+                </ScrollViewer>
+
+            </Grid>
         </Grid>
-    
+
+    </Grid>
+
 </Page>
