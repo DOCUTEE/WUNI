@@ -189,7 +189,7 @@ CREATE TABLE [dbo].[Order] (
     isQueue bit,
 	WorkerID varchar(10) 
 );
-delete [dbo].[Order]
+
 
 
 INSERT INTO [dbo].[Order] (OrderID, FieldID, CustomerID, IsWorked, Description, IssueImage, IssueDate, isQueue, WorkerID)
@@ -219,7 +219,7 @@ VALUES
     ('19', '2', '3', 0, N'Mô tả 19', 'IssueImage\\19.png', '2024-05-11', 1, '21'),
     ('20', '2', '3', 0, N'Mô tả 20', 'IssueImage\\20.png', '2024-05-09', 1, '21');
 
-Select * from [dbo].[Order]
+
 
 
 
@@ -267,4 +267,3 @@ Create table Review(
 -- as  AVGsalary
 
 
-SELECT MAX(Cast( orderID as int)) FROM [dbo].[Order]
